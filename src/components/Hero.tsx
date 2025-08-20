@@ -27,8 +27,8 @@ const Hero = () => {
           
           {/* Main Heading with Brand Underline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            <span className="brand-underline">Sustainable</span>{" "}
-            <span className="text-primary">Titanium Solutions</span>
+            <span>Sustainable</span>{" "}
+            <span className="text-primary brand-underline">Titanium Solutions</span>
           </h1>
           
           {/* Subheading */}
