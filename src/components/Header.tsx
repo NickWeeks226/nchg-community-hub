@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useAuth } from "@/hooks/use-auth";
+import { AuthModal } from "@/components/auth/AuthModal";
+import { UserMenu } from "@/components/auth/UserMenu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { user } = useAuth();
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -39,11 +44,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex">
-            <Button variant="hero" size="sm">
-              Get Started
-            </Button>
+          {/* Auth Section */}
+          <div className="hidden md:flex items-center space-x-4">
+            {user ? (
+              <UserMenu />
+            ) : (
+              <Button variant="hero" size="sm" onClick={() => setAuthModalOpen(true)}>
+                Sign In
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,13 +80,26 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" size="sm" className="w-full mt-4">
-                Get Started
-              </Button>
+              {user ? (
+                <div className="pt-4 border-t border-border/50">
+                  <UserMenu />
+                </div>
+              ) : (
+                <Button 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-full mt-4"
+                  onClick={() => setAuthModalOpen(true)}
+                >
+                  Sign In
+                </Button>
+              )}
             </nav>
           </div>
         )}
       </div>
+      
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </header>
   );
 };

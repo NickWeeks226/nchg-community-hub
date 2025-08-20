@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, MessageSquare, Calendar, Trophy, TrendingUp, Globe } from "lucide-react";
+import { Users, MessageSquare, Calendar, Trophy, TrendingUp, Globe, Lock } from "lucide-react";
+import { useAuth } from "@/hooks/use-auth";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 const Community = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { user } = useAuth();
   const features = [
     {
       icon: MessageSquare,
@@ -132,9 +137,16 @@ const Community = () => {
                     <span>{topic.time}</span>
                   </div>
                 </div>
-                <Button variant="ghost" size="sm">
-                  View
-                </Button>
+                {user ? (
+                  <Button variant="ghost" size="sm">
+                    View
+                  </Button>
+                ) : (
+                  <Button variant="ghost" size="sm" onClick={() => setAuthModalOpen(true)}>
+                    <Lock className="w-3 h-3 mr-1" />
+                    Sign In
+                  </Button>
+                )}
               </div>
             ))}
           </div>
@@ -150,15 +162,31 @@ const Community = () => {
             of the latest developments in sustainable titanium manufacturing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              Join Community Forum
-            </Button>
-            <Button variant="outline" size="lg">
-              Browse Discussions
-            </Button>
+            {user ? (
+              <>
+                <Button variant="hero" size="lg">
+                  Join Community Forum
+                </Button>
+                <Button variant="outline" size="lg">
+                  Browse Discussions
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
+                  <Lock className="w-4 h-4 mr-2" />
+                  Sign In to Join Forum
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
+                  View Public Discussions
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
+      
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </section>
   );
 };

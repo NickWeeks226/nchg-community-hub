@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,10 +10,15 @@ import {
   Clock, 
   CheckCircle,
   Star,
-  MapPin
+  MapPin,
+  Lock
 } from "lucide-react";
+import { useAuth } from "@/hooks/use-auth";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 const Marketplace = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { user } = useAuth();
   const features = [
     {
       icon: Package,
@@ -180,9 +186,20 @@ const Marketplace = () => {
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-2xl font-bold text-foreground">{listing.price}</span>
                     </div>
-                    <Button variant="default" className="w-full">
-                      Contact Supplier
-                    </Button>
+                    {user ? (
+                      <Button variant="default" className="w-full">
+                        Contact Supplier
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="default" 
+                        className="w-full" 
+                        onClick={() => setAuthModalOpen(true)}
+                      >
+                        <Lock className="w-4 h-4 mr-2" />
+                        Sign In to Contact
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -200,15 +217,31 @@ const Marketplace = () => {
             our marketplace connects you with verified suppliers and buyers across the UK.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              List Your Materials
-            </Button>
-            <Button variant="outline" size="lg">
-              Browse Marketplace
-            </Button>
+            {user ? (
+              <>
+                <Button variant="hero" size="lg">
+                  List Your Materials
+                </Button>
+                <Button variant="outline" size="lg">
+                  Browse Marketplace
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
+                  <Lock className="w-4 h-4 mr-2" />
+                  Sign In to List Materials
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
+                  View Marketplace
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
+      
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </section>
   );
 };
