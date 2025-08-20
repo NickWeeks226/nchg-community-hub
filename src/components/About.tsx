@@ -1,18 +1,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
+import claudiaImg from "@/assets/leadership/claudia.svg";
+import nickImg from "@/assets/leadership/nick.svg";
+import nplLogo from "@/assets/partners/npl.svg";
+import powderloopLogo from "@/assets/partners/powderloop.svg";
+import rotidebLogo from "@/assets/partners/rotideb.svg";
+import henryRoyceLogo from "@/assets/partners/henry-royce.svg";
+import partnerLogo from "@/assets/partners/partner.svg";
+import customer1Logo from "@/assets/customers/customer-1.svg";
+import customer2Logo from "@/assets/customers/customer-2.svg";
+import customer3Logo from "@/assets/customers/customer-3.svg";
+import customer4Logo from "@/assets/customers/customer-4.svg";
+import customer5Logo from "@/assets/customers/customer-5.svg";
+import customer6Logo from "@/assets/customers/customer-6.svg";
+
 const About = () => {
   const leadership = [
     {
       name: "Claudia",
       role: "Director",
-      image: "/leadership/claudia.svg",
+      image: claudiaImg,
       description: "Leading innovation in titanium powder solutions with extensive expertise in materials science and business development."
     },
     {
       name: "Nick",
       role: "Director", 
-      image: "/leadership/nick.svg",
+      image: nickImg,
       description: "Driving technical excellence and strategic partnerships in advanced manufacturing and powder metallurgy."
     }
   ];
@@ -20,50 +34,50 @@ const About = () => {
   const partners = [
     {
       name: "NPL",
-      logo: "/partners/npl.svg"
+      logo: nplLogo
     },
     {
       name: "Powderloop",
-      logo: "/partners/powderloop.svg"
+      logo: powderloopLogo
     },
     {
       name: "Rotideb Company Limited",
-      logo: "/partners/rotideb.svg"
+      logo: rotidebLogo
     },
     {
       name: "Henry Royce Institute",
-      logo: "/partners/henry-royce.svg"
+      logo: henryRoyceLogo
     },
     {
       name: "Partner",
-      logo: "/partners/partner.svg"
+      logo: partnerLogo
     }
   ];
 
   const customers = [
     {
       name: "Customer 1",
-      logo: "/customers/customer-1.svg"
+      logo: customer1Logo
     },
     {
       name: "Customer 2", 
-      logo: "/customers/customer-2.svg"
+      logo: customer2Logo
     },
     {
       name: "Customer 3",
-      logo: "/customers/customer-3.svg"
+      logo: customer3Logo
     },
     {
       name: "Customer 4",
-      logo: "/customers/customer-4.svg"
+      logo: customer4Logo
     },
     {
       name: "Customer 5",
-      logo: "/customers/customer-5.svg"
+      logo: customer5Logo
     },
     {
       name: "Customer 6",
-      logo: "/customers/customer-6.svg"
+      logo: customer6Logo
     }
   ];
 
@@ -92,6 +106,7 @@ const About = () => {
                       decoding="async"
                       onError={(e) => {
                         const img = e.currentTarget as HTMLImageElement;
+                        console.warn("Leadership image failed to load:", img.src);
                         img.src = "/placeholder.svg";
                       }}
                     />
@@ -126,6 +141,7 @@ const About = () => {
                   decoding="async"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
+                    console.warn("Partner logo failed to load:", img.src);
                     img.src = "/placeholder.svg";
                   }}
                 />
@@ -148,6 +164,7 @@ const About = () => {
                   decoding="async"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
+                    console.warn("Customer logo failed to load:", img.src);
                     img.src = "/placeholder.svg";
                   }}
                 />
