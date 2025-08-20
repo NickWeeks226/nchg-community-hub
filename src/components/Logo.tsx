@@ -1,4 +1,4 @@
-import logo from "@/assets/nchg-logo.png";
+const logo = "/lovable-uploads/ae237c9b-1f11-4428-ad49-e3f968cb7995.png";
 
 interface LogoProps {
   className?: string;
