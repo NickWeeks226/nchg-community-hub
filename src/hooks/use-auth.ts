@@ -7,6 +7,12 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Skip auth if Supabase is not properly configured
+    if (!import.meta.env.VITE_SUPABASE_URL) {
+      setLoading(false)
+      console.log('Supabase not configured, running in demo mode')
+      return
+    }
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
@@ -25,6 +31,9 @@ export const useAuth = () => {
   }, [])
 
   const signUp = async (email: string, password: string, metadata?: any) => {
+    if (!import.meta.env.VITE_SUPABASE_URL) {
+      return { data: null, error: { message: 'Supabase not configured. Please connect your project to Supabase.' } }
+    }
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
@@ -36,6 +45,9 @@ export const useAuth = () => {
   }
 
   const signIn = async (email: string, password: string) => {
+    if (!import.meta.env.VITE_SUPABASE_URL) {
+      return { data: null, error: { message: 'Supabase not configured. Please connect your project to Supabase.' } }
+    }
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
@@ -44,6 +56,9 @@ export const useAuth = () => {
   }
 
   const signOut = async () => {
+    if (!import.meta.env.VITE_SUPABASE_URL) {
+      return { error: { message: 'Supabase not configured' } }
+    }
     const { error } = await supabase.auth.signOut()
     return { error }
   }
