@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Globe } from "lucide-react";
+import nchgLogo from "@/assets/nchg-logo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,11 +31,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">N</span>
-              </div>
-              <span className="font-display font-bold text-xl">NCHG</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src={nchgLogo} 
+                alt="NCHG Limited - Sustainable Titanium Solutions" 
+                className="h-8 w-auto brightness-0 invert"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement.innerHTML = '<span class="font-display font-bold text-xl">NCHG</span>';
+                }}
+              />
             </div>
             <p className="text-primary-foreground/80 mb-6">
               Leading provider of sustainable titanium solutions for additive manufacturing. 
