@@ -21,9 +21,9 @@ const Footer = () => {
   ];
 
   const contact = [
-    { icon: Mail, label: "info@nchg.co.uk" },
-    { icon: Phone, label: "+44 (0) 123 456 7890" },
-    { icon: MapPin, label: "United Kingdom" },
+    { icon: Mail, label: "claudia@nchg.co.uk" },
+    { icon: Phone, label: "+44 (0) 7823 489 248" },
+    { icon: MapPin, label: "Over Peover, Cheshire, United Kingdom" },
   ];
 
   return (
@@ -122,7 +122,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="text-primary-foreground/80 text-sm">
-            © 2024 NCHG Limited. All rights reserved.
+            © 2025 NCHG Limited. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
