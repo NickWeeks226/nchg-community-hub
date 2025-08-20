@@ -28,15 +28,22 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src={`${nchgLogo}?v=2`} 
-              alt="NCHG Limited - Sustainable Titanium Solutions" 
-              className="h-10 w-auto"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement.innerHTML = '<span class="font-display font-bold text-xl text-primary">NCHG</span>';
-              }}
-            />
+            <div className="p-1 rounded-md bg-card/60 shadow-elegant">
+              <img
+                src={"/nchg-logo-user.png?v=3"}
+                alt="NCHG Limited - Sustainable Titanium Solutions"
+                className="h-10 w-auto"
+                onLoad={(e) => {
+                  console.info('Header logo loaded from:', (e.currentTarget as HTMLImageElement).currentSrc);
+                }}
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  console.warn('Header public logo not found, falling back to bundled asset.');
+                  img.onerror = null;
+                  img.src = `${nchgLogo}?v=3`;
+                }}
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}

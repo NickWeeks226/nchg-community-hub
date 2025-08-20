@@ -33,13 +33,18 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src={`${nchgLogo}?v=2`} 
-                alt="NCHG Limited - Sustainable Titanium Solutions" 
+              <img
+                src={"/nchg-logo-user.png?v=3"}
+                alt="NCHG Limited - Sustainable Titanium Solutions"
                 className="h-8 w-auto"
+                onLoad={(e) => {
+                  console.info('Footer logo loaded from:', (e.currentTarget as HTMLImageElement).currentSrc);
+                }}
                 onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement.innerHTML = '<span class="font-display font-bold text-xl">NCHG</span>';
+                  const img = e.currentTarget as HTMLImageElement;
+                  console.warn('Footer public logo not found, falling back to bundled asset.');
+                  img.onerror = null;
+                  img.src = `${nchgLogo}?v=3`;
                 }}
               />
             </div>
