@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-import claudiaImg from "@/assets/leadership/claudia.svg";
-import nickImg from "@/assets/leadership/nick.svg";
+// Leadership photos from uploads
+const claudiaImg = "/lovable-uploads/c4b97b77-1c05-4e22-890c-63def67da262.png";
+const nickImg = "/lovable-uploads/985b7b3a-ebb7-4c4c-bdef-bad9ddad2998.png";
 import nplLogo from "@/assets/partners/npl.svg";
 import powderloopLogo from "@/assets/partners/powderloop.svg";
 import rotidebLogo from "@/assets/partners/rotideb.svg";
