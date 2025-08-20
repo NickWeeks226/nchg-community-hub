@@ -4,11 +4,12 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 // Leadership photos from uploads
 const claudiaImg = "/lovable-uploads/c4b97b77-1c05-4e22-890c-63def67da262.png";
 const nickImg = "/lovable-uploads/985b7b3a-ebb7-4c4c-bdef-bad9ddad2998.png";
-import nplLogo from "@/assets/partners/npl.svg";
-import powderloopLogo from "@/assets/partners/powderloop.svg";
-import rotidebLogo from "@/assets/partners/rotideb.svg";
-import henryRoyceLogo from "@/assets/partners/henry-royce.svg";
-import partnerLogo from "@/assets/partners/partner.svg";
+// Partner logos from uploads
+const nplLogo = "/lovable-uploads/815d37d3-7968-4915-a72e-41529be11e35.png";
+const powderloopLogo = "/lovable-uploads/7e9ab992-1f81-4fd5-9c1d-256c1cf4d3ce.png";
+const rotidebLogo = "/lovable-uploads/64b13dc8-db49-4a83-9438-3611c66ea1b1.png";
+const henryRoyceLogo = "/lovable-uploads/6c5ce2ee-ea5b-46ea-b3e3-d2eeb4811e52.png";
+const partnerLogo = "/lovable-uploads/336302be-3b77-47e7-873d-d49309ba56bd.png";
 // Customer logos from uploads
 const athertonLogo = "/lovable-uploads/30605f4b-f121-4d4e-9f83-188e8f693c5e.png";
 const atomikLogo = "/lovable-uploads/ee3a28a5-80b3-410e-8ba0-2ced2f5924f9.png";
