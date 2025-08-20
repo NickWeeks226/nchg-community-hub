@@ -11,6 +11,19 @@ const queryClient = new QueryClient();
 const App = () => {
   console.log('App component rendering')
   
+  // Logo preflight check
+  fetch('/logo.png', { cache: 'no-store' })
+    .then(response => {
+      if (response.ok) {
+        console.log('🚀 Logo preflight: /logo.png exists and accessible');
+      } else {
+        console.warn('⚠️ Logo preflight: /logo.png returned', response.status);
+      }
+    })
+    .catch(error => {
+      console.error('❌ Logo preflight failed:', error);
+    });
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Globe } from "lucide-react";
+import Logo from "@/components/Logo";
 
 
 const Footer = () => {
@@ -33,11 +34,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <img
-                src="/logo.png"
-                alt="NCHG Limited - Sustainable Titanium Solutions"
-                className="h-8 w-auto"
-              />
+              <Logo className="h-8 w-auto" />
             </div>
             <p className="text-primary-foreground/80 mb-6">
               Leading provider of sustainable titanium solutions for additive manufacturing. 

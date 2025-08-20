@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { UserMenu } from "@/components/auth/UserMenu";
+import Logo from "@/components/Logo";
 
 
 
@@ -28,11 +29,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="/logo.png" 
-              alt="NCHG Limited - Sustainable Titanium Solutions" 
-              className="h-10 w-auto"
-            />
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}
