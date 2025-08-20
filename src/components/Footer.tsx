@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Globe } from "lucide-react";
 import nchgLogo from "@/assets/nchg-logo.png";
 
 const Footer = () => {
+  console.log('Footer logo URL:', nchgLogo)
   const quickLinks = [
     { label: "Services", href: "#services" },
     { label: "Community", href: "#community" },
@@ -33,7 +34,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src={nchgLogo} 
+                src={`${nchgLogo}?v=2`} 
                 alt="NCHG Limited - Sustainable Titanium Solutions" 
                 className="h-8 w-auto"
                 onError={(e) => {

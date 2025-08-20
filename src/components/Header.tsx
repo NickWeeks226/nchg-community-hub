@@ -11,6 +11,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const { user } = useAuth();
+  console.log('Header logo URL:', nchgLogo)
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -28,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src={nchgLogo} 
+              src={`${nchgLogo}?v=2`} 
               alt="NCHG Limited - Sustainable Titanium Solutions" 
               className="h-10 w-auto"
               onError={(e) => {
