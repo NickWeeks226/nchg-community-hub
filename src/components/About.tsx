@@ -68,12 +68,12 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-surface-gradient">
-      <div className="container mx-auto">
+    <section id="about" className="py-20 surface-gradient">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Leadership Team */}
         <div className="text-center mb-16">
-          <h2 className="heading-xl gradient-text mb-6">About NCHG Limited</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">About NCHG Limited</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             NCHG Limited is at the forefront of titanium powder innovation, specializing in Ti64 powder solutions 
             for additive manufacturing and advanced aerospace applications. Our experienced leadership team brings 
             decades of expertise in materials science and manufacturing excellence.
@@ -88,6 +88,12 @@ const About = () => {
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
                       className="object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement;
+                        img.src = "/placeholder.svg";
+                      }}
                     />
                     <AvatarFallback className="text-2xl font-semibold bg-gradient-primary text-primary-foreground">
                       {person.name.charAt(0)}
@@ -108,7 +114,7 @@ const About = () => {
 
         {/* Partners Section */}
         <div className="text-center mb-16">
-          <h3 className="heading-lg mb-8">Trusted Partners</h3>
+          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Trusted Partners</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
               <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-6 flex items-center justify-center min-h-[120px]">
@@ -116,6 +122,12 @@ const About = () => {
                   src={partner.logo} 
                   alt={`${partner.name} logo`}
                   className="max-w-full max-h-16 object-contain filter transition-all duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.src = "/placeholder.svg";
+                  }}
                 />
               </Card>
             ))}
@@ -124,7 +136,7 @@ const About = () => {
 
         {/* Customers Section */}
         <div className="text-center">
-          <h3 className="heading-lg mb-8">Valued Customers</h3>
+          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Valued Customers</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {customers.map((customer, index) => (
               <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-6 flex items-center justify-center min-h-[120px]">
@@ -132,6 +144,12 @@ const About = () => {
                   src={customer.logo} 
                   alt={`${customer.name} logo`}
                   className="max-w-full max-h-16 object-contain filter transition-all duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.src = "/placeholder.svg";
+                  }}
                 />
               </Card>
             ))}
