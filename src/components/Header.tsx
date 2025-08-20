@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { UserMenu } from "@/components/auth/UserMenu";
+import nchgLogo from "@/assets/nchg-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,11 +25,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">N</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">NCHG</span>
+          <div className="flex items-center space-x-3">
+            <img 
+              src={nchgLogo} 
+              alt="NCHG Limited Logo" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
