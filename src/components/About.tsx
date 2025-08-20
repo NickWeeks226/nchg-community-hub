@@ -8,12 +8,13 @@ import powderloopLogo from "@/assets/partners/powderloop.svg";
 import rotidebLogo from "@/assets/partners/rotideb.svg";
 import henryRoyceLogo from "@/assets/partners/henry-royce.svg";
 import partnerLogo from "@/assets/partners/partner.svg";
-import customer1Logo from "@/assets/customers/customer-1.svg";
-import customer2Logo from "@/assets/customers/customer-2.svg";
-import customer3Logo from "@/assets/customers/customer-3.svg";
-import customer4Logo from "@/assets/customers/customer-4.svg";
-import customer5Logo from "@/assets/customers/customer-5.svg";
-import customer6Logo from "@/assets/customers/customer-6.svg";
+// Customer logos from uploads
+const athertonLogo = "/lovable-uploads/30605f4b-f121-4d4e-9f83-188e8f693c5e.png";
+const atomikLogo = "/lovable-uploads/ee3a28a5-80b3-410e-8ba0-2ced2f5924f9.png";
+const baeLogo = "/lovable-uploads/63f4cb82-66dd-4680-bc51-adc1faf64f8e.png";
+const carpenterLogo = "/lovable-uploads/ef4c232d-f9f4-4b7d-8d95-2bc8d58adbab.png";
+const metalysisLogo = "/lovable-uploads/851c71bc-295f-483a-b170-f70509574e98.png";
+const sheffieldLogo = "/lovable-uploads/48fd4c6a-1153-464f-b139-8bd0f4ebe240.png";
 
 const About = () => {
   const leadership = [
@@ -56,28 +57,28 @@ const About = () => {
 
   const customers = [
     {
-      name: "Customer 1",
-      logo: customer1Logo
+      name: "Atherton Bikes",
+      logo: athertonLogo
     },
     {
-      name: "Customer 2", 
-      logo: customer2Logo
+      name: "Atomik", 
+      logo: atomikLogo
     },
     {
-      name: "Customer 3",
-      logo: customer3Logo
+      name: "BAE Systems",
+      logo: baeLogo
     },
     {
-      name: "Customer 4",
-      logo: customer4Logo
+      name: "Carpenter Additive",
+      logo: carpenterLogo
     },
     {
-      name: "Customer 5",
-      logo: customer5Logo
+      name: "Metalysis",
+      logo: metalysisLogo
     },
     {
-      name: "Customer 6",
-      logo: customer6Logo
+      name: "University of Sheffield",
+      logo: sheffieldLogo
     }
   ];
 
