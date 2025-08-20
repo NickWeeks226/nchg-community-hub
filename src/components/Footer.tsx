@@ -35,7 +35,7 @@ const Footer = () => {
               <img 
                 src={nchgLogo} 
                 alt="NCHG Limited - Sustainable Titanium Solutions" 
-                className="h-8 w-auto brightness-0 invert"
+                className="h-8 w-auto"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.parentElement.innerHTML = '<span class="font-display font-bold text-xl">NCHG</span>';
