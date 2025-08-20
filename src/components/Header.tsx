@@ -4,14 +4,14 @@ import { Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { UserMenu } from "@/components/auth/UserMenu";
-import nchgLogo from "@/assets/nchg-logo.png";
+
 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const { user } = useAuth();
-  console.log('Header logo URL:', nchgLogo)
+  
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -28,22 +28,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="p-1 rounded-md bg-card/60 shadow-elegant">
-              <img
-                src={"/nchg-logo-user.png?v=3"}
-                alt="NCHG Limited - Sustainable Titanium Solutions"
-                className="h-10 w-auto"
-                onLoad={(e) => {
-                  console.info('Header logo loaded from:', (e.currentTarget as HTMLImageElement).currentSrc);
-                }}
-                onError={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  console.warn('Header public logo not found, falling back to bundled asset.');
-                  img.onerror = null;
-                  img.src = `${nchgLogo}?v=3`;
-                }}
-              />
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="NCHG Limited - Sustainable Titanium Solutions" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
