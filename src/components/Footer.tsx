@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <Logo className="h-8 w-auto" />
+              <Logo className="h-12 w-auto md:h-14" />
             </div>
             <p className="text-primary-foreground/80 mb-6">
               Leading provider of sustainable titanium solutions for additive manufacturing. 

@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <Logo />
+            <Logo className="h-14 w-auto md:h-16" />
           </div>
 
           {/* Desktop Navigation */}
