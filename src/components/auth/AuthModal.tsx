@@ -85,7 +85,10 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('Sign up form data:', signUpData);
+    
     if (!validateSignUpForm()) {
+      console.log('Form validation failed');
       return;
     }
 
@@ -99,17 +102,21 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
       phone_number: signUpData.phoneNumber || null
     };
 
+    console.log('Sign up metadata:', metadata);
+
     const { error } = await signUp(signUpData.email, signUpData.password, metadata);
     
     setSignUpLoading(false);
 
     if (error) {
+      console.error('Sign up error:', error);
       toast({
         variant: "destructive",
         title: "Sign up failed",
         description: error.message
       });
     } else {
+      console.log('Sign up successful');
       toast({
         title: "Success!",
         description: "Please check your email to verify your account"
@@ -164,16 +171,31 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
   };
 
   const handleSocialLogin = async (provider: 'google' | 'linkedin') => {
+    console.log(`Attempting ${provider} login...`);
+    
     const { error } = provider === 'google' 
       ? await signInWithGoogle()
       : await signInWithLinkedIn();
 
+    console.log(`${provider} login result:`, { error });
+
     if (error) {
-      toast({
-        variant: "destructive",
-        title: "Social login failed",
-        description: error.message
-      });
+      console.error(`${provider} login error:`, error);
+      
+      // Check if it's an OAuth configuration error
+      if (error.message.includes('OAuth') || error.message.includes('provider')) {
+        toast({
+          variant: "destructive",
+          title: "Social login not configured",
+          description: `${provider === 'google' ? 'Google' : 'LinkedIn'} OAuth needs to be configured in Supabase dashboard. Please contact support or use email registration.`
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Social login failed",
+          description: error.message
+        });
+      }
     }
   };
 
