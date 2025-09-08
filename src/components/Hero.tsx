@@ -1,9 +1,12 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Recycle, Factory } from "lucide-react";
 import heroImage from "@/assets/hero-titanium.jpg";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 const Hero = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -66,11 +69,11 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="default" size="lg" className="group">
+            <Button variant="default" size="lg" className="group" onClick={() => setAuthModalOpen(true)}>
               Explore Our Solutions
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
               Join the Movement
             </Button>
           </div>
@@ -96,6 +99,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </section>
   );
 };

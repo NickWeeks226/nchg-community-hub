@@ -128,7 +128,7 @@ const Marketplace = () => {
             <h3 className="text-2xl font-display font-semibold text-foreground">
               Featured Listings
             </h3>
-            <Button variant="outline">
+            <Button variant="outline" onClick={() => setAuthModalOpen(true)}>
               View All Listings
             </Button>
           </div>

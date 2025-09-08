@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -9,8 +10,10 @@ import {
   Recycle,
   ArrowRight 
 } from "lucide-react";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 const Services = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
   const services = [
     {
       icon: BarChart3,
@@ -88,7 +91,7 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="ghost" className="w-full mt-6 group">
+                  <Button variant="ghost" className="w-full mt-6 group" onClick={() => setAuthModalOpen(true)}>
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -107,11 +110,13 @@ const Services = () => {
             Get in touch with our experts to discuss how our sustainable solutions 
             can benefit your manufacturing operations.
           </p>
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
             Schedule Consultation
           </Button>
         </div>
       </div>
+      
+      <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </section>
   );
 };
