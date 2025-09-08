@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useAuth } from "@/hooks/use-auth";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { validateEmail, validatePassword, validatePhoneNumber, sanitizeInput, validateCompanyName } from "@/lib/validation";
 
 interface AuthModalProps {
   open: boolean;
@@ -37,35 +38,64 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
     password: ""
   });
   const [signInLoading, setSignInLoading] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<{ [key: string]: string[] }>({});
+
+  const validateSignUpForm = (): boolean => {
+    const errors: { [key: string]: string[] } = {};
+
+    // Validate email
+    if (!validateEmail(signUpData.email)) {
+      errors.email = ['Please enter a valid email address'];
+    }
+
+    // Validate password
+    const passwordValidation = validatePassword(signUpData.password);
+    if (!passwordValidation.isValid) {
+      errors.password = passwordValidation.errors;
+    }
+
+    // Validate password confirmation
+    if (signUpData.password !== signUpData.confirmPassword) {
+      errors.confirmPassword = ['Passwords do not match'];
+    }
+
+    // Validate required fields
+    if (!signUpData.firstName.trim()) {
+      errors.firstName = ['First name is required'];
+    }
+
+    if (!signUpData.lastName.trim()) {
+      errors.lastName = ['Last name is required'];
+    }
+
+    // Validate phone number if provided
+    if (signUpData.phoneNumber && !validatePhoneNumber(signUpData.phoneNumber)) {
+      errors.phoneNumber = ['Please enter a valid phone number (e.g., +1 555-123-4567)'];
+    }
+
+    // Validate company name if required
+    if ((signUpData.userRole === "company_rep" || signUpData.userRole === "verified_supplier" || signUpData.userRole === "service_provider") && !validateCompanyName(signUpData.companyName)) {
+      errors.companyName = ['Company name must be between 2 and 100 characters'];
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (signUpData.password !== signUpData.confirmPassword) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Passwords do not match"
-      });
-      return;
-    }
-
-    if (signUpData.password.length < 6) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Password must be at least 6 characters long"
-      });
+    if (!validateSignUpForm()) {
       return;
     }
 
     setSignUpLoading(true);
     
     const metadata = {
-      first_name: signUpData.firstName,
-      last_name: signUpData.lastName,
+      first_name: sanitizeInput(signUpData.firstName),
+      last_name: sanitizeInput(signUpData.lastName),
       user_role: signUpData.userRole,
-      company_name: signUpData.companyName || null,
+      company_name: signUpData.companyName ? sanitizeInput(signUpData.companyName) : null,
       phone_number: signUpData.phoneNumber || null
     };
 
@@ -89,8 +119,28 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
     }
   };
 
+  const validateSignInForm = (): boolean => {
+    const errors: { [key: string]: string[] } = {};
+
+    if (!validateEmail(signInData.email)) {
+      errors.email = ['Please enter a valid email address'];
+    }
+
+    if (!signInData.password) {
+      errors.password = ['Password is required'];
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateSignInForm()) {
+      return;
+    }
+
     setSignInLoading(true);
 
     const { error } = await signIn(signInData.email, signInData.password);
@@ -142,6 +192,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
       email: "",
       password: ""
     });
+    setValidationErrors({});
   };
 
   return (
@@ -175,6 +226,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                   onChange={(e) => setSignInData(prev => ({ ...prev, email: e.target.value }))}
                   required
                 />
+                {validationErrors.email && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.email.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
               
               <div className="space-y-2">
@@ -187,6 +245,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                   onChange={(e) => setSignInData(prev => ({ ...prev, password: e.target.value }))}
                   required
                 />
+                {validationErrors.password && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.password.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <Button type="submit" className="w-full" disabled={signInLoading}>
@@ -226,6 +291,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                     onChange={(e) => setSignUpData(prev => ({ ...prev, firstName: e.target.value }))}
                     required
                   />
+                  {validationErrors.firstName && (
+                    <div className="text-sm text-destructive">
+                      {validationErrors.firstName.map((error, index) => (
+                        <div key={index}>{error}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Last Name</Label>
@@ -236,6 +308,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                     onChange={(e) => setSignUpData(prev => ({ ...prev, lastName: e.target.value }))}
                     required
                   />
+                  {validationErrors.lastName && (
+                    <div className="text-sm text-destructive">
+                      {validationErrors.lastName.map((error, index) => (
+                        <div key={index}>{error}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -249,6 +328,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                   onChange={(e) => setSignUpData(prev => ({ ...prev, email: e.target.value }))}
                   required
                 />
+                {validationErrors.email && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.email.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -256,10 +342,17 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                 <Input
                   id="phoneNumber"
                   type="tel"
-                  placeholder="Enter your phone number"
+                  placeholder="+1 (555) 123-4567"
                   value={signUpData.phoneNumber}
                   onChange={(e) => setSignUpData(prev => ({ ...prev, phoneNumber: e.target.value }))}
                 />
+                {validationErrors.phoneNumber && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.phoneNumber.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -287,6 +380,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                     onChange={(e) => setSignUpData(prev => ({ ...prev, companyName: e.target.value }))}
                     required
                   />
+                  {validationErrors.companyName && (
+                    <div className="text-sm text-destructive">
+                      {validationErrors.companyName.map((error, index) => (
+                        <div key={index}>{error}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
               
@@ -295,11 +395,18 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                 <Input
                   id="signup-password"
                   type="password"
-                  placeholder="Create a password (min 6 characters)"
+                  placeholder="Create a secure password (8+ chars, mixed case, numbers, symbols)"
                   value={signUpData.password}
                   onChange={(e) => setSignUpData(prev => ({ ...prev, password: e.target.value }))}
                   required
                 />
+                {validationErrors.password && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.password.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
               
               <div className="space-y-2">
@@ -312,6 +419,13 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                   onChange={(e) => setSignUpData(prev => ({ ...prev, confirmPassword: e.target.value }))}
                   required
                 />
+                {validationErrors.confirmPassword && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.confirmPassword.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <Button type="submit" className="w-full" disabled={signUpLoading}>
