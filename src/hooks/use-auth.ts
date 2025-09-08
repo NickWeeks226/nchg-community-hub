@@ -1,43 +1,40 @@
 import { useState, useEffect } from 'react'
-import { User } from '@supabase/supabase-js'
-import { supabase } from '@/lib/supabase'
+import { User, Session } from '@supabase/supabase-js'
+import { supabase } from '@/integrations/supabase/client'
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null)
+  const [session, setSession] = useState<Session | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Skip auth if Supabase is not properly configured
-    if (!import.meta.env.VITE_SUPABASE_URL) {
-      setLoading(false)
-      console.log('Supabase not configured, running in demo mode')
-      return
-    }
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
-
-    // Listen for auth changes
+    // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
+      (event, session) => {
+        setSession(session)
         setUser(session?.user ?? null)
         setLoading(false)
       }
     )
 
+    // THEN check for existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+      setUser(session?.user ?? null)
+      setLoading(false)
+    })
+
     return () => subscription.unsubscribe()
   }, [])
 
   const signUp = async (email: string, password: string, metadata?: any) => {
-    if (!import.meta.env.VITE_SUPABASE_URL) {
-      return { data: null, error: { message: 'Supabase not configured. Please connect your project to Supabase.' } }
-    }
+    const redirectUrl = `${window.location.origin}/`
+    
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
+        emailRedirectTo: redirectUrl,
         data: metadata
       }
     })
@@ -45,9 +42,6 @@ export const useAuth = () => {
   }
 
   const signIn = async (email: string, password: string) => {
-    if (!import.meta.env.VITE_SUPABASE_URL) {
-      return { data: null, error: { message: 'Supabase not configured. Please connect your project to Supabase.' } }
-    }
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
@@ -55,19 +49,47 @@ export const useAuth = () => {
     return { data, error }
   }
 
+  const signInWithGoogle = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/`
+      }
+    })
+    return { data, error }
+  }
+
+  const signInWithLinkedIn = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'linkedin_oidc',
+      options: {
+        redirectTo: `${window.location.origin}/`
+      }
+    })
+    return { data, error }
+  }
+
   const signOut = async () => {
-    if (!import.meta.env.VITE_SUPABASE_URL) {
-      return { error: { message: 'Supabase not configured' } }
-    }
     const { error } = await supabase.auth.signOut()
     return { error }
   }
 
+  const resetPassword = async (email: string) => {
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/auth/reset-password`
+    })
+    return { data, error }
+  }
+
   return {
     user,
+    session,
     loading,
     signUp,
     signIn,
-    signOut
+    signInWithGoogle,
+    signInWithLinkedIn,
+    signOut,
+    resetPassword
   }
 }
