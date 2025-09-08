@@ -16,7 +16,7 @@ interface AuthModalProps {
 }
 
 export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
-  const { signUp, signIn, signInWithGoogle, signInWithLinkedIn } = useAuth();
+  const { signUp, signIn } = useAuth();
   const { toast } = useToast();
 
   // Sign up state
@@ -170,35 +170,6 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
     }
   };
 
-  const handleSocialLogin = async (provider: 'google' | 'linkedin') => {
-    console.log(`Attempting ${provider} login...`);
-    
-    const { error } = provider === 'google' 
-      ? await signInWithGoogle()
-      : await signInWithLinkedIn();
-
-    console.log(`${provider} login result:`, { error });
-
-    if (error) {
-      console.error(`${provider} login error:`, error);
-      
-      // Check if it's an OAuth configuration error
-      if (error.message.includes('OAuth') || error.message.includes('provider')) {
-        toast({
-          variant: "destructive",
-          title: "Social login not configured",
-          description: `${provider === 'google' ? 'Google' : 'LinkedIn'} OAuth needs to be configured in Supabase dashboard. Please contact support or use email registration.`
-        });
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Social login failed",
-          description: error.message
-        });
-      }
-    }
-  };
-
   const resetForm = () => {
     setSignUpData({
       email: "",
@@ -281,24 +252,6 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                 Sign In
               </Button>
             </form>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2">
-              <Button variant="outline" onClick={() => handleSocialLogin('google')}>
-                Google
-              </Button>
-              <Button variant="outline" onClick={() => handleSocialLogin('linkedin')}>
-                LinkedIn
-              </Button>
-            </div>
           </TabsContent>
           
           <TabsContent value="signup" className="space-y-4">
@@ -455,24 +408,6 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                 Create Account
               </Button>
             </form>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2">
-              <Button variant="outline" onClick={() => handleSocialLogin('google')}>
-                Google
-              </Button>
-              <Button variant="outline" onClick={() => handleSocialLogin('linkedin')}>
-                LinkedIn
-              </Button>
-            </div>
           </TabsContent>
         </Tabs>
       </DialogContent>
