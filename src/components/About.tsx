@@ -24,13 +24,13 @@ const About = () => {
       name: "Claudia",
       role: "Director",
       image: claudiaImg,
-      description: "Leading innovation in titanium powder solutions with extensive expertise in materials science and business development."
+      description: "Claudia brings a wealth of experience in brand development, stakeholder engagement, and relationship management. Her strength lies in connecting people, ideas, and opportunities—supporting NCHG's mission by building meaningful partnerships and raising awareness around sustainable innovation in UK manufacturing."
     },
     {
       name: "Nick",
       role: "Director", 
       image: nickImg,
-      description: "Driving technical excellence and strategic partnerships in advanced manufacturing and powder metallurgy."
+      description: "Nick is a seasoned expert in additive manufacturing with extensive experience leading high-growth companies. As a former COO and director, he combines deep technical knowledge with strategic vision, driving innovation and forging strong industry partnerships. Nick's extensive network and leadership empower NCHG to deliver cutting-edge titanium solutions that advance sustainable manufacturing in the UK."
     }
   ];
 
@@ -91,9 +91,10 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">About NCHG Limited</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            NCHG Limited is at the forefront of titanium powder innovation, specializing in Ti64 powder solutions 
-            for additive manufacturing and advanced aerospace applications. Our experienced leadership team brings 
-            decades of expertise in materials science and manufacturing excellence.
+            NCHG Limited is driving the next generation of titanium powder innovation in the UK. Focused on sustainable Ti64 feedstock solutions, we support additive manufacturing and aerospace applications with a local, circular, and secure supply chain.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+            Our leadership combines deep technical expertise, strategic industry insight, and a commitment to reshaping British manufacturing through collaboration, sustainability, and innovation.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

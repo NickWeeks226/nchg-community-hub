@@ -27,15 +27,24 @@ const Hero = () => {
           
           {/* Main Heading with Brand Underline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            <span>Sustainable</span>{" "}
-            <span className="text-primary brand-underline">Titanium Solutions</span>
+            <span>Resilient.</span>{" "}
+            <span className="text-primary brand-underline">Sustainable. British.</span>
           </h1>
           
           {/* Subheading */}
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed font-medium">
-            Making your business more resilient for a more sustainable future through 
-            innovative titanium feedstock solutions and additive manufacturing expertise.
+            Titanium solutions for a stronger, greener future.
           </p>
+          
+          {/* Body Text */}
+          <div className="text-lg text-muted-foreground mb-8 max-w-4xl leading-relaxed">
+            <p className="mb-4">
+              At NCHG Limited, we're building a community of forward-thinking UK businesses committed to sustainable manufacturing. By embracing the principles of Reduce, Re-use, and Recycle, we're paving the way toward a 100% UK-sourced titanium supply by 2030.
+            </p>
+            <p>
+              Together, we're strengthening British industry—supporting energy and mobility sectors with reliable, low-impact solutions that reduce global dependency and champion local innovation.
+            </p>
+          </div>
           
           {/* Key Points */}
           <div className="flex flex-col sm:flex-row gap-6 mb-10">
@@ -56,11 +65,11 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="default" size="lg" className="group">
-              Explore Our Services
+              Explore Our Solutions
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="lg">
-              Join Our Community
+              Join the Movement
             </Button>
           </div>
           
