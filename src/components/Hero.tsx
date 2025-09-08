@@ -39,10 +39,13 @@ const Hero = () => {
           {/* Body Text */}
           <div className="text-lg text-muted-foreground mb-8 max-w-4xl leading-relaxed">
             <p className="mb-4">
-              At NCHG Limited, we're building a community of forward-thinking UK businesses committed to sustainable manufacturing. By embracing the principles of Reduce, Re-use, and Recycle, we're paving the way toward a 100% UK-sourced titanium supply by 2030.
+              At NCHG Limited, we are committed to creating a resilient and sustainable future for British industry. By embracing the core principles of Reduce, Re-use, and Recycle, we aim to educate, empower, and connect a community of UK businesses dedicated to sustainable manufacturing.
+            </p>
+            <p className="mb-4">
+              Our mission is to establish a secure, 100% UK-sourced supply of Titanium by 2030, supporting the energy and mobility sectors with reliable, environmentally conscious solutions. In doing so, we help mitigate global supply chain risks while promoting local innovation and sustainability.
             </p>
             <p>
-              Together, we're strengthening British industry—supporting energy and mobility sectors with reliable, low-impact solutions that reduce global dependency and champion local innovation.
+              Join us in reshaping the future—where resilience, sustainability, and circular economy practices drive British manufacturing forward.
             </p>
           </div>
           
