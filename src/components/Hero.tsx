@@ -25,10 +25,9 @@ const Hero = () => {
             <span className="text-sm font-medium text-primary">Sustainable Manufacturing Leader</span>
           </div>
           
-          {/* Main Heading with Brand Underline */}
+          {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            <span>Resilient.</span>{" "}
-            <span className="text-primary brand-underline">Sustainable. British.</span>
+            Resilient. Sustainable. British.
           </h1>
           
           {/* Subheading */}
@@ -45,7 +44,7 @@ const Hero = () => {
               Our mission is to establish a secure, 100% UK-sourced supply of Titanium by 2030, supporting the energy and mobility sectors with reliable, environmentally conscious solutions. In doing so, we help mitigate global supply chain risks while promoting local innovation and sustainability.
             </p>
             <p>
-              Join us in reshaping the future—where resilience, sustainability, and circular economy practices drive British manufacturing forward.
+              Join us in reshaping the future - where resilience, sustainability, and circular economy practices drive British manufacturing forward.
             </p>
           </div>
           

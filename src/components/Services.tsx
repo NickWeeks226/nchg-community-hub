@@ -16,7 +16,7 @@ const Services = () => {
       icon: BarChart3,
       title: "Feedstock Consultancy",
       description: "Expert consultation to help aid positive decisions on all things feedstock related for your titanium applications.",
-      features: ["Material Assessment", "Process Optimization", "Quality Assurance"]
+      features: ["Material Assessment", "Process Optimisation", "Quality Assurance"]
     },
     {
       icon: Database,
@@ -33,8 +33,8 @@ const Services = () => {
     {
       icon: Users,
       title: "Digital Shopfloor Solutions",
-      description: "Additive manufacturing lean consultancy with digital solutions for traceability and scheduling optimization.",
-      features: ["Digital Tracking", "Process Optimization", "Lean Implementation"]
+      description: "Additive manufacturing lean consultancy with digital solutions for traceability and scheduling optimisation.",
+      features: ["Digital Tracking", "Process Optimisation", "Lean Implementation"]
     },
     {
       icon: ShoppingCart,

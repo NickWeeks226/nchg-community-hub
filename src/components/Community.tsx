@@ -114,7 +114,7 @@ const Community = () => {
                 time: "2 hours ago"
               },
               {
-                title: "AM Process Parameter Optimization",
+                title: "AM Process Parameter Optimisation",
                 author: "James R.",
                 replies: 18,
                 time: "5 hours ago"
