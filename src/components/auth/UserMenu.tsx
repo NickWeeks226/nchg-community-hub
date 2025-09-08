@@ -36,6 +36,13 @@ export const UserMenu = () => {
     setLoading(false);
   };
 
+  const handleMenuItemClick = (feature: string) => {
+    toast({
+      title: `${feature} Coming Soon`,
+      description: `The ${feature.toLowerCase()} feature is currently under development. Stay tuned!`,
+    });
+  };
+
   if (!user) return null;
 
   const userInitials = user.user_metadata?.full_name
@@ -74,19 +81,19 @@ export const UserMenu = () => {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleMenuItemClick("Profile")}>
           <User className="mr-2 h-4 w-4" />
           <span>Profile</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleMenuItemClick("My Forum Posts")}>
           <MessageSquare className="mr-2 h-4 w-4" />
           <span>My Forum Posts</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleMenuItemClick("My Listings")}>
           <ShoppingCart className="mr-2 h-4 w-4" />
           <span>My Listings</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleMenuItemClick("Settings")}>
           <Settings className="mr-2 h-4 w-4" />
           <span>Settings</span>
         </DropdownMenuItem>
