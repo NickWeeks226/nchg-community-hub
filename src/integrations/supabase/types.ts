@@ -107,6 +107,56 @@ export type Database = {
         }
         Relationships: []
       }
+      company_verification_documents: {
+        Row: {
+          company_profile_id: string
+          created_at: string | null
+          document_name: string
+          document_type: string
+          document_url: string
+          expiry_date: string | null
+          id: string
+          rejection_reason: string | null
+          updated_at: string | null
+          upload_date: string | null
+          verification_status: string | null
+        }
+        Insert: {
+          company_profile_id: string
+          created_at?: string | null
+          document_name: string
+          document_type: string
+          document_url: string
+          expiry_date?: string | null
+          id?: string
+          rejection_reason?: string | null
+          updated_at?: string | null
+          upload_date?: string | null
+          verification_status?: string | null
+        }
+        Update: {
+          company_profile_id?: string
+          created_at?: string | null
+          document_name?: string
+          document_type?: string
+          document_url?: string
+          expiry_date?: string | null
+          id?: string
+          rejection_reason?: string | null
+          updated_at?: string | null
+          upload_date?: string | null
+          verification_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "company_verification_documents_company_profile_id_fkey"
+            columns: ["company_profile_id"]
+            isOneToOne: false
+            referencedRelation: "company_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       message_threads: {
         Row: {
           created_at: string
@@ -426,6 +476,59 @@ export type Database = {
         }
         Relationships: []
       }
+      team_members: {
+        Row: {
+          company_profile_id: string
+          created_at: string | null
+          id: string
+          invitation_date: string | null
+          invitation_email: string
+          invited_by_user_id: string
+          joined_date: string | null
+          permissions: Json | null
+          role: string
+          status: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          company_profile_id: string
+          created_at?: string | null
+          id?: string
+          invitation_date?: string | null
+          invitation_email: string
+          invited_by_user_id: string
+          joined_date?: string | null
+          permissions?: Json | null
+          role: string
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          company_profile_id?: string
+          created_at?: string | null
+          id?: string
+          invitation_date?: string | null
+          invitation_email?: string
+          invited_by_user_id?: string
+          joined_date?: string | null
+          permissions?: Json | null
+          role?: string
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_members_company_profile_id_fkey"
+            columns: ["company_profile_id"]
+            isOneToOne: false
+            referencedRelation: "company_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       ti64_specifications: {
         Row: {
           apparent_density: number | null
@@ -593,6 +696,57 @@ export type Database = {
         }
         Relationships: []
       }
+      user_analytics_summary: {
+        Row: {
+          average_response_time_hours: number | null
+          created_at: string | null
+          id: string
+          metric_date: string
+          response_rate_percentage: number | null
+          revenue_amount: number | null
+          total_inquiries_received: number | null
+          total_listings_created: number | null
+          total_listings_viewed: number | null
+          total_logins: number | null
+          total_messages_sent: number | null
+          total_searches_performed: number | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          average_response_time_hours?: number | null
+          created_at?: string | null
+          id?: string
+          metric_date: string
+          response_rate_percentage?: number | null
+          revenue_amount?: number | null
+          total_inquiries_received?: number | null
+          total_listings_created?: number | null
+          total_listings_viewed?: number | null
+          total_logins?: number | null
+          total_messages_sent?: number | null
+          total_searches_performed?: number | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          average_response_time_hours?: number | null
+          created_at?: string | null
+          id?: string
+          metric_date?: string
+          response_rate_percentage?: number | null
+          revenue_amount?: number | null
+          total_inquiries_received?: number | null
+          total_listings_created?: number | null
+          total_listings_viewed?: number | null
+          total_logins?: number | null
+          total_messages_sent?: number | null
+          total_searches_performed?: number | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_dashboard_metrics: {
         Row: {
           created_at: string | null
@@ -619,6 +773,96 @@ export type Database = {
           last_updated?: string | null
           metric_type?: string
           metric_value?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_marketplace_preferences: {
+        Row: {
+          created_at: string | null
+          currency: string | null
+          date_format: string | null
+          default_search_radius: number | null
+          distance_units: string | null
+          id: string
+          language: string | null
+          preferred_particle_size_range: string | null
+          preferred_powder_condition: string | null
+          price_range_max: number | null
+          price_range_min: number | null
+          temperature_units: string | null
+          timezone: string | null
+          updated_at: string | null
+          user_id: string
+          weight_units: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          currency?: string | null
+          date_format?: string | null
+          default_search_radius?: number | null
+          distance_units?: string | null
+          id?: string
+          language?: string | null
+          preferred_particle_size_range?: string | null
+          preferred_powder_condition?: string | null
+          price_range_max?: number | null
+          price_range_min?: number | null
+          temperature_units?: string | null
+          timezone?: string | null
+          updated_at?: string | null
+          user_id: string
+          weight_units?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          currency?: string | null
+          date_format?: string | null
+          default_search_radius?: number | null
+          distance_units?: string | null
+          id?: string
+          language?: string | null
+          preferred_particle_size_range?: string | null
+          preferred_powder_condition?: string | null
+          price_range_max?: number | null
+          price_range_min?: number | null
+          temperature_units?: string | null
+          timezone?: string | null
+          updated_at?: string | null
+          user_id?: string
+          weight_units?: string | null
+        }
+        Relationships: []
+      }
+      user_notification_settings: {
+        Row: {
+          created_at: string | null
+          event_type: string
+          frequency: string | null
+          id: string
+          is_enabled: boolean | null
+          notification_type: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          event_type: string
+          frequency?: string | null
+          id?: string
+          is_enabled?: boolean | null
+          notification_type: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          event_type?: string
+          frequency?: string | null
+          id?: string
+          is_enabled?: boolean | null
+          notification_type?: string
+          updated_at?: string | null
           user_id?: string
         }
         Relationships: []

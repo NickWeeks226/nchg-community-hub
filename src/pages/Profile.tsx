@@ -7,6 +7,9 @@ import { ProfileDashboard } from "@/components/profile/ProfileDashboard";
 import { PersonalInfoForm } from "@/components/profile/PersonalInfoForm";
 import { AddressManagement } from "@/components/profile/AddressManagement";
 import { PrivacySettings } from "@/components/profile/PrivacySettings";
+import { CompanyProfileManagement } from "@/components/profile/CompanyProfileManagement";
+import { PreferencesSettings } from "@/components/profile/PreferencesSettings";
+import { ActivityHistoryAnalytics } from "@/components/profile/ActivityHistoryAnalytics";
 import { LayoutDashboard, User, MapPin, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -107,22 +110,30 @@ export default function Profile() {
         </div>
 
         <Tabs defaultValue="dashboard" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-6">
             <TabsTrigger value="dashboard" className="flex items-center gap-2">
               <LayoutDashboard className="h-4 w-4" />
               Dashboard
             </TabsTrigger>
             <TabsTrigger value="personal" className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              Personal Info
+              Personal
             </TabsTrigger>
             <TabsTrigger value="addresses" className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
               Addresses
             </TabsTrigger>
-            <TabsTrigger value="privacy" className="flex items-center gap-2">
+            <TabsTrigger value="company" className="flex items-center gap-2">
+              <User className="h-4 w-4" />
+              Company
+            </TabsTrigger>
+            <TabsTrigger value="preferences" className="flex items-center gap-2">
               <Shield className="h-4 w-4" />
-              Privacy
+              Preferences
+            </TabsTrigger>
+            <TabsTrigger value="analytics" className="flex items-center gap-2">
+              <Shield className="h-4 w-4" />
+              Analytics
             </TabsTrigger>
           </TabsList>
 
@@ -151,14 +162,23 @@ export default function Profile() {
             <Card>
               <CardHeader>
                 <CardTitle>Address Management</CardTitle>
-                <CardDescription>
-                  Manage your primary, billing, and shipping addresses.
-                </CardDescription>
               </CardHeader>
               <CardContent>
                 <AddressManagement userId={user.id} />
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="company">
+            <CompanyProfileManagement />
+          </TabsContent>
+
+          <TabsContent value="preferences">
+            <PreferencesSettings />
+          </TabsContent>
+
+          <TabsContent value="analytics">
+            <ActivityHistoryAnalytics />
           </TabsContent>
 
           <TabsContent value="privacy">
