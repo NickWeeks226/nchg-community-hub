@@ -86,7 +86,7 @@ const Messages = () => {
       const processedThreads = await Promise.all(
         (threadsData || []).map(async (thread) => {
           const participantsArray = Array.isArray(thread.participants) ? thread.participants : [];
-          const otherUserId = participantsArray.find((id: string) => id !== user.id);
+          const otherUserId = participantsArray.find((id: any) => typeof id === 'string' && id !== user.id) as string;
           
           // Get other participant's profile
           let otherParticipant = null;
