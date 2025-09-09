@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -16,6 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 export const UserMenu = () => {
   const { user, signOut } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleSignOut = async () => {
@@ -37,10 +39,14 @@ export const UserMenu = () => {
   };
 
   const handleMenuItemClick = (feature: string) => {
-    toast({
-      title: `${feature} Coming Soon`,
-      description: `The ${feature.toLowerCase()} feature is currently under development. Stay tuned!`,
-    });
+    if (feature === "Profile") {
+      navigate("/profile");
+    } else {
+      toast({
+        title: `${feature} Coming Soon`,
+        description: `The ${feature.toLowerCase()} feature is currently under development. Stay tuned!`,
+      });
+    }
   };
 
   if (!user) return null;
