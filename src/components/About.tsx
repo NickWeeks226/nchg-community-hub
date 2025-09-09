@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // Leadership photos from uploads
-const claudiaImg = "/lovable-uploads/f83daa41-ada2-4480-8e87-7e2b91835459.png";
+const claudiaImg = "/lovable-uploads/c35b15e5-b855-4d33-887c-612b9fa86a41.png";
 const nickImg = "/lovable-uploads/985b7b3a-ebb7-4c4c-bdef-bad9ddad2998.png";
 // Partner logos from uploads
 const nplLogo = "/lovable-uploads/815d37d3-7968-4915-a72e-41529be11e35.png";
