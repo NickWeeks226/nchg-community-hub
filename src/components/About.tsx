@@ -136,11 +136,11 @@ const About = () => {
           <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Trusted Partners</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
-              <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-6 flex items-center justify-center min-h-[120px]">
+              <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-4 flex items-center justify-center min-h-[120px]">
                 <img 
                   src={partner.logo} 
                   alt={`${partner.name} logo`}
-                  className="max-w-full max-h-16 object-contain filter transition-all duration-300 hover:scale-105"
+                  className="max-w-full max-h-20 object-contain filter transition-all duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {
@@ -159,11 +159,11 @@ const About = () => {
           <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Valued Customers</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {customers.map((customer, index) => (
-              <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-6 flex items-center justify-center min-h-[120px]">
+              <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-4 flex items-center justify-center min-h-[120px]">
                 <img 
                   src={customer.logo} 
                   alt={`${customer.name} logo`}
-                  className="max-w-full max-h-16 object-contain filter transition-all duration-300 hover:scale-105"
+                  className="max-w-full max-h-20 object-contain filter transition-all duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {
