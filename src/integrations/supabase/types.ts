@@ -265,39 +265,78 @@ export type Database = {
       profiles: {
         Row: {
           account_status: Database["public"]["Enums"]["account_status"]
+          bio_description: string | null
+          contact_visibility: string | null
           created_at: string
+          department: string | null
           email_verified: boolean
           first_name: string
           id: string
+          job_title: string | null
           last_login: string | null
           last_name: string
+          last_profile_update: string | null
           phone_number: string | null
+          phone_verified: boolean | null
+          preferred_contact_method: string | null
+          primary_phone: string | null
+          profile_picture_url: string | null
+          profile_visibility: string | null
+          secondary_email: string | null
+          secondary_phone: string | null
+          show_online_status: boolean | null
           updated_at: string
           user_id: string
           user_role: Database["public"]["Enums"]["app_role"]
         }
         Insert: {
           account_status?: Database["public"]["Enums"]["account_status"]
+          bio_description?: string | null
+          contact_visibility?: string | null
           created_at?: string
+          department?: string | null
           email_verified?: boolean
           first_name: string
           id?: string
+          job_title?: string | null
           last_login?: string | null
           last_name: string
+          last_profile_update?: string | null
           phone_number?: string | null
+          phone_verified?: boolean | null
+          preferred_contact_method?: string | null
+          primary_phone?: string | null
+          profile_picture_url?: string | null
+          profile_visibility?: string | null
+          secondary_email?: string | null
+          secondary_phone?: string | null
+          show_online_status?: boolean | null
           updated_at?: string
           user_id: string
           user_role?: Database["public"]["Enums"]["app_role"]
         }
         Update: {
           account_status?: Database["public"]["Enums"]["account_status"]
+          bio_description?: string | null
+          contact_visibility?: string | null
           created_at?: string
+          department?: string | null
           email_verified?: boolean
           first_name?: string
           id?: string
+          job_title?: string | null
           last_login?: string | null
           last_name?: string
+          last_profile_update?: string | null
           phone_number?: string | null
+          phone_verified?: boolean | null
+          preferred_contact_method?: string | null
+          primary_phone?: string | null
+          profile_picture_url?: string | null
+          profile_visibility?: string | null
+          secondary_email?: string | null
+          secondary_phone?: string | null
+          show_online_status?: boolean | null
           updated_at?: string
           user_id?: string
           user_role?: Database["public"]["Enums"]["app_role"]
@@ -469,6 +508,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      user_addresses: {
+        Row: {
+          address_line_2: string | null
+          address_type: string
+          address_verified: boolean | null
+          city: string
+          country_code: string
+          county_state: string | null
+          created_at: string | null
+          id: string
+          is_default: boolean | null
+          postal_code: string
+          street_address: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          address_line_2?: string | null
+          address_type: string
+          address_verified?: boolean | null
+          city: string
+          country_code?: string
+          county_state?: string | null
+          created_at?: string | null
+          id?: string
+          is_default?: boolean | null
+          postal_code: string
+          street_address: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          address_line_2?: string | null
+          address_type?: string
+          address_verified?: boolean | null
+          city?: string
+          country_code?: string
+          county_state?: string | null
+          created_at?: string | null
+          id?: string
+          is_default?: boolean | null
+          postal_code?: string
+          street_address?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
       }
       user_roles: {
         Row: {
