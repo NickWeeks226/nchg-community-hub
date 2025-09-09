@@ -3,10 +3,11 @@ import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ProfileDashboard } from "@/components/profile/ProfileDashboard";
 import { PersonalInfoForm } from "@/components/profile/PersonalInfoForm";
 import { AddressManagement } from "@/components/profile/AddressManagement";
 import { PrivacySettings } from "@/components/profile/PrivacySettings";
-import { User, MapPin, Shield } from "lucide-react";
+import { LayoutDashboard, User, MapPin, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface UserProfile {
@@ -105,8 +106,12 @@ export default function Profile() {
           </p>
         </div>
 
-        <Tabs defaultValue="personal" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3">
+        <Tabs defaultValue="dashboard" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="dashboard" className="flex items-center gap-2">
+              <LayoutDashboard className="h-4 w-4" />
+              Dashboard
+            </TabsTrigger>
             <TabsTrigger value="personal" className="flex items-center gap-2">
               <User className="h-4 w-4" />
               Personal Info
@@ -120,6 +125,10 @@ export default function Profile() {
               Privacy
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="dashboard">
+            <ProfileDashboard />
+          </TabsContent>
 
           <TabsContent value="personal">
             <Card>

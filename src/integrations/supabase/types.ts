@@ -509,6 +509,42 @@ export type Database = {
           },
         ]
       }
+      user_activity_feed: {
+        Row: {
+          activity_description: string
+          activity_timestamp: string | null
+          activity_type: string
+          id: string
+          is_read: boolean | null
+          metadata: Json | null
+          related_entity_id: string | null
+          related_entity_type: string | null
+          user_id: string
+        }
+        Insert: {
+          activity_description: string
+          activity_timestamp?: string | null
+          activity_type: string
+          id?: string
+          is_read?: boolean | null
+          metadata?: Json | null
+          related_entity_id?: string | null
+          related_entity_type?: string | null
+          user_id: string
+        }
+        Update: {
+          activity_description?: string
+          activity_timestamp?: string | null
+          activity_type?: string
+          id?: string
+          is_read?: boolean | null
+          metadata?: Json | null
+          related_entity_id?: string | null
+          related_entity_type?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_addresses: {
         Row: {
           address_line_2: string | null
@@ -557,6 +593,36 @@ export type Database = {
         }
         Relationships: []
       }
+      user_dashboard_metrics: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_visible: boolean | null
+          last_updated: string | null
+          metric_type: string
+          metric_value: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_visible?: boolean | null
+          last_updated?: string | null
+          metric_type: string
+          metric_value?: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_visible?: boolean | null
+          last_updated?: string | null
+          metric_type?: string
+          metric_value?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -597,6 +663,21 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      initialize_user_metrics: {
+        Args: { p_user_id: string }
+        Returns: undefined
+      }
+      log_user_activity: {
+        Args: {
+          p_activity_type: string
+          p_description: string
+          p_entity_id?: string
+          p_entity_type?: string
+          p_metadata?: Json
+          p_user_id: string
+        }
+        Returns: undefined
       }
     }
     Enums: {
