@@ -231,9 +231,19 @@ export function CompanyProfileManagement() {
   const onSubmitCompanyInfo = async (data: CompanyInfoForm) => {
     setSaving(true);
     try {
+      // Only send columns that actually exist in the company_profiles table
+      const { trading_name: _omitTradingName, founded_year: _omitFoundedYear, ...rest } = data;
+
       const companyData = {
-        ...data,
         user_id: user?.id,
+        company_name: rest.company_name,
+        registration_number: rest.registration_number,
+        vat_number: rest.vat_number || null,
+        industry_sector: rest.industry_sector,
+        employee_count: rest.employee_count ?? null,
+        annual_revenue_range: rest.annual_revenue_range || null,
+        website_url: rest.website_url || null,
+        description: rest.description || null,
       };
 
       if (companyProfile) {
