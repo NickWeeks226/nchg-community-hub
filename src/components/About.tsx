@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // Leadership photos from uploads
-const claudiaImg = "/lovable-uploads/c35b15e5-b855-4d33-887c-612b9fa86a41.png";
+const claudiaImg = "/lovable-uploads/91bd7063-0849-4f95-9a31-96eb39fcfa77.png";
 const nickImg = "/lovable-uploads/985b7b3a-ebb7-4c4c-bdef-bad9ddad2998.png";
 // Partner logos from uploads
 const nplLogo = "/lovable-uploads/815d37d3-7968-4915-a72e-41529be11e35.png";
@@ -110,8 +110,8 @@ const About = () => {
                       decoding="async"
                       onError={(e) => {
                         const img = e.currentTarget as HTMLImageElement;
-                        console.warn("Leadership image failed to load:", img.src);
-                        img.src = "/placeholder.svg";
+                        console.warn(`Leadership image failed to load for ${person.name}:`, img.src);
+                        img.onerror = null; img.src = person.name === "Claudia" ? "/leadership/claudia.svg" : "/placeholder.svg";
                       }}
                     />
                     <AvatarFallback className="text-2xl font-semibold bg-gradient-primary text-primary-foreground">
