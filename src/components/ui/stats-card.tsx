@@ -13,18 +13,18 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
     <div
       ref={ref}
       className={cn(
-        "bg-card text-card-foreground rounded-lg p-6 text-center border shadow-card hover:shadow-elegant transition-smooth",
+        "bg-card text-card-foreground rounded-lg p-4 text-center border shadow-card hover:shadow-elegant transition-smooth",
         className
       )}
       {...props}
     >
       {icon && (
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center mb-2">
           {icon}
         </div>
       )}
-      <div className="text-2xl font-bold text-primary mb-1">{title}</div>
-      <div className="text-sm font-semibold text-foreground mb-2">{subtitle}</div>
+      <div className="text-xl font-extrabold text-primary mb-0.5">{title}</div>
+      <div className="text-sm font-semibold text-foreground mb-1">{subtitle}</div>
       <div className="text-xs text-muted-foreground">{description}</div>
     </div>
   )

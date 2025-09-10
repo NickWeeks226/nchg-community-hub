@@ -137,14 +137,13 @@ const SmartFeedstockSolutions = () => {
         <section className="hero-gradient pt-24 pb-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-8">
               <div className="text-left mb-8">
                 <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
                 </Link>
               </div>
-              <div className="text-center">
+              <div className="text-center mb-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
                   Maximize Your Ti64 Powder ROI and Lifecycle Value
                 </h1>
@@ -158,15 +157,14 @@ const SmartFeedstockSolutions = () => {
                   <Button variant="hero" size="lg" className="text-lg px-8">
                     Get Your Free Powder Assessment
                   </Button>
-                  <Button variant="glass" size="lg" className="text-lg px-8 transform hover:scale-105">
+                  <Button variant="glass" size="lg" className="text-lg px-8">
                     Download ROI Calculator
                   </Button>
                 </div>
               </div>
-              </div>
 
               {/* Key Statistics Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                 {statistics.map((stat, index) => (
                   <StatsCard
                     key={index}
@@ -193,7 +191,7 @@ const SmartFeedstockSolutions = () => {
               </div>
 
               {/* Problem Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                 {problems.map((problem, index) => (
                   <Card key={index} className="p-6 hover-lift">
                     <div className="flex items-start space-x-3">
