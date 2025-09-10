@@ -13,10 +13,10 @@ const partnerLogo = "/lovable-uploads/336302be-3b77-47e7-873d-d49309ba56bd.png";
 // Customer logos from uploads
 const athertonLogo = "/customers/Atherton.png";
 const atomikLogo = "/lovable-uploads/ee3a28a5-80b3-410e-8ba0-2ced2f5924f9.png";
-const baeLogo = "/customers/customer-2.svg";
+const baeLogo = "/customers/BAE.png";
 const carpenterLogo = "/lovable-uploads/ef4c232d-f9f4-4b7d-8d95-2bc8d58adbab.png";
 const metalysisLogo = "/lovable-uploads/851c71bc-295f-483a-b170-f70509574e98.png";
-const sheffieldLogo = "/customers/customer-3.svg";
+const sheffieldLogo = "/customers/UoS.png";
 
 const About = () => {
   const leadership = [
