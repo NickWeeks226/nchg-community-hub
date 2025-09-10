@@ -15,10 +15,11 @@ const Header = () => {
   
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "/" },
     { label: "Services", href: "#services" },
-    { label: "Community", href: "#community" },
-    { label: "Marketplace", href: "#marketplace" },
+    { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
+    { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
+    { label: "Marketplace", href: "/marketplace-community" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];

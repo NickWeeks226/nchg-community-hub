@@ -9,6 +9,9 @@ import Marketplace from "./pages/Marketplace";
 import CreateListing from "./pages/CreateListing";
 import Messages from "./pages/Messages";
 import NotFound from "./pages/NotFound";
+import SmartFeedstockSolutions from "./pages/SmartFeedstockSolutions";
+import DigitalManufacturingIntelligence from "./pages/DigitalManufacturingIntelligence";
+import MarketplaceCommunity from "./pages/MarketplaceCommunity";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,9 @@ const App = () => {
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/create-listing" element={<CreateListing />} />
             <Route path="/messages" element={<Messages />} />
+            <Route path="/smart-feedstock-solutions" element={<SmartFeedstockSolutions />} />
+            <Route path="/digital-manufacturing-intelligence" element={<DigitalManufacturingIntelligence />} />
+            <Route path="/marketplace-community" element={<MarketplaceCommunity />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

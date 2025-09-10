@@ -8,6 +8,7 @@ import {
   ArrowRight 
 } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -17,21 +18,21 @@ const Services = () => {
       title: "Smart Feedstock Solutions",
       description: "Optimize powder performance & maximize lifecycle value",
       services: ["Consultancy", "Testing", "Lifecycle Max"],
-      detail: "Expert consultation and testing to maximize the performance and lifecycle value of your titanium feedstock materials."
+      link: "/smart-feedstock-solutions"
     },
     {
       icon: Database,
       title: "Digital Manufacturing Intelligence",
       description: "Data-driven insights for superior AM operations",
       services: ["AM Dataset", "Shopfloor Solutions"],
-      detail: "Comprehensive data solutions and digital tools to optimize your additive manufacturing processes and operations."
+      link: "/digital-manufacturing-intelligence"
     },
     {
       icon: Users,
       title: "Marketplace & Community",
       description: "Sustainable trading & knowledge sharing",
       services: ["Powder Trading", "Community", "Reconditioning", "Expert Network"],
-      detail: "Connect with the titanium community through our marketplace platform and expert knowledge sharing network."
+      link: "/marketplace-community"
     }
   ];
 
@@ -54,21 +55,21 @@ const Services = () => {
           {pillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             return (
-              <Card key={index} className="hover-lift bg-card/80 backdrop-blur-sm border-border/50 h-full">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
+               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-card border-border h-full flex flex-col">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
                     <IconComponent className="w-8 h-8 text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-xl font-display font-bold text-foreground mb-2 uppercase tracking-wide">
+                  <CardTitle className="text-2xl font-display font-bold text-foreground mb-3 uppercase tracking-wide">
                     {pillar.title}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground text-base">
+                  <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                     {pillar.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col h-full">
-                  <div className="flex-grow">
-                    <ul className="space-y-3 mb-6">
+                <CardContent className="flex-1 flex flex-col justify-between p-6 pt-0">
+                  <div className="mb-6">
+                    <ul className="space-y-3">
                       {pillar.services.map((service, serviceIndex) => (
                         <li key={serviceIndex} className="flex items-center space-x-3 text-sm font-medium text-foreground">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -77,10 +78,12 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  <Button variant="outline" className="w-full group" onClick={() => setAuthModalOpen(true)}>
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link to={pillar.link} className="w-full">
+                    <Button variant="outline" className="w-full group mt-auto">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             );
