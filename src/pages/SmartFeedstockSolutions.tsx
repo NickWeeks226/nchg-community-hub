@@ -98,7 +98,7 @@ const SmartFeedstockSolutions = () => {
                   Maximize Your Ti64 Powder ROI and Lifecycle Value
                 </h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                  Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 
+                  Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 
                   <span className="font-bold"> 40% on material costs</span> while extending powder life by 
                   <span className="font-bold"> 3-5 cycles</span>.
                 </p>
