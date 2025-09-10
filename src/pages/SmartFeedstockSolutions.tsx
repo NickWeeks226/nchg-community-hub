@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatsCard } from "@/components/ui/stats-card";
-import { CaseStudyCard } from "@/components/ui/case-study-card";
+
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -70,21 +70,6 @@ const SmartFeedstockSolutions = () => {
     activities: ["Process integration", "Staff training", "Quality monitoring", "Continuous optimization"],
     timeline: "Ongoing",
     deliverables: "Live system"
-  }];
-  const caseStudies = [{
-    title: "SME R&D Project Prevents £180k Revenue Loss",
-    problem: "5-week trial-and-error process causing missed opportunities and delayed project delivery",
-    solution: "Ti64 database + optimized process parameters with validated alternatives",
-    results: "Development time reduced from 5 weeks to 2 weeks, preventing ~£180k revenue loss",
-    ctaText: "Read Full Case Study",
-    onCtaClick: () => console.log("Case study 1 clicked")
-  }, {
-    title: "Lifecycle Optimization Extends Powder Value",
-    problem: "Premature powder disposal increasing costs and environmental impact",
-    solution: "Custom reuse protocols + quality monitoring system implementation",
-    results: "Extended powder life from 4 to 9 cycles, achieving £78k annual savings",
-    ctaText: "Download Case Study PDF",
-    onCtaClick: () => console.log("Case study 2 clicked")
   }];
   const benefits_list = ["Current powder usage efficiency analysis", "Potential cost savings calculation", "Lifecycle extension opportunities", "Custom optimization recommendations", "ROI projections for implementation"];
   return <>
@@ -240,25 +225,6 @@ const SmartFeedstockSolutions = () => {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  Real Results from Real Customers
-                </h2>
-                <p className="text-xl text-muted-foreground">
-                  See how our Ti64 optimization strategies deliver measurable value
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {caseStudies.map((caseStudy, index) => <CaseStudyCard key={index} title={caseStudy.title} problem={caseStudy.problem} solution={caseStudy.solution} results={caseStudy.results} ctaText={caseStudy.ctaText} onCtaClick={caseStudy.onCtaClick} />)}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Lead Capture Section */}
         <section className="py-20 surface-gradient">
