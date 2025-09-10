@@ -16,7 +16,6 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "#services" },
     { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
     { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
     { label: "Marketplace", href: "/marketplace-community" },
