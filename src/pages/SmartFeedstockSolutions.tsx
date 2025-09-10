@@ -8,121 +8,86 @@ import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
-
 const SmartFeedstockSolutions = () => {
-  const statistics = [
-    {
-      title: "Up to 40%",
-      subtitle: "Cost Reduction",
-      description: "Material cost savings",
-      icon: <DollarSign className="w-6 h-6 text-success" />
-    },
-    {
-      title: "3-5x",
-      subtitle: "Lifecycle Extension", 
-      description: "Powder reuse cycles",
-      icon: <Recycle className="w-6 h-6 text-primary" />
-    }
-  ];
-
-  const problems = [
-    "High material costs (£180-250/kg) eating into margins",
-    "Waste from premature powder disposal",
-    "Lack of validated parameters for cost-effective alternatives",
-    "No strategy for end-of-life powder value recovery"
-  ];
-
-  const benefits = [
-    {
-      icon: DollarSign,
-      title: "COST OPTIMIZATION",
-      description: "40% reduction in feedstock costs with expanded size distribution (10-106μm vs standard 10-53μm)",
-      features: ["Custom blending strategies for optimal cost/performance", "Strategic sourcing recommendations", "Volume pricing negotiations"]
-    },
-    {
-      icon: Recycle,
-      title: "LIFECYCLE EXTENSION", 
-      description: "Safely extend powder reuse from 3-5 to 8-10 cycles",
-      features: ["Quality monitoring protocols to track degradation", "Custom reuse protocols for different applications", "Performance validation testing"]
-    },
-    {
-      icon: Shield,
-      title: "RISK MITIGATION",
-      description: "Comprehensive testing before process changes",
-      features: ["Validated parameters for multiple configurations", "Quality assurance throughout powder lifecycle", "Failure mode analysis"]
-    },
-    {
-      icon: RefreshCw,
-      title: "VALUE RECOVERY",
-      description: "End-of-life powder assessment and valuation",
-      features: ["Marketplace connections for spent powder resale", "Reconditioning feasibility analysis", "Material certification services"]
-    }
-  ];
-
-  const processSteps = [
-    {
-      step: "1",
-      title: "ASSESSMENT",
-      description: "Current usage analysis",
-      activities: ["Powder usage audit", "Cost analysis", "Quality assessment", "Process review"],
-      timeline: "1-2 weeks",
-      deliverables: "Baseline report"
-    },
-    {
-      step: "2", 
-      title: "STRATEGY",
-      description: "Optimization planning",
-      activities: ["Custom strategy development", "Parameter validation", "Risk assessment", "ROI projections"],
-      timeline: "2-3 weeks",
-      deliverables: "Implementation plan"
-    },
-    {
-      step: "3",
-      title: "VALIDATION", 
-      description: "Testing and verification",
-      activities: ["Pilot testing", "Quality validation", "Performance verification", "Parameter optimization"],
-      timeline: "3-4 weeks",
-      deliverables: "Validated protocols"
-    },
-    {
-      step: "4",
-      title: "IMPLEMENTATION",
-      description: "Full deployment",
-      activities: ["Process integration", "Staff training", "Quality monitoring", "Continuous optimization"],
-      timeline: "Ongoing",
-      deliverables: "Live system"
-    }
-  ];
-
-  const caseStudies = [
-    {
-      title: "SME R&D Project Prevents £180k Revenue Loss",
-      problem: "5-week trial-and-error process causing missed opportunities and delayed project delivery",
-      solution: "Ti64 database + optimized process parameters with validated alternatives",
-      results: "Development time reduced from 5 weeks to 2 weeks, preventing ~£180k revenue loss",
-      ctaText: "Read Full Case Study",
-      onCtaClick: () => console.log("Case study 1 clicked")
-    },
-    {
-      title: "Lifecycle Optimization Extends Powder Value",
-      problem: "Premature powder disposal increasing costs and environmental impact",
-      solution: "Custom reuse protocols + quality monitoring system implementation",
-      results: "Extended powder life from 4 to 9 cycles, achieving £78k annual savings",
-      ctaText: "Download Case Study PDF", 
-      onCtaClick: () => console.log("Case study 2 clicked")
-    }
-  ];
-
-  const benefits_list = [
-    "Current powder usage efficiency analysis",
-    "Potential cost savings calculation",
-    "Lifecycle extension opportunities", 
-    "Custom optimization recommendations",
-    "ROI projections for implementation"
-  ];
-
-  return (
-    <>
+  const statistics = [{
+    title: "Up to 40%",
+    subtitle: "Cost Reduction",
+    description: "Material cost savings",
+    icon: <DollarSign className="w-6 h-6 text-success" />
+  }, {
+    title: "3-5x",
+    subtitle: "Lifecycle Extension",
+    description: "Powder reuse cycles",
+    icon: <Recycle className="w-6 h-6 text-primary" />
+  }];
+  const problems = ["High material costs (£180-250/kg) eating into margins", "Waste from premature powder disposal", "Lack of validated parameters for cost-effective alternatives", "No strategy for end-of-life powder value recovery"];
+  const benefits = [{
+    icon: DollarSign,
+    title: "COST OPTIMIZATION",
+    description: "40% reduction in feedstock costs with expanded size distribution (10-106μm vs standard 10-53μm)",
+    features: ["Custom blending strategies for optimal cost/performance", "Strategic sourcing recommendations", "Volume pricing negotiations"]
+  }, {
+    icon: Recycle,
+    title: "LIFECYCLE EXTENSION",
+    description: "Safely extend powder reuse from 3-5 to 8-10 cycles",
+    features: ["Quality monitoring protocols to track degradation", "Custom reuse protocols for different applications", "Performance validation testing"]
+  }, {
+    icon: Shield,
+    title: "RISK MITIGATION",
+    description: "Comprehensive testing before process changes",
+    features: ["Validated parameters for multiple configurations", "Quality assurance throughout powder lifecycle", "Failure mode analysis"]
+  }, {
+    icon: RefreshCw,
+    title: "VALUE RECOVERY",
+    description: "End-of-life powder assessment and valuation",
+    features: ["Marketplace connections for spent powder resale", "Reconditioning feasibility analysis", "Material certification services"]
+  }];
+  const processSteps = [{
+    step: "1",
+    title: "ASSESSMENT",
+    description: "Current usage analysis",
+    activities: ["Powder usage audit", "Cost analysis", "Quality assessment", "Process review"],
+    timeline: "1-2 weeks",
+    deliverables: "Baseline report"
+  }, {
+    step: "2",
+    title: "STRATEGY",
+    description: "Optimization planning",
+    activities: ["Custom strategy development", "Parameter validation", "Risk assessment", "ROI projections"],
+    timeline: "2-3 weeks",
+    deliverables: "Implementation plan"
+  }, {
+    step: "3",
+    title: "VALIDATION",
+    description: "Testing and verification",
+    activities: ["Pilot testing", "Quality validation", "Performance verification", "Parameter optimization"],
+    timeline: "3-4 weeks",
+    deliverables: "Validated protocols"
+  }, {
+    step: "4",
+    title: "IMPLEMENTATION",
+    description: "Full deployment",
+    activities: ["Process integration", "Staff training", "Quality monitoring", "Continuous optimization"],
+    timeline: "Ongoing",
+    deliverables: "Live system"
+  }];
+  const caseStudies = [{
+    title: "SME R&D Project Prevents £180k Revenue Loss",
+    problem: "5-week trial-and-error process causing missed opportunities and delayed project delivery",
+    solution: "Ti64 database + optimized process parameters with validated alternatives",
+    results: "Development time reduced from 5 weeks to 2 weeks, preventing ~£180k revenue loss",
+    ctaText: "Read Full Case Study",
+    onCtaClick: () => console.log("Case study 1 clicked")
+  }, {
+    title: "Lifecycle Optimization Extends Powder Value",
+    problem: "Premature powder disposal increasing costs and environmental impact",
+    solution: "Custom reuse protocols + quality monitoring system implementation",
+    results: "Extended powder life from 4 to 9 cycles, achieving £78k annual savings",
+    ctaText: "Download Case Study PDF",
+    onCtaClick: () => console.log("Case study 2 clicked")
+  }];
+  const benefits_list = ["Current powder usage efficiency analysis", "Potential cost savings calculation", "Lifecycle extension opportunities", "Custom optimization recommendations", "ROI projections for implementation"];
+  return <>
       <Helmet>
         <title>Maximize Your Ti64 Powder ROI and Lifecycle Value | NCHG Smart Feedstock Solutions</title>
         <meta name="description" content="Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles." />
@@ -165,16 +130,7 @@ const SmartFeedstockSolutions = () => {
 
               {/* Key Statistics Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-                {statistics.map((stat, index) => (
-                  <StatsCard
-                    key={index}
-                    title={stat.title}
-                    subtitle={stat.subtitle}
-                    description={stat.description}
-                    icon={stat.icon}
-                    className="bg-card/90 border-primary-foreground/20"
-                  />
-                ))}
+                {statistics.map((stat, index) => <StatsCard key={index} title={stat.title} subtitle={stat.subtitle} description={stat.description} icon={stat.icon} className="bg-card/90 border-primary-foreground/20" />)}
               </div>
             </div>
           </div>
@@ -192,23 +148,19 @@ const SmartFeedstockSolutions = () => {
 
               {/* Problem Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                {problems.map((problem, index) => (
-                  <Card key={index} className="p-6 hover-lift">
+                {problems.map((problem, index) => <Card key={index} className="p-6 hover-lift">
                     <div className="flex items-start space-x-3">
                       <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-1">
                         <Target className="w-3 h-3 text-destructive" />
                       </div>
                       <p className="text-sm text-foreground">{problem}</p>
                     </div>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Solution Statement */}
               <div className="text-center bg-primary/5 rounded-xl p-8 border border-primary/20">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">
-                  We've developed proven methodologies to optimize every aspect of your Ti64 powder strategy
-                </h3>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-4">We've developed proven methodologies to optimise every aspect of your Ti64 powder strategy</h3>
                 <p className="text-lg text-muted-foreground">
                   From initial selection through to end-of-life value recovery
                 </p>
@@ -232,9 +184,8 @@ const SmartFeedstockSolutions = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {benefits.map((benefit, index) => {
-                  const IconComponent = benefit.icon;
-                  return (
-                    <Card key={index} className="p-8 hover-lift">
+                const IconComponent = benefit.icon;
+                return <Card key={index} className="p-8 hover-lift">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                           <IconComponent className="w-6 h-6 text-primary-foreground" />
@@ -243,18 +194,15 @@ const SmartFeedstockSolutions = () => {
                           <h3 className="text-xl font-bold text-foreground mb-2">{benefit.title}</h3>
                           <p className="text-muted-foreground mb-4">{benefit.description}</p>
                           <ul className="space-y-2">
-                            {benefit.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-center space-x-2 text-sm text-foreground">
+                            {benefit.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center space-x-2 text-sm text-foreground">
                                 <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                                 <span>{feature}</span>
-                              </li>
-                            ))}
+                              </li>)}
                           </ul>
                         </div>
                       </div>
-                    </Card>
-                  );
-                })}
+                    </Card>;
+              })}
               </div>
             </div>
           </div>
@@ -274,23 +222,19 @@ const SmartFeedstockSolutions = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {processSteps.map((step, index) => (
-                  <Card key={index} className="p-6 text-center hover-lift">
+                {processSteps.map((step, index) => <Card key={index} className="p-6 text-center hover-lift">
                     <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-2xl font-bold text-primary-foreground">{step.step}</span>
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{step.description}</p>
                     <div className="space-y-2 mb-4">
-                      {step.activities.map((activity, activityIndex) => (
-                        <div key={activityIndex} className="text-xs text-foreground">• {activity}</div>
-                      ))}
+                      {step.activities.map((activity, activityIndex) => <div key={activityIndex} className="text-xs text-foreground">• {activity}</div>)}
                     </div>
                     <div className="text-xs text-primary font-semibold">
                       {step.timeline} • {step.deliverables}
                     </div>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -310,17 +254,7 @@ const SmartFeedstockSolutions = () => {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {caseStudies.map((caseStudy, index) => (
-                  <CaseStudyCard
-                    key={index}
-                    title={caseStudy.title}
-                    problem={caseStudy.problem}
-                    solution={caseStudy.solution}
-                    results={caseStudy.results}
-                    ctaText={caseStudy.ctaText}
-                    onCtaClick={caseStudy.onCtaClick}
-                  />
-                ))}
+                {caseStudies.map((caseStudy, index) => <CaseStudyCard key={index} title={caseStudy.title} problem={caseStudy.problem} solution={caseStudy.solution} results={caseStudy.results} ctaText={caseStudy.ctaText} onCtaClick={caseStudy.onCtaClick} />)}
               </div>
             </div>
           </div>
@@ -334,9 +268,7 @@ const SmartFeedstockSolutions = () => {
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
                   Get Your Free Ti64 Powder Optimization Assessment
                 </h2>
-                <p className="text-xl text-muted-foreground">
-                  Discover your powder optimization potential with a comprehensive analysis
-                </p>
+                <p className="text-xl text-muted-foreground">Discover your powder optimisation potential with a comprehensive analysis</p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -344,12 +276,10 @@ const SmartFeedstockSolutions = () => {
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-6">What You'll Receive:</h3>
                   <div className="space-y-4">
-                    {benefits_list.map((benefit, index) => (
-                      <div key={index} className="flex items-center space-x-3">
+                    {benefits_list.map((benefit, index) => <div key={index} className="flex items-center space-x-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
                         <span className="text-foreground">{benefit}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                   
                   <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
@@ -357,9 +287,7 @@ const SmartFeedstockSolutions = () => {
                       <Users className="w-5 h-5 text-primary" />
                       <span className="font-semibold text-foreground">Trusted by Industry Leaders</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      Join 50+ companies already optimizing their Ti64 strategy with NCHG
-                    </p>
+                    <p className="text-sm text-muted-foreground">Join industry leaders already optimising their Ti64 strategy with NCHG</p>
                   </div>
                 </div>
 
@@ -372,8 +300,6 @@ const SmartFeedstockSolutions = () => {
           </div>
         </section>
       </main>
-    </>
-  );
+    </>;
 };
-
 export default SmartFeedstockSolutions;
