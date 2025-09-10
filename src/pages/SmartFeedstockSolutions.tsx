@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatsCard } from "@/components/ui/stats-card";
-
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -94,11 +93,9 @@ const SmartFeedstockSolutions = () => {
                 </Link>
               </div>
               <div className="text-center mb-8">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
-                  Maximize Your Ti64 Powder ROI and Lifecycle Value
-                </h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">Maximise Your Ti64 Powder ROI and Lifecycle Value</h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                  Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 
+                  Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 
                   <span className="font-bold"> 40% on material costs</span> while extending powder life by 
                   <span className="font-bold"> 3-5 cycles</span>.
                 </p>
