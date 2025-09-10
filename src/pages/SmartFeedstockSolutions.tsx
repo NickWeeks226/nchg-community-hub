@@ -22,28 +22,14 @@ const SmartFeedstockSolutions = () => {
       subtitle: "Lifecycle Extension", 
       description: "Powder reuse cycles",
       icon: <Recycle className="w-6 h-6 text-primary" />
-    },
-    {
-      title: "Renishaw",
-      subtitle: "AM500Q Validated",
-      description: "Industry standard",
-      icon: <Award className="w-6 h-6 text-accent" />
-    },
-    {
-      title: "£180k+",
-      subtitle: "Revenue Protected",
-      description: "Customer success",
-      icon: <TrendingUp className="w-6 h-6 text-success" />
     }
   ];
 
   const problems = [
-    "High material costs (£80-120/kg) eating into margins",
-    "Uncertainty about powder reuse safety and quality impacts", 
+    "High material costs (£180-250/kg) eating into margins",
     "Waste from premature powder disposal",
     "Lack of validated parameters for cost-effective alternatives",
-    "No strategy for end-of-life powder value recovery",
-    "Trial-and-error approaches causing project delays"
+    "No strategy for end-of-life powder value recovery"
   ];
 
   const benefits = [
@@ -152,10 +138,13 @@ const SmartFeedstockSolutions = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-8">
+              <div className="text-left mb-8">
                 <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
                 </Link>
+              </div>
+              <div className="text-center">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
                   Maximize Your Ti64 Powder ROI and Lifecycle Value
                 </h1>
@@ -169,14 +158,15 @@ const SmartFeedstockSolutions = () => {
                   <Button variant="hero" size="lg" className="text-lg px-8">
                     Get Your Free Powder Assessment
                   </Button>
-                  <Button variant="glass" size="lg" className="text-lg px-8">
+                  <Button variant="glass" size="lg" className="text-lg px-8 transform hover:scale-105">
                     Download ROI Calculator
                   </Button>
                 </div>
               </div>
+              </div>
 
               {/* Key Statistics Row */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {statistics.map((stat, index) => (
                   <StatsCard
                     key={index}
@@ -222,7 +212,7 @@ const SmartFeedstockSolutions = () => {
                   We've developed proven methodologies to optimize every aspect of your Ti64 powder strategy
                 </h3>
                 <p className="text-lg text-muted-foreground">
-                  From initial selection through end-of-life value recovery
+                  From initial selection through to end-of-life value recovery
                 </p>
               </div>
             </div>
