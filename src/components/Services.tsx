@@ -2,54 +2,36 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Users, 
-  ShoppingCart, 
   BarChart3, 
-  Settings, 
   Database, 
-  Recycle,
+  Users,
   ArrowRight 
 } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
 
 const Services = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const services = [
+  const pillars = [
     {
       icon: BarChart3,
-      title: "Feedstock Consultancy",
-      description: "Expert consultation to help aid positive decisions on all things feedstock related for your titanium applications.",
-      features: ["Material Assessment", "Process Optimisation", "Quality Assurance"]
+      title: "Smart Feedstock Solutions",
+      description: "Optimize powder performance & maximize lifecycle value",
+      services: ["Consultancy", "Testing", "Lifecycle Max"],
+      detail: "Expert consultation and testing to maximize the performance and lifecycle value of your titanium feedstock materials."
     },
     {
       icon: Database,
-      title: "Commercial Viability Testing",
-      description: "Proving out commercial viability of 10-106μm PSD feedstock for additive manufacturing applications.",
-      features: ["PSD Analysis", "AM Testing", "Performance Validation"]
-    },
-    {
-      icon: Settings,
-      title: "Ti64 AM Dataset Development",
-      description: "Comprehensive dataset for Ti64 AM components that can be purchased, validated and continually expanded.",
-      features: ["Data Collection", "Process Parameters", "Quality Standards"]
+      title: "Digital Manufacturing Intelligence",
+      description: "Data-driven insights for superior AM operations",
+      services: ["AM Dataset", "Shopfloor Solutions"],
+      detail: "Comprehensive data solutions and digital tools to optimize your additive manufacturing processes and operations."
     },
     {
       icon: Users,
-      title: "Digital Shopfloor Solutions",
-      description: "Additive manufacturing lean consultancy with digital solutions for traceability and scheduling optimisation.",
-      features: ["Digital Tracking", "Process Optimisation", "Lean Implementation"]
-    },
-    {
-      icon: ShoppingCart,
-      title: "Ti64 Marketplace",
-      description: "Creating a marketplace for trading used Ti64 powder, extending material lifecycle and reducing waste.",
-      features: ["Powder Trading", "Quality Verification", "Lifecycle Extension"]
-    },
-    {
-      icon: Recycle,
-      title: "Swarf-to-Powder Processing",
-      description: "Cost-efficient processes for converting machining swarf into wire and powder feedstock materials.",
-      features: ["Swarf Conversion", "Cost Efficiency", "Material Recovery"]
+      title: "Marketplace & Community",
+      description: "Sustainable trading & knowledge sharing",
+      services: ["Powder Trading", "Community", "Reconditioning", "Expert Network"],
+      detail: "Connect with the titanium community through our marketplace platform and expert knowledge sharing network."
     }
   ];
 
@@ -67,33 +49,37 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
+        {/* Three Pillars Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {pillars.map((pillar, index) => {
+            const IconComponent = pillar.icon;
             return (
-              <Card key={index} className="hover-lift bg-card/80 backdrop-blur-sm border-border/50">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-primary-foreground" />
+              <Card key={index} className="hover-lift bg-card/80 backdrop-blur-sm border-border/50 h-full">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <IconComponent className="w-8 h-8 text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-foreground">{service.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {service.description}
+                  <CardTitle className="text-xl font-display font-bold text-foreground mb-2 uppercase tracking-wide">
+                    {pillar.title}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground text-base">
+                    {pillar.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="ghost" className="w-full mt-6 group" onClick={() => setAuthModalOpen(true)}>
+                <CardContent className="flex flex-col h-full">
+                  <div className="flex-grow">
+                    <ul className="space-y-3 mb-6">
+                      {pillar.services.map((service, serviceIndex) => (
+                        <li key={serviceIndex} className="flex items-center space-x-3 text-sm font-medium text-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span>{service}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Button variant="outline" className="w-full group" onClick={() => setAuthModalOpen(true)}>
                     Learn More
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
