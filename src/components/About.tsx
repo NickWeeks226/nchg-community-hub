@@ -11,7 +11,7 @@ const rotidebLogo = "/lovable-uploads/64b13dc8-db49-4a83-9438-3611c66ea1b1.png";
 const henryRoyceLogo = "/lovable-uploads/6c5ce2ee-ea5b-46ea-b3e3-d2eeb4811e52.png";
 const partnerLogo = "/lovable-uploads/336302be-3b77-47e7-873d-d49309ba56bd.png";
 // Customer logos from uploads
-const athertonLogo = "/customers/customer-1.svg";
+const athertonLogo = "/customers/Atherton.png";
 const atomikLogo = "/lovable-uploads/ee3a28a5-80b3-410e-8ba0-2ced2f5924f9.png";
 const baeLogo = "/customers/customer-2.svg";
 const carpenterLogo = "/lovable-uploads/ef4c232d-f9f4-4b7d-8d95-2bc8d58adbab.png";
