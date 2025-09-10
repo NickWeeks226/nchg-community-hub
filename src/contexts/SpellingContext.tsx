@@ -33,12 +33,12 @@ export function SpellingProvider({ children }: SpellingProviderProps) {
         // Try to load from user profile
         const { data: profile, error } = await supabase
           .from('profiles')
-          .select('spelling_preference')
+          .select('*')
           .eq('user_id', user.id)
           .single();
 
-        if (!error && profile?.spelling_preference) {
-          setSpellingVariantState(profile.spelling_preference as SpellingVariant);
+        if (!error && profile && (profile as any).spelling_preference) {
+          setSpellingVariantState((profile as any).spelling_preference as SpellingVariant);
         } else {
           // Fall back to localStorage or default
           const stored = localStorage.getItem('spelling_preference') as SpellingVariant;
@@ -68,7 +68,7 @@ export function SpellingProvider({ children }: SpellingProviderProps) {
       try {
         const { error } = await supabase
           .from('profiles')
-          .update({ spelling_preference: variant })
+          .update({ spelling_preference: variant } as any)
           .eq('user_id', user.id);
         
         if (error) {

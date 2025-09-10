@@ -12,19 +12,19 @@ const DigitalManufacturingIntelligence = () => {
       icon: Database,
       title: "AM Dataset Solutions",
       description: "Comprehensive data collection and analysis tools for additive manufacturing processes.",
-      features: ["Process parameter optimization", "Quality prediction models", "Material performance tracking", "Historical data analysis"]
+      features: ["Process parameter optimisation", "Quality prediction models", "Material performance tracking", "Historical data analysis"]
     },
     {
       icon: Monitor,
       title: "Shopfloor Solutions",
       description: "Real-time monitoring and control systems for manufacturing operations.",
-      features: ["Live process monitoring", "Quality control dashboards", "Automated alerts", "Production optimization"]
+      features: ["Live process monitoring", "Quality control dashboards", "Automated alerts", "Production optimisation"]
     },
     {
       icon: BarChart3,
       title: "Advanced Analytics",
       description: "Data-driven insights and predictive analytics for superior manufacturing performance.",
-      features: ["Predictive maintenance", "Yield optimization", "Cost analysis", "Performance benchmarking"]
+      features: ["Predictive maintenance", "Yield optimisation", "Cost analysis", "Performance benchmarking"]
     }
   ];
 
@@ -53,7 +53,7 @@ const DigitalManufacturingIntelligence = () => {
               </h1>
               <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
                 Transform your additive manufacturing operations with data-driven insights, 
-                real-time monitoring, and advanced analytics for superior performance and efficiency.
+                 real-time monitoring, and advanced analytics for superior performance and efficiency.
               </p>
             </div>
           </div>
@@ -67,8 +67,8 @@ const DigitalManufacturingIntelligence = () => {
                 Our Digital Solutions
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Cutting-edge digital tools and analytics platforms designed to optimize 
-                your manufacturing processes and drive operational excellence.
+                 Cutting-edge digital tools and analytics platforms designed to optimise 
+                 your manufacturing processes and drive operational excellence.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ const DigitalManufacturingIntelligence = () => {
             {/* CTA Section */}
             <div className="text-center">
               <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-                Ready to Digitize Your Manufacturing?
+                Ready to Digitise Your Manufacturing?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 Discover how our digital manufacturing intelligence solutions can transform 

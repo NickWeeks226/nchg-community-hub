@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { useToast } from "@/hooks/use-toast";
+import { useSpelling } from "@/hooks/useSpelling";
 
 const notificationSettingsSchema = z.object({
   email_new_message: z.boolean(),
@@ -87,6 +88,7 @@ const powderConditions = [
 export function PreferencesSettings() {
   const { user } = useAuth();
   const { toast } = useToast();
+  const { spellingVariant, setSpellingVariant } = useSpelling();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [exporting, setExporting] = useState(false);
@@ -308,9 +310,10 @@ export function PreferencesSettings() {
       </div>
 
       <Tabs defaultValue="notifications" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="notifications">Notifications</TabsTrigger>
           <TabsTrigger value="marketplace">Marketplace</TabsTrigger>
+          <TabsTrigger value="language">Language</TabsTrigger>
           <TabsTrigger value="security">Security</TabsTrigger>
           <TabsTrigger value="data">Data & Privacy</TabsTrigger>
         </TabsList>
@@ -650,6 +653,70 @@ export function PreferencesSettings() {
               </Button>
             </div>
           </form>
+        </TabsContent>
+
+        <TabsContent value="language">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Globe className="h-5 w-5" />
+                Language & Spelling Preferences
+              </CardTitle>
+              <CardDescription>
+                Customise your language and spelling preferences for the best experience
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <Label>Spelling Preference</Label>
+                    <p className="text-sm text-muted-foreground">
+                      Choose between British and American spelling variants
+                    </p>
+                  </div>
+                  <Select
+                    value={spellingVariant}
+                    onValueChange={(value) => setSpellingVariant(value as 'british' | 'american')}
+                  >
+                    <SelectTrigger className="w-40">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="british">British English</SelectItem>
+                      <SelectItem value="american">American English</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="bg-muted p-4 rounded-lg">
+                  <h4 className="font-medium mb-2">Examples:</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong>British:</strong>
+                      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                        <li>Optimise, maximise</li>
+                        <li>Organisation, realisation</li>
+                        <li>Colour, flavour</li>
+                        <li>Centre, theatre</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong>American:</strong>
+                      <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                        <li>Optimize, maximize</li>
+                        <li>Organization, realization</li>
+                        <li>Color, flavor</li>
+                        <li>Center, theater</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  <strong>Note:</strong> Your preference is automatically saved and will be applied across the entire website.
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
 
         <TabsContent value="security">

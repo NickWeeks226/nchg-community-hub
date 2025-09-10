@@ -335,6 +335,7 @@ export type Database = {
           secondary_email: string | null
           secondary_phone: string | null
           show_online_status: boolean | null
+          spelling_preference: string | null
           updated_at: string
           user_id: string
           user_role: Database["public"]["Enums"]["app_role"]
@@ -361,6 +362,7 @@ export type Database = {
           secondary_email?: string | null
           secondary_phone?: string | null
           show_online_status?: boolean | null
+          spelling_preference?: string | null
           updated_at?: string
           user_id: string
           user_role?: Database["public"]["Enums"]["app_role"]
@@ -387,6 +389,7 @@ export type Database = {
           secondary_email?: string | null
           secondary_phone?: string | null
           show_online_status?: boolean | null
+          spelling_preference?: string | null
           updated_at?: string
           user_id?: string
           user_role?: Database["public"]["Enums"]["app_role"]

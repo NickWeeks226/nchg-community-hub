@@ -16,7 +16,7 @@ const Services = () => {
     {
       icon: BarChart3,
       title: "Smart Feedstock Solutions",
-      description: "Optimize powder performance & maximize lifecycle value",
+      description: "Optimise powder performance & maximise lifecycle value",
       services: ["Consultancy", "Testing", "Lifecycle Max"],
       link: "/smart-feedstock-solutions"
     },

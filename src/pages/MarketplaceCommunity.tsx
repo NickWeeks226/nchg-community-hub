@@ -23,14 +23,14 @@ const MarketplaceCommunity = () => {
     {
       icon: RefreshCw,
       title: "Reconditioning Services",
-      description: "Professional powder reconditioning to restore and optimize material properties.",
+      description: "Professional powder reconditioning to restore and optimise material properties.",
       features: ["Quality restoration", "Performance validation", "Cost-effective solutions", "Sustainability focus"]
     },
     {
       icon: Network,
       title: "Expert Network",
-      description: "Access to industry experts and specialized consultants for technical guidance.",
-      features: ["Technical consulting", "Project support", "Training programs", "Knowledge transfer"]
+      description: "Access to industry experts and specialised consultants for technical guidance.",
+      features: ["Technical consulting", "Project support", "Training programmes", "Knowledge transfer"]
     }
   ];
 
