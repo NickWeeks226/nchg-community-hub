@@ -78,25 +78,6 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 pt-8 border-t border-border/50">
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">4,000T</div>
-              <div className="text-sm text-muted-foreground font-medium">Global Annual Demand</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">14%</div>
-              <div className="text-sm text-muted-foreground font-medium">Growth Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">£250-280</div>
-              <div className="text-sm text-muted-foreground font-medium">Price per kg</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">2030</div>
-              <div className="text-sm text-muted-foreground font-medium">UK Source Target</div>
-            </div>
-          </div>
         </div>
       </div>
       

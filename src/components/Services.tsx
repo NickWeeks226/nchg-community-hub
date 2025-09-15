@@ -45,8 +45,8 @@ const Services = () => {
             What We Do
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive titanium solutions from feedstock to finished components, 
-            supporting sustainable manufacturing across the entire supply chain.
+            Developing comprehensive titanium solutions from feedstock to finished components, 
+            building the future of sustainable manufacturing across the entire supply chain.
           </p>
         </div>
 
@@ -93,14 +93,14 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-            Ready to Transform Your Titanium Supply Chain?
+            Help Us Build the Future of Titanium Manufacturing
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Get in touch with our experts to discuss how our sustainable solutions 
-            can benefit your manufacturing operations.
+            Join us in developing sustainable solutions for the titanium industry. 
+            Partner with us to shape the future of UK manufacturing.
           </p>
           <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
-            Schedule Consultation
+            Partner With Us
           </Button>
         </div>
       </div>

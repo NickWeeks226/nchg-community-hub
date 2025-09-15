@@ -94,11 +94,11 @@ const Marketplace = () => {
             <span className="text-sm font-medium text-success">Ti64 Marketplace</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-            Powder Marketplace
+            Building the UK's Ti64 Marketplace
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Creating a marketplace for trading used Ti64 powder, extending material 
-            lifecycle and reducing waste while connecting buyers and sellers.
+            Join us in creating the UK's first dedicated marketplace for trading Ti64 powder. 
+            Help us build a platform that extends material lifecycle and connects industry.
           </p>
         </div>
 
@@ -126,10 +126,10 @@ const Marketplace = () => {
         <div className="mb-12">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-display font-semibold text-foreground">
-              Featured Listings
+              Preview: Future Marketplace Listings
             </h3>
             <Button variant="outline" onClick={() => setAuthModalOpen(true)}>
-              View All Listings
+              Request Early Access
             </Button>
           </div>
 
@@ -210,33 +210,19 @@ const Marketplace = () => {
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-success/5 to-primary/5 rounded-xl p-8 text-center">
           <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-            Start Trading on Our Marketplace
+            Help Us Build the UK's Premier Ti64 Marketplace
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Whether you're looking to buy quality Ti64 powder or sell your surplus materials, 
-            our marketplace connects you with verified suppliers and buyers across the UK.
+            Be part of creating the UK's first dedicated Ti64 trading platform. 
+            Early supporters will shape our marketplace and gain exclusive access at launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {user ? (
-              <>
-                <Button variant="hero" size="lg">
-                  List Your Materials
-                </Button>
-                <Button variant="outline" size="lg">
-                  Browse Marketplace
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
-                  <Lock className="w-4 h-4 mr-2" />
-                  Sign In to List Materials
-                </Button>
-                <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
-                  View Marketplace
-                </Button>
-              </>
-            )}
+            <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
+              Join as Early Partner
+            </Button>
+            <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
+              Request Early Access
+            </Button>
           </div>
         </div>
       </div>

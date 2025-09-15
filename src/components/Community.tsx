@@ -31,11 +31,11 @@ const Community = () => {
     }
   ];
 
-  const stats = [
-    { label: "Active Members", value: "500+", icon: Users },
-    { label: "Forum Topics", value: "150+", icon: MessageSquare },
-    { label: "Companies", value: "80+", icon: Globe },
-    { label: "Resources", value: "200+", icon: TrendingUp }
+  const goals = [
+    { label: "Target Launch", value: "Q2 2025", icon: Calendar },
+    { label: "Founding Members", value: "50+", icon: Users },
+    { label: "Discussion Topics", value: "Ready", icon: MessageSquare },
+    { label: "Expert Network", value: "Building", icon: TrendingUp }
   ];
 
   return (
@@ -48,25 +48,25 @@ const Community = () => {
             <span className="text-sm font-medium text-accent">Join Our Community</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-            Industry Community
+            Building Our Industry Community
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Building a community of companies to discuss and collaboratively solve 
-            titanium industry challenges. Connect, learn, and grow together.
+            Join us in creating the UK's premier titanium industry community. Be a founding member 
+            and help shape the future of sustainable manufacturing collaboration.
           </p>
         </div>
 
-        {/* Stats Grid */}
+        {/* Launch Timeline */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
+          {goals.map((goal, index) => {
+            const IconComponent = goal.icon;
             return (
               <div key={index} className="text-center p-6 rounded-lg bg-card/50 border border-border/50">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <IconComponent className="w-6 h-6 text-primary" />
                 </div>
-                <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-2xl font-bold text-foreground mb-1">{goal.value}</div>
+                <div className="text-sm text-muted-foreground">{goal.label}</div>
               </div>
             );
           })}
@@ -98,10 +98,10 @@ const Community = () => {
         <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-8 mb-12">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-              Latest Community Discussions
+              Preview: Future Community Discussions
             </h3>
             <p className="text-muted-foreground">
-              See what our community members are discussing this week
+              These are the types of discussions our community will enable when we launch
             </p>
           </div>
           
@@ -155,33 +155,19 @@ const Community = () => {
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-            Ready to Join Our Community?
+            Become a Founding Community Member
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Connect with industry professionals, share knowledge, and stay ahead 
-            of the latest developments in sustainable titanium manufacturing.
+            Help us build the UK's premier titanium industry community. Founding members will 
+            shape the platform and gain exclusive early access to all community features.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {user ? (
-              <>
-                <Button variant="hero" size="lg">
-                  Join Community Forum
-                </Button>
-                <Button variant="outline" size="lg">
-                  Browse Discussions
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
-                  <Lock className="w-4 h-4 mr-2" />
-                  Sign In to Join Forum
-                </Button>
-                <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
-                  View Public Discussions
-                </Button>
-              </>
-            )}
+            <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
+              Become a Founding Member
+            </Button>
+            <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
+              Get Early Access
+            </Button>
           </div>
         </div>
       </div>
