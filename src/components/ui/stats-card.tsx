@@ -13,7 +13,7 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
     <div
       ref={ref}
       className={cn(
-        "bg-card text-card-foreground rounded-lg p-4 text-center border shadow-card hover:shadow-elegant transition-smooth",
+        "bg-white/10 backdrop-blur-md text-white rounded-lg p-4 text-center border border-white/20 shadow-card hover:shadow-elegant hover:bg-white/15 transition-smooth",
         className
       )}
       {...props}
