@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import { User, Session } from '@supabase/supabase-js'
 import { supabase } from '@/integrations/supabase/client'
+import { useSecurityMonitor } from './use-security-monitor'
+import { validateEmail, validatePassword } from '@/lib/validation'
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null)
   const [session, setSession] = useState<Session | null>(null)
   const [loading, setLoading] = useState(true)
+  const { logSecurityEvent, checkAuthRateLimit } = useSecurityMonitor()
 
   useEffect(() => {
     // Set up auth state listener FIRST
@@ -28,25 +31,102 @@ export const useAuth = () => {
   }, [])
 
   const signUp = async (email: string, password: string, metadata?: any) => {
+    // Security validations
+    if (!validateEmail(email)) {
+      const error = new Error('Invalid email format');
+      await logSecurityEvent('SIGNUP_INVALID_EMAIL', { email: email.substring(0, 3) + '***' });
+      return { data: null, error };
+    }
+
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.isValid) {
+      const error = new Error(passwordValidation.errors.join(', '));
+      await logSecurityEvent('SIGNUP_WEAK_PASSWORD', { email: email.substring(0, 3) + '***' });
+      return { data: null, error };
+    }
+
+    // Check rate limiting
+    if (!checkAuthRateLimit(email)) {
+      const error = new Error('Too many signup attempts. Please try again later.');
+      return { data: null, error };
+    }
+
     const redirectUrl = `${window.location.origin}/`
     
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectUrl,
-        data: metadata
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: redirectUrl,
+          data: metadata
+        }
+      })
+
+      if (error) {
+        await logSecurityEvent('SIGNUP_FAILED', { 
+          email: email.substring(0, 3) + '***',
+          error: error.message 
+        });
+      } else {
+        await logSecurityEvent('SIGNUP_SUCCESS', { 
+          email: email.substring(0, 3) + '***',
+          user_id: data.user?.id 
+        });
       }
-    })
-    return { data, error }
+
+      return { data, error }
+    } catch (err) {
+      const error = err instanceof Error ? err : new Error('Signup failed');
+      await logSecurityEvent('SIGNUP_EXCEPTION', { 
+        email: email.substring(0, 3) + '***',
+        error: error.message 
+      });
+      return { data: null, error };
+    }
   }
 
   const signIn = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-    return { data, error }
+    // Security validations
+    if (!validateEmail(email)) {
+      const error = new Error('Invalid email format');
+      await logSecurityEvent('SIGNIN_INVALID_EMAIL', { email: email.substring(0, 3) + '***' });
+      return { data: null, error };
+    }
+
+    // Check rate limiting
+    if (!checkAuthRateLimit(email)) {
+      const error = new Error('Too many signin attempts. Please try again later.');
+      return { data: null, error };
+    }
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      })
+
+      if (error) {
+        await logSecurityEvent('SIGNIN_FAILED', { 
+          email: email.substring(0, 3) + '***',
+          error: error.message 
+        });
+      } else {
+        await logSecurityEvent('SIGNIN_SUCCESS', { 
+          email: email.substring(0, 3) + '***',
+          user_id: data.user?.id 
+        });
+      }
+
+      return { data, error }
+    } catch (err) {
+      const error = err instanceof Error ? err : new Error('Signin failed');
+      await logSecurityEvent('SIGNIN_EXCEPTION', { 
+        email: email.substring(0, 3) + '***',
+        error: error.message 
+      });
+      return { data: null, error };
+    }
   }
 
   const signInWithGoogle = async () => {

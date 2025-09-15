@@ -904,6 +904,10 @@ export type Database = {
           user_role: Database["public"]["Enums"]["app_role"]
         }[]
       }
+      get_security_context: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -913,6 +917,14 @@ export type Database = {
       }
       initialize_user_metrics: {
         Args: { p_user_id: string }
+        Returns: undefined
+      }
+      is_authenticated_user: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      log_security_event: {
+        Args: { event_details?: Json; event_type: string }
         Returns: undefined
       }
       log_user_activity: {
