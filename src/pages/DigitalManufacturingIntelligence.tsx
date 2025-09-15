@@ -9,45 +9,86 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { CaseStudyCard } from "@/components/ui/case-study-card";
 import OperationalExcellenceForm from "@/components/forms/OperationalExcellenceForm";
 import Ti64DatabaseForm from "@/components/forms/Ti64DatabaseForm";
-
 const DigitalManufacturingIntelligence = () => {
   const [selectedService, setSelectedService] = useState<'operational' | 'ti64'>('operational');
-
-  const keyStats = [
-    { title: "99.8%", subtitle: "On-Time Delivery", description: "Achieved with Uptimo implementation" },
-    { title: "1 Week", subtitle: "Lead Times", description: "Reduced to process times" },
-    { title: ">100%", subtitle: "Revenue Increase", description: "Typical customer achievement" },
-    { title: "3 Month", subtitle: "Typical ROI", description: "Return on investment period" }
-  ];
-
-  const operationalBenefits = [
-    { icon: TrendingUp, title: "Only AM-Specific Software", features: ["Manage AM operational flow and scheduling", "Quantify OEE (Additive Manufacturing Index)", "AMS7031 and ARP7044 powder compliance", "ERP and MES system integration"] },
-    { icon: Factory, title: "Lean Implementation", features: ["FIFO, VSM, SMED for AM environments", "Batch size optimization", "WIP elimination strategies", "Continuous improvement methodologies"] },
-    { icon: Award, title: "Proven Results", features: ["99.8% on-time delivery achievement", "Lead times reduced to process times", ">100% revenue increases", "3-month typical ROI"] },
-    { icon: Users, title: "Partnership Excellence", features: ["Magnitude: 20+ years metal AM experience", "NCHG: Practical lean implementation", "Combined proven methodologies", "Dedicated AM operational expertise"] }
-  ];
-
-  const ti64Benefits = [
-    { icon: Database, title: "Comprehensive Database", features: ["Validated mechanical properties", "Multiple AM system data", "Design allowables for aerospace/medical", "Renishaw AM500Q validated parameters"] },
-    { icon: Target, title: "Performance Benchmarking", features: ["Process optimization insights", "Comparative analysis capabilities", "Performance tracking tools", "Quality prediction models"] },
-    { icon: Clock, title: "Accelerated Qualification", features: ["Months to weeks timeline reduction", "Validated design allowables", "Risk reduction in material adoption", "Faster time-to-market"] },
-    { icon: Building, title: "Flexible Participation", features: ["Private database access", "Shared database participation", "Custom data contribution", "Flexible pricing models"] }
-  ];
-
-  const howItWorksOperational = [
-    { phase: "Assessment & Planning", timeline: "Weeks 1-2", description: "Current state analysis, Uptimo scoping, lean opportunity identification" },
-    { phase: "Deployment & Implementation", timeline: "Weeks 3-8", description: "Uptimo system deployment, lean methodology implementation, staff training" },
-    { phase: "Optimization & Support", timeline: "Ongoing", description: "Continuous improvement, performance monitoring, optimization support" }
-  ];
-
-  const howItWorksTi64 = [
-    { phase: "Requirements Analysis", timeline: "Week 1", description: "Application requirements, performance criteria, database access level determination" },
-    { phase: "Database Integration", timeline: "Weeks 2-4", description: "Access setup, data integration, workflow establishment" },
-    { phase: "Optimization & Expansion", timeline: "Ongoing", description: "Data analysis, performance optimization, database contribution" }
-  ];
-
-  return (
-    <>
+  const keyStats = [{
+    title: "99.8%",
+    subtitle: "On-Time Delivery",
+    description: "Achieved with Uptimo implementation"
+  }, {
+    title: "1 Week",
+    subtitle: "Lead Times",
+    description: "Reduced to process times"
+  }, {
+    title: ">100%",
+    subtitle: "Revenue Increase",
+    description: "Typical customer achievement"
+  }, {
+    title: "3 Month",
+    subtitle: "Typical ROI",
+    description: "Return on investment period"
+  }];
+  const operationalBenefits = [{
+    icon: TrendingUp,
+    title: "Only AM-Specific Software",
+    features: ["Manage AM operational flow and scheduling", "Quantify OEE (Additive Manufacturing Index)", "AMS7031 and ARP7044 powder compliance", "ERP and MES system integration"]
+  }, {
+    icon: Factory,
+    title: "Lean Implementation",
+    features: ["FIFO, VSM, SMED for AM environments", "Batch size optimization", "WIP elimination strategies", "Continuous improvement methodologies"]
+  }, {
+    icon: Award,
+    title: "Proven Results",
+    features: ["99.8% on-time delivery achievement", "Lead times reduced to process times", ">100% revenue increases", "3-month typical ROI"]
+  }, {
+    icon: Users,
+    title: "Partnership Excellence",
+    features: ["Magnitude: 20+ years metal AM experience", "NCHG: Practical lean implementation", "Combined proven methodologies", "Dedicated AM operational expertise"]
+  }];
+  const ti64Benefits = [{
+    icon: Database,
+    title: "Comprehensive Database",
+    features: ["Validated mechanical properties", "Multiple AM system data", "Design allowables for aerospace/medical", "Renishaw AM500Q validated parameters"]
+  }, {
+    icon: Target,
+    title: "Performance Benchmarking",
+    features: ["Process optimization insights", "Comparative analysis capabilities", "Performance tracking tools", "Quality prediction models"]
+  }, {
+    icon: Clock,
+    title: "Accelerated Qualification",
+    features: ["Months to weeks timeline reduction", "Validated design allowables", "Risk reduction in material adoption", "Faster time-to-market"]
+  }, {
+    icon: Building,
+    title: "Flexible Participation",
+    features: ["Private database access", "Shared database participation", "Custom data contribution", "Flexible pricing models"]
+  }];
+  const howItWorksOperational = [{
+    phase: "Assessment & Planning",
+    timeline: "Weeks 1-2",
+    description: "Current state analysis, Uptimo scoping, lean opportunity identification"
+  }, {
+    phase: "Deployment & Implementation",
+    timeline: "Weeks 3-8",
+    description: "Uptimo system deployment, lean methodology implementation, staff training"
+  }, {
+    phase: "Optimization & Support",
+    timeline: "Ongoing",
+    description: "Continuous improvement, performance monitoring, optimization support"
+  }];
+  const howItWorksTi64 = [{
+    phase: "Requirements Analysis",
+    timeline: "Week 1",
+    description: "Application requirements, performance criteria, database access level determination"
+  }, {
+    phase: "Database Integration",
+    timeline: "Weeks 2-4",
+    description: "Access setup, data integration, workflow establishment"
+  }, {
+    phase: "Optimization & Expansion",
+    timeline: "Ongoing",
+    description: "Data analysis, performance optimization, database contribution"
+  }];
+  return <>
       <Helmet>
         <title>Digital Manufacturing Intelligence | NCHG - Data-Driven AM Excellence</title>
         <meta name="description" content="Transform AM operations with Uptimo software and Ti64 performance database. Achieve 99.8% on-time delivery and accelerate material qualification." />
@@ -76,15 +117,7 @@ const DigitalManufacturingIntelligence = () => {
               
               {/* Key Statistics */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {keyStats.map((stat, index) => (
-                  <StatsCard
-                    key={index}
-                    title={stat.title}
-                    subtitle={stat.subtitle}
-                    description={stat.description}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm"
-                  />
-                ))}
+                {keyStats.map((stat, index) => <StatsCard key={index} title={stat.title} subtitle={stat.subtitle} description={stat.description} className="border-primary-foreground/20 backdrop-blur-sm bg-slate-100" />)}
               </div>
             </div>
           </div>
@@ -105,32 +138,17 @@ const DigitalManufacturingIntelligence = () => {
             {/* Service Selection Tabs */}
             <div className="flex justify-center mb-12">
               <div className="bg-card rounded-lg p-1 border border-border inline-flex">
-                <button
-                  onClick={() => setSelectedService('operational')}
-                  className={`px-6 py-3 rounded-md transition-colors font-medium ${
-                    selectedService === 'operational' 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
+                <button onClick={() => setSelectedService('operational')} className={`px-6 py-3 rounded-md transition-colors font-medium ${selectedService === 'operational' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
                   AM Operational Excellence
                 </button>
-                <button
-                  onClick={() => setSelectedService('ti64')}
-                  className={`px-6 py-3 rounded-md transition-colors font-medium ${
-                    selectedService === 'ti64' 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
+                <button onClick={() => setSelectedService('ti64')} className={`px-6 py-3 rounded-md transition-colors font-medium ${selectedService === 'ti64' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
                   Ti64 Performance Database
                 </button>
               </div>
             </div>
 
             {/* Service 1: AM Operational Excellence */}
-            {selectedService === 'operational' && (
-              <div className="space-y-12">
+            {selectedService === 'operational' && <div className="space-y-12">
                 <div className="bg-card rounded-2xl p-8 border border-border">
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
@@ -148,9 +166,8 @@ const DigitalManufacturingIntelligence = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
                     {operationalBenefits.map((benefit, index) => {
-                      const IconComponent = benefit.icon;
-                      return (
-                        <Card key={index} className="hover-lift">
+                  const IconComponent = benefit.icon;
+                  return <Card key={index} className="hover-lift">
                           <CardHeader className="text-center pb-4">
                             <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                               <IconComponent className="w-6 h-6 text-primary-foreground" />
@@ -161,17 +178,14 @@ const DigitalManufacturingIntelligence = () => {
                           </CardHeader>
                           <CardContent className="pt-0">
                             <ul className="space-y-2">
-                              {benefit.features.map((feature, featureIndex) => (
-                                <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                              {benefit.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
                                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                   <span>{feature}</span>
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
                           </CardContent>
-                        </Card>
-                      );
-                    })}
+                        </Card>;
+                })}
                   </div>
 
                   {/* How It Works - Operational */}
@@ -180,25 +194,21 @@ const DigitalManufacturingIntelligence = () => {
                       How It Works: Operational Excellence Pathway
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {howItWorksOperational.map((step, index) => (
-                        <div key={index} className="text-center">
+                      {howItWorksOperational.map((step, index) => <div key={index} className="text-center">
                           <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mb-4 mx-auto">
                             {index + 1}
                           </div>
                           <h5 className="font-semibold text-foreground mb-2">{step.phase}</h5>
                           <p className="text-sm text-primary font-medium mb-2">{step.timeline}</p>
                           <p className="text-sm text-muted-foreground">{step.description}</p>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              </div>}
 
             {/* Service 2: Ti64 Performance Database */}
-            {selectedService === 'ti64' && (
-              <div className="space-y-12">
+            {selectedService === 'ti64' && <div className="space-y-12">
                 <div className="bg-card rounded-2xl p-8 border border-border">
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
@@ -216,9 +226,8 @@ const DigitalManufacturingIntelligence = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
                     {ti64Benefits.map((benefit, index) => {
-                      const IconComponent = benefit.icon;
-                      return (
-                        <Card key={index} className="hover-lift">
+                  const IconComponent = benefit.icon;
+                  return <Card key={index} className="hover-lift">
                           <CardHeader className="text-center pb-4">
                             <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                               <IconComponent className="w-6 h-6 text-primary-foreground" />
@@ -229,17 +238,14 @@ const DigitalManufacturingIntelligence = () => {
                           </CardHeader>
                           <CardContent className="pt-0">
                             <ul className="space-y-2">
-                              {benefit.features.map((feature, featureIndex) => (
-                                <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                              {benefit.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
                                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                   <span>{feature}</span>
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
                           </CardContent>
-                        </Card>
-                      );
-                    })}
+                        </Card>;
+                })}
                   </div>
 
                   {/* How It Works - Ti64 */}
@@ -248,21 +254,18 @@ const DigitalManufacturingIntelligence = () => {
                       How It Works: Ti64 Database Pathway
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {howItWorksTi64.map((step, index) => (
-                        <div key={index} className="text-center">
+                      {howItWorksTi64.map((step, index) => <div key={index} className="text-center">
                           <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mb-4 mx-auto">
                             {index + 1}
                           </div>
                           <h5 className="font-semibold text-foreground mb-2">{step.phase}</h5>
                           <p className="text-sm text-primary font-medium mb-2">{step.timeline}</p>
                           <p className="text-sm text-muted-foreground">{step.description}</p>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              </div>}
           </div>
         </section>
 
@@ -350,23 +353,9 @@ const DigitalManufacturingIntelligence = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <CaseStudyCard
-                title="Aerospace Manufacturer Transforms Operations"
-                problem="25% AM efficiency, 11-week lead times, 70% on-time delivery performance was limiting growth and customer satisfaction"
-                solution="Uptimo software deployment with comprehensive lean consultancy implementation, including FIFO, VSM, and SMED methodologies"
-                results="80% improvement in AM system efficiency, lead times reduced from 11 weeks to 1 week, 99.8% on-time delivery, >100% revenue increase"
-                ctaText="Learn More About Operational Excellence"
-                onCtaClick={() => setSelectedService('operational')}
-              />
+              <CaseStudyCard title="Aerospace Manufacturer Transforms Operations" problem="25% AM efficiency, 11-week lead times, 70% on-time delivery performance was limiting growth and customer satisfaction" solution="Uptimo software deployment with comprehensive lean consultancy implementation, including FIFO, VSM, and SMED methodologies" results="80% improvement in AM system efficiency, lead times reduced from 11 weeks to 1 week, 99.8% on-time delivery, >100% revenue increase" ctaText="Learn More About Operational Excellence" onCtaClick={() => setSelectedService('operational')} />
 
-              <CaseStudyCard
-                title="R&D Team Accelerates Ti64 Development"
-                problem="5-week trial-and-error development process causing missed opportunities and limiting innovation pace in Ti64 applications"
-                solution="Ti64 performance database access with validated process parameters and design allowables integration into development workflow"
-                results="Development time reduced from 5 weeks to 2 weeks, £180k revenue protection, targeting 40% feedstock cost reduction and 60% build time reduction"
-                ctaText="Access Ti64 Database"
-                onCtaClick={() => setSelectedService('ti64')}
-              />
+              <CaseStudyCard title="R&D Team Accelerates Ti64 Development" problem="5-week trial-and-error development process causing missed opportunities and limiting innovation pace in Ti64 applications" solution="Ti64 performance database access with validated process parameters and design allowables integration into development workflow" results="Development time reduced from 5 weeks to 2 weeks, £180k revenue protection, targeting 40% feedstock cost reduction and 60% build time reduction" ctaText="Access Ti64 Database" onCtaClick={() => setSelectedService('ti64')} />
             </div>
           </div>
         </section>
@@ -501,8 +490,6 @@ const DigitalManufacturingIntelligence = () => {
           </div>
         </section>
       </main>
-    </>
-  );
+    </>;
 };
-
 export default DigitalManufacturingIntelligence;
