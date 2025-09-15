@@ -465,7 +465,7 @@ const MarketplaceCommunity = () => {
 
               <div className="flex items-center justify-center space-x-4 mb-8 text-primary-foreground">
                 <Clock3 className="w-5 h-5" />
-                <span className="text-lg font-medium">15 of 50 founding spots confirmed • 35 remaining</span>
+                <span className="text-lg font-medium">15 of 20 founding spots confirmed • 5 remaining</span>
               </div>
 
               <Button 
@@ -528,8 +528,8 @@ const MarketplaceCommunity = () => {
                       </li>
                     </ul>
                     <div className="bg-primary/10 rounded-lg p-3 text-center">
-                      <div className="text-sm font-medium text-primary">Limited to 50 founding members</div>
-                      <div className="text-xs text-muted-foreground">15 confirmed • 35 remaining</div>
+                      <div className="text-sm font-medium text-primary">Limited to 20 founding members</div>
+                      <div className="text-xs text-muted-foreground">15 confirmed • 5 remaining</div>
                     </div>
                     <Button 
                       className="w-full" 
@@ -667,7 +667,7 @@ const MarketplaceCommunity = () => {
                 <div className="bg-primary/10 rounded-lg p-6 border border-primary/20">
                   <div className="flex items-center justify-center space-x-4 text-primary font-medium">
                     <Clock3 className="w-5 h-5" />
-                    <span>Founding Member Opportunity - 35 of 50 spots remaining</span>
+                    <span>Founding Member Opportunity - 5 of 20 spots remaining</span>
                   </div>
                 </div>
 
