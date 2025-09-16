@@ -43,7 +43,7 @@ const DigitalManufacturingIntelligence = () => {
   }, {
     icon: Users,
     title: "Partnership Excellence",
-    features: ["Magnitude: 20+ years metal AM experience", "NCHG: Practical lean implementation", "Combined proven methodologies", "Dedicated AM operational expertise"]
+    features: ["Magnitude: 12+ years metal AM experience", "NCHG: Practical lean implementation", "Combined proven methodologies", "Dedicated AM operational expertise"]
   }];
   const ti64Benefits = [{
     icon: Database,
@@ -52,7 +52,7 @@ const DigitalManufacturingIntelligence = () => {
   }, {
     icon: Target,
     title: "Performance Benchmarking",
-    features: ["Process optimization insights", "Comparative analysis capabilities", "Performance tracking tools", "Quality prediction models"]
+    features: ["Process optimisation insights", "Comparative analysis capabilities", "Performance tracking tools", "Quality prediction models"]
   }, {
     icon: Clock,
     title: "Accelerated Qualification",
@@ -73,7 +73,7 @@ const DigitalManufacturingIntelligence = () => {
   }, {
     phase: "Optimization & Support",
     timeline: "Ongoing",
-    description: "Continuous improvement, performance monitoring, optimization support"
+    description: "Continuous improvement, performance monitoring, optimisation support"
   }];
   const howItWorksTi64 = [{
     phase: "Requirements Analysis",
@@ -86,7 +86,7 @@ const DigitalManufacturingIntelligence = () => {
   }, {
     phase: "Optimization & Expansion",
     timeline: "Ongoing",
-    description: "Data analysis, performance optimization, database contribution"
+    description: "Data analysis, performance optimisation, database contribution"
   }];
   return <>
       <Helmet>
@@ -112,7 +112,7 @@ const DigitalManufacturingIntelligence = () => {
               </h1>
               <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-12">
                 Transform your AM operations with proven lean methodologies and comprehensive Ti64 performance data. 
-                Achieve operational excellence while accelerating material qualification and design optimization.
+                Achieve operational excellence while accelerating material qualification and design optimisation.
               </p>
               
               {/* Key Statistics */}
@@ -219,7 +219,7 @@ const DigitalManufacturingIntelligence = () => {
                     </h3>
                     <p className="text-lg text-primary font-semibold mb-4">Design Allowables & Performance Benchmarking</p>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
-                      Accelerate Ti64 adoption and optimization with the most comprehensive database of AM Ti64 
+                      Accelerate Ti64 adoption and optimisation with the most comprehensive database of AM Ti64 
                       mechanical properties and performance data.
                     </p>
                   </div>
@@ -368,7 +368,7 @@ const DigitalManufacturingIntelligence = () => {
                 Partnership Excellence with Magnitude Innovations
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Combining Magnitude's 20+ years of metal AM experience with NCHG's lean implementation expertise.
+                Combining Magnitude's 12+ years of metal AM experience with NCHG's lean implementation expertise.
               </p>
             </div>
 
@@ -385,7 +385,7 @@ const DigitalManufacturingIntelligence = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Magnitude Innovations</h4>
-                        <p className="text-muted-foreground">20+ years metal AM experience, creator of Uptimo - the only software designed specifically for AM operational excellence</p>
+                        <p className="text-muted-foreground">12+ years metal AM experience, creator of Uptimo - the only software designed specifically for AM operational excellence</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -441,7 +441,7 @@ const DigitalManufacturingIntelligence = () => {
                 Unlock Your Manufacturing Intelligence Potential
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Choose your pathway to excellence. Access specialized tools and expert consultation 
+                Choose your pathway to excellence. Access specialised tools and expert consultation 
                 tailored to your specific needs and operational goals.
               </p>
             </div>

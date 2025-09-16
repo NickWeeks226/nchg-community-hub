@@ -98,7 +98,7 @@ const MarketplaceCommunity = () => {
     {
       step: "01",
       title: "Assessment & Analysis",
-      description: "Comprehensive powder characterization, contamination analysis, and feasibility assessment.",
+      description: "Comprehensive powder characterisation, contamination analysis, and feasibility assessment.",
       features: ["Particle size analysis", "Chemical composition", "Contamination detection", "Feasibility report"],
       timeline: "2-3 days"
     },
@@ -156,7 +156,7 @@ const MarketplaceCommunity = () => {
                   <div className="text-sm text-primary-foreground/80">Platform Launch</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
-                  <div className="text-lg font-bold text-primary-foreground">15/50 Confirmed</div>
+                  <div className="text-lg font-bold text-primary-foreground">5/20 Confirmed</div>
                   <div className="text-sm text-primary-foreground/80">Founding Members</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
@@ -690,12 +690,12 @@ const MarketplaceCommunity = () => {
 
                 <div className="text-sm text-muted-foreground pt-4">
                   Questions? Contact us at{" "}
-                  <a href="mailto:hello@nchg.co.uk" className="text-primary hover:underline">
-                    hello@nchg.co.uk
+                  <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">
+                    claudia@nchg.co.uk
                   </a>
                   {" "}or{" "}
-                  <a href="tel:+441234567890" className="text-primary hover:underline">
-                    +44 123 456 7890
+                  <a href="tel:+447823489248" className="text-primary hover:underline">
+                    +44 7823 489248
                   </a>
                 </div>
               </div>

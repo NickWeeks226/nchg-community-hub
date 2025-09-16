@@ -22,7 +22,7 @@ const SmartFeedstockSolutions = () => {
   const problems = ["High material costs (£180-250/kg) eating into margins", "Waste from premature powder disposal", "Lack of validated parameters for cost-effective alternatives", "No strategy for end-of-life powder value recovery"];
   const benefits = [{
     icon: DollarSign,
-    title: "COST OPTIMIZATION",
+    title: "COST OPTIMISATION",
     description: "40% reduction in feedstock costs with expanded size distribution (10-106μm vs standard 10-53μm)",
     features: ["Custom blending strategies for optimal cost/performance", "Strategic sourcing recommendations", "Volume pricing negotiations"]
   }, {
@@ -51,7 +51,7 @@ const SmartFeedstockSolutions = () => {
   }, {
     step: "2",
     title: "STRATEGY",
-    description: "Optimization planning",
+    description: "Optimisation planning",
     activities: ["Custom strategy development", "Parameter validation", "Risk assessment", "ROI projections"],
     timeline: "2-3 weeks",
     deliverables: "Implementation plan"
@@ -66,16 +66,16 @@ const SmartFeedstockSolutions = () => {
     step: "4",
     title: "IMPLEMENTATION",
     description: "Full deployment",
-    activities: ["Process integration", "Staff training", "Quality monitoring", "Continuous optimization"],
+    activities: ["Process integration", "Staff training", "Quality monitoring", "Continuous optimisation"],
     timeline: "Ongoing",
     deliverables: "Live system"
   }];
-  const benefits_list = ["Current powder usage efficiency analysis", "Potential cost savings calculation", "Lifecycle extension opportunities", "Custom optimization recommendations", "ROI projections for implementation"];
+  const benefits_list = ["Current powder usage efficiency analysis", "Potential cost savings calculation", "Lifecycle extension opportunities", "Custom optimisation recommendations", "ROI projections for implementation"];
   return <>
       <Helmet>
-        <title>Maximize Your Ti64 Powder ROI and Lifecycle Value | NCHG Smart Feedstock Solutions</title>
-        <meta name="description" content="Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles." />
-        <meta name="keywords" content="Ti64 powder optimization, titanium feedstock solutions, powder lifecycle extension, cost reduction, additive manufacturing, ROI calculator" />
+        <title>Maximise Your Ti64 Powder ROI and Lifecycle Value | NCHG Smart Feedstock Solutions</title>
+        <meta name="description" content="Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles." />
+        <meta name="keywords" content="Ti64 powder optimisation, titanium feedstock solutions, powder lifecycle extension, cost reduction, additive manufacturing, ROI calculator" />
         <link rel="canonical" href="/smart-feedstock-solutions" />
       </Helmet>
       
@@ -95,7 +95,7 @@ const SmartFeedstockSolutions = () => {
               <div className="text-center mb-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">Maximise Your Ti64 Powder ROI and Lifecycle Value</h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                  Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 
+                  Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 
                   <span className="font-bold"> 40% on material costs</span> while extending powder life by 
                   <span className="font-bold"> 3-5 cycles</span>.
                 </p>
@@ -160,7 +160,7 @@ const SmartFeedstockSolutions = () => {
                   Transform Your Ti64 Powder Strategy
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Four pillars of comprehensive powder optimization
+                  Four pillars of comprehensive powder optimisation
                 </p>
               </div>
 
@@ -199,7 +199,7 @@ const SmartFeedstockSolutions = () => {
                   How It Works
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Our proven 4-step process for Ti64 powder optimization
+                  Our proven 4-step process for Ti64 powder optimisation
                 </p>
               </div>
 
@@ -229,7 +229,7 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  Get Your Free Ti64 Powder Optimization Assessment
+                  Get Your Free Ti64 Powder Optimisation Assessment
                 </h2>
                 <p className="text-xl text-muted-foreground">Discover your powder optimisation potential with a comprehensive analysis</p>
               </div>

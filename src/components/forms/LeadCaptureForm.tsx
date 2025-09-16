@@ -133,7 +133,7 @@ export function LeadCaptureForm({
       }) => <FormItem>
               <FormLabel>Phone (Optional)</FormLabel>
               <FormControl>
-                <Input placeholder="+44 123 456 7890" {...field} />
+                <Input placeholder="+44 7823 489248" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>} />

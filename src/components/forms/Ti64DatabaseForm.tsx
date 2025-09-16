@@ -29,7 +29,7 @@ const Ti64DatabaseForm = () => {
     "Design allowables evaluation for your applications",
     "Performance benchmarking analysis",
     "Custom data integration assessment",
-    "Material optimization consultation"
+    "Material optimisation consultation"
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -194,7 +194,7 @@ const Ti64DatabaseForm = () => {
                   <SelectItem value="fatigue">Fatigue performance</SelectItem>
                   <SelectItem value="strength">Mechanical strength</SelectItem>
                   <SelectItem value="qualification">Material qualification</SelectItem>
-                  <SelectItem value="optimization">Process optimization</SelectItem>
+                  <SelectItem value="optimization">Process optimisation</SelectItem>
                   <SelectItem value="consistency">Property consistency</SelectItem>
                 </SelectContent>
               </Select>

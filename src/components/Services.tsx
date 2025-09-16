@@ -18,9 +18,9 @@ const Services = () => {
       icon: Target,
       title: "Smart Feedstock Solutions",
       tagline: "Maximize powder ROI & lifecycle value",
-      description: "Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles.",
+      description: "Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles.",
       services: [
-        "Feedstock Consultancy & Optimization",
+        "Feedstock Consultancy & Optimisation",
         "Commercial Viability Testing & Validation", 
         "Powder Lifecycle Extension (3-5x cycles)",
         "Strategic Cost Reduction Programs"
@@ -33,11 +33,11 @@ const Services = () => {
       icon: TrendingUp,
       title: "Digital Manufacturing Intelligence",
       tagline: "Data-driven operational excellence for AM operations",
-      description: "Comprehensive digital solutions combining advanced analytics, process optimization, and mechanical properties databases to maximize manufacturing efficiency and quality control.",
+      description: "Comprehensive digital solutions combining advanced analytics, process optimisation, and mechanical properties databases to maximise manufacturing efficiency and quality control.",
       services: [
         "Uptimo Software + Lean Consultancy",
         "Ti64 Mechanical Properties Database",
-        "Process Optimization & Analytics",
+        "Process Optimisation & Analytics",
         "Quality Control Systems"
       ],
       resultsBadge: "30% Efficiency Gains + Certified Data Standards",
@@ -70,11 +70,11 @@ const Services = () => {
             What We Do
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-            Transforming titanium manufacturing through smart feedstock optimization, 
+            Transforming titanium manufacturing through smart feedstock optimisation, 
             data-driven operational excellence, and the UK's premier Ti64 ecosystem.
           </p>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            From powder lifecycle optimization to digital manufacturing intelligence and sustainable trading - 
+            From powder lifecycle optimisation to digital manufacturing intelligence and sustainable trading - 
             we provide comprehensive solutions for the entire Ti64 value chain.
           </p>
         </div>

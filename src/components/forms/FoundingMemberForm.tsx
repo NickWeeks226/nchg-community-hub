@@ -60,7 +60,7 @@ const FoundingMemberForm = ({ onClose }: FoundingMemberFormProps) => {
         <div className="flex items-center justify-center space-x-4 text-sm text-primary font-medium">
           <span className="flex items-center">
             <Users className="w-4 h-4 mr-1" />
-            15/50 confirmed
+            5/20 confirmed
           </span>
           <span className="flex items-center">
             <Lightbulb className="w-4 h-4 mr-1" />
@@ -152,7 +152,7 @@ const FoundingMemberForm = ({ onClose }: FoundingMemberFormProps) => {
               <FormItem>
                 <FormLabel>Phone Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="+44 123 456 7890" {...field} />
+                  <Input placeholder="+44 7823 489248" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
