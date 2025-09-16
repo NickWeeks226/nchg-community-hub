@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { 
-  BarChart3, 
-  Database, 
-  Users,
+  Target, 
+  TrendingUp, 
+  Handshake,
   ArrowRight 
 } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
@@ -14,24 +15,48 @@ const Services = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const pillars = [
     {
-      icon: BarChart3,
+      icon: Target,
       title: "Smart Feedstock Solutions",
-      description: "Optimise powder performance & maximise lifecycle value",
-      services: ["Consultancy", "Testing", "Lifecycle Max"],
+      tagline: "Maximize powder ROI & lifecycle value",
+      description: "Expert feedstock optimization, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles.",
+      services: [
+        "Feedstock Consultancy & Optimization",
+        "Commercial Viability Testing & Validation", 
+        "Powder Lifecycle Extension (3-5x cycles)",
+        "Strategic Cost Reduction Programs"
+      ],
+      resultsBadge: "Up to 40% Cost Reduction + 3-5x Lifecycle Extension",
+      ctaText: "Optimize Your Feedstock",
       link: "/smart-feedstock-solutions"
     },
     {
-      icon: Database,
+      icon: TrendingUp,
       title: "Digital Manufacturing Intelligence",
-      description: "Data-driven insights for superior AM operations",
-      services: ["AM Dataset", "Shopfloor Solutions"],
+      tagline: "Data-driven operational excellence for AM operations",
+      description: "Comprehensive digital solutions combining advanced analytics, process optimization, and mechanical properties databases to maximize manufacturing efficiency and quality control.",
+      services: [
+        "Uptimo Software + Lean Consultancy",
+        "Ti64 Mechanical Properties Database",
+        "Process Optimization & Analytics",
+        "Quality Control Systems"
+      ],
+      resultsBadge: "30% Efficiency Gains + Certified Data Standards",
+      ctaText: "Transform Your Operations",
       link: "/digital-manufacturing-intelligence"
     },
     {
-      icon: Users,
-      title: "Marketplace & Community",
-      description: "Sustainable trading & knowledge sharing",
-      services: ["Powder Trading", "Community", "Reconditioning", "Expert Network"],
+      icon: Handshake,
+      title: "Ti64 Marketplace & Community",
+      tagline: "Sustainable ecosystem for trading & knowledge sharing",
+      description: "The UK's premier Ti64 trading platform and professional community, connecting manufacturers, suppliers, and experts in a secure, sustainable marketplace focused on circular economy principles.",
+      services: [
+        "Secure Marketplace Platform",
+        "Expert Community Network",
+        "Professional Reconditioning Services",
+        "Sustainability & Circular Economy Focus"
+      ],
+      resultsBadge: "Founding Members - Exclusive Early Access",
+      ctaText: "Join the Community",
       link: "/marketplace-community"
     }
   ];
@@ -44,9 +69,13 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
             What We Do
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Developing comprehensive titanium solutions from feedstock to finished components, 
-            building the future of sustainable manufacturing across the entire supply chain.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+            Transforming titanium manufacturing through smart feedstock optimization, 
+            data-driven operational excellence, and the UK's premier Ti64 ecosystem.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            From powder lifecycle optimization to digital manufacturing intelligence and sustainable trading - 
+            we provide comprehensive solutions for the entire Ti64 value chain.
           </p>
         </div>
 
@@ -55,7 +84,7 @@ const Services = () => {
           {pillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             return (
-               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-card border-border h-full flex flex-col">
+               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-card border-border h-full flex flex-col relative">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
                     <IconComponent className="w-8 h-8 text-primary-foreground" />
@@ -63,24 +92,35 @@ const Services = () => {
                   <CardTitle className="text-2xl font-display font-bold text-foreground mb-3 uppercase tracking-wide">
                     {pillar.title}
                   </CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  <div className="text-base font-medium text-primary mb-3">
+                    {pillar.tagline}
+                  </div>
+                  <CardDescription className="text-sm text-muted-foreground leading-relaxed">
                     {pillar.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col justify-between p-6 pt-0">
                   <div className="mb-6">
-                    <ul className="space-y-3">
+                    <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wide">Key Services:</h4>
+                    <ul className="space-y-2">
                       {pillar.services.map((service, serviceIndex) => (
-                        <li key={serviceIndex} className="flex items-center space-x-3 text-sm font-medium text-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span>{service}</span>
+                        <li key={serviceIndex} className="flex items-start space-x-3 text-sm text-foreground">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="leading-relaxed">{service}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+                  
+                  <div className="mb-6">
+                    <Badge variant="secondary" className="w-full text-center p-2 text-xs font-bold bg-gradient-primary text-primary-foreground">
+                      {pillar.resultsBadge}
+                    </Badge>
+                  </div>
+                  
                   <Link to={pillar.link} className="w-full">
                     <Button variant="outline" className="w-full group mt-auto">
-                      Learn More
+                      {pillar.ctaText}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
