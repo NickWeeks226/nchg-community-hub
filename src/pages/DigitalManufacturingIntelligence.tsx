@@ -155,7 +155,7 @@ const DigitalManufacturingIntelligence = () => {
                       <Factory className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-foreground mb-2">
-                      🏭 UPTIMO SOFTWARE + LEAN CONSULTANCY
+                      🏭 UPTIMO SOFTWARE & LEAN CONSULTANCY
                     </h3>
                     <p className="text-lg text-primary font-semibold mb-4">Partnership with Magnitude Innovations</p>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
@@ -329,7 +329,7 @@ const DigitalManufacturingIntelligence = () => {
             <div className="text-center mt-12">
               <div className="bg-gradient-primary rounded-xl p-8 text-primary-foreground">
                 <h3 className="text-2xl font-display font-bold mb-4">
-                  Integrated Solution: Operational Excellence + Material Intelligence
+                  Integrated Solution: Operational Excellence & Material Intelligence
                 </h3>
                 <p className="text-lg opacity-90 max-w-3xl mx-auto">
                   Our comprehensive approach addresses both operational inefficiencies and material adoption challenges, 

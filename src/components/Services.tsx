@@ -25,7 +25,7 @@ const Services = () => {
         "Powder Lifecycle Extension (3-5x cycles)",
         "Strategic Cost Reduction Programs"
       ],
-      resultsBadge: "Up to 40% Cost Reduction + 3-5x Lifecycle Extension",
+      resultsBadge: "Up to 40% Cost Reduction & 3-5x Lifecycle Extension",
       ctaText: "Optimize Your Feedstock",
       link: "/smart-feedstock-solutions"
     },
@@ -35,12 +35,12 @@ const Services = () => {
       tagline: "Data-driven operational excellence for AM operations",
       description: "Comprehensive digital solutions combining advanced analytics, process optimisation, and mechanical properties databases to maximise manufacturing efficiency and quality control.",
       services: [
-        "Uptimo Software + Lean Consultancy",
+        "Uptimo Software & Lean Consultancy",
         "Ti64 Mechanical Properties Database",
         "Process Optimisation & Analytics",
         "Quality Control Systems"
       ],
-      resultsBadge: "30% Efficiency Gains + Certified Data Standards",
+      resultsBadge: "30% Efficiency Gains & Certified Data Standards",
       ctaText: "Transform Your Operations",
       link: "/digital-manufacturing-intelligence"
     },
