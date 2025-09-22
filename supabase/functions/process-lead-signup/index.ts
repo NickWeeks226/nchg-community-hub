@@ -87,9 +87,6 @@ async function sendWelcomeEmail(userData: UserSignupData) {
             
             <!-- Header with NCHG Branding -->
             <div style="background: linear-gradient(135deg, #2d5a87 0%, #4a7c9b 100%); padding: 40px 30px; text-align: center;">
-              <div style="margin-bottom: 20px;">
-                <img src="https://zvrnwhjiomtraaphfzmk.supabase.co/storage/v1/object/public/lovable-uploads/ae237c9b-1f11-4428-ad49-e3f968cb7995.png" alt="NCHG Logo" style="height: 40px; width: auto;" />
-              </div>
               <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.025em;">Welcome to NCHG Limited</h1>
               <p style="color: #e5f4fd; margin: 10px 0 0 0; font-size: 16px; font-weight: 400;">Sustainable Ti64 Solutions</p>
             </div>
