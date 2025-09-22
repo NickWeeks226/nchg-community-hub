@@ -16,6 +16,8 @@ interface UserSignupData {
     first_name?: string;
     last_name?: string;
     user_role?: string;
+    phone_number?: string;
+    company_name?: string;
   };
 }
 
@@ -147,12 +149,20 @@ async function createHubSpotContact(userData: UserSignupData) {
     }
 
     // Use only safe, standard HubSpot fields
+    const phoneNumber = userData.raw_user_meta_data?.phone_number;
+    const companyName = userData.raw_user_meta_data?.company_name;
+    
+    console.log("Phone number available:", !!phoneNumber, phoneNumber);
+    console.log("Company name available:", !!companyName, companyName);
+    
     const contactData = {
       properties: {
         email: userData.email,
         firstname: userData.raw_user_meta_data?.first_name || "",
         lastname: userData.raw_user_meta_data?.last_name || "",
-        lifecyclestage: "lead"
+        lifecyclestage: "lead",
+        ...(phoneNumber && { phone: phoneNumber }),
+        ...(companyName && { company: companyName })
       }
     };
 
@@ -219,9 +229,14 @@ async function updateHubSpotContact(userData: UserSignupData) {
     }
 
     const contactId = searchResult.results[0].id;
+    const phoneNumber = userData.raw_user_meta_data?.phone_number;
+    const companyName = userData.raw_user_meta_data?.company_name;
+    
     const updateData = {
       properties: {
-        lifecyclestage: "lead"
+        lifecyclestage: "lead",
+        ...(phoneNumber && { phone: phoneNumber }),
+        ...(companyName && { company: companyName })
       }
     };
 
