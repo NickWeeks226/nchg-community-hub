@@ -146,17 +146,13 @@ async function createHubSpotContact(userData: UserSignupData) {
       throw new Error("HubSpot API key not configured");
     }
 
+    // Use only safe, standard HubSpot fields
     const contactData = {
       properties: {
         email: userData.email,
         firstname: userData.raw_user_meta_data?.first_name || "",
         lastname: userData.raw_user_meta_data?.last_name || "",
-        lead_source: "Early Access Request",
-        lead_source_detail: "Ti64 Marketplace",
-        lifecyclestage: "lead",
-        user_role: userData.raw_user_meta_data?.user_role || "individual",
-        signup_date: new Date().toISOString(),
-        hs_lead_status: "NEW"
+        lifecyclestage: "lead"
       }
     };
 
@@ -175,7 +171,11 @@ async function createHubSpotContact(userData: UserSignupData) {
         console.log("Contact exists, attempting to update...");
         return await updateHubSpotContact(userData);
       }
-      throw new Error(`HubSpot API error: ${response.status} ${response.statusText}`);
+      
+      // Get detailed error response
+      const errorBody = await response.text();
+      console.error("HubSpot API error response:", errorBody);
+      throw new Error(`HubSpot API error: ${response.status} ${response.statusText} - ${errorBody}`);
     }
 
     const result = await response.json();
@@ -221,11 +221,7 @@ async function updateHubSpotContact(userData: UserSignupData) {
     const contactId = searchResult.results[0].id;
     const updateData = {
       properties: {
-        lead_source: "Early Access Request",
-        lead_source_detail: "Ti64 Marketplace",
-        user_role: userData.raw_user_meta_data?.user_role || "individual",
-        signup_date: new Date().toISOString(),
-        hs_lead_status: "NEW"
+        lifecyclestage: "lead"
       }
     };
 
@@ -242,7 +238,9 @@ async function updateHubSpotContact(userData: UserSignupData) {
     );
 
     if (!updateResponse.ok) {
-      throw new Error(`HubSpot update error: ${updateResponse.status}`);
+      const errorBody = await updateResponse.text();
+      console.error("HubSpot update error response:", errorBody);
+      throw new Error(`HubSpot update error: ${updateResponse.status} - ${errorBody}`);
     }
 
     const result = await updateResponse.json();
@@ -315,7 +313,7 @@ async function sendAdminNotification(userData: UserSignupData) {
               </p>
 
               <div style="text-align: center; margin: 30px 0;">
-                <a href="https://app.hubspot.com/contacts/45977443/contact/${userData.id}" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block; margin-right: 10px;">View in HubSpot</a>
+                <a href="https://app.hubspot.com/contacts/45977443/contacts/list/view/all/" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block; margin-right: 10px;">View in HubSpot</a>
                 <a href="https://supabase.com/dashboard/project/zvrnwhjiomtraaphfzmk/auth/users" style="background: #374151; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block;">View in Supabase</a>
               </div>
             </div>
