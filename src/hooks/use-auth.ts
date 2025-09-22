@@ -73,6 +73,22 @@ export const useAuth = () => {
           email: email.substring(0, 3) + '***',
           user_id: data.user?.id 
         });
+
+        // Call the lead signup processing edge function
+        if (data.user) {
+          try {
+            await supabase.functions.invoke('process-lead-signup', {
+              body: {
+                id: data.user.id,
+                email: data.user.email,
+                raw_user_meta_data: metadata || {}
+              }
+            });
+          } catch (edgeFunctionError) {
+            console.error('Failed to process lead signup:', edgeFunctionError);
+            // Don't fail the signup if the edge function fails
+          }
+        }
       }
 
       return { data, error }

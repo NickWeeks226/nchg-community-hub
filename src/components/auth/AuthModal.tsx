@@ -370,7 +370,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
                 <Input
                   id="signup-password"
                   type="password"
-                  placeholder="Create a secure password (8+ chars, mixed case, numbers, symbols)"
+                  placeholder="Create a secure password (12+ chars, mixed case, numbers, symbols)"
                   value={signUpData.password}
                   onChange={(e) => setSignUpData(prev => ({ ...prev, password: e.target.value }))}
                   required
