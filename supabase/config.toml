@@ -1,1 +1,4 @@
 project_id = "zvrnwhjiomtraaphfzmk"
+
+[functions.process-form-submission]
+verify_jwt = false
