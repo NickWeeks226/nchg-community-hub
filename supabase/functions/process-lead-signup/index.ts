@@ -149,34 +149,19 @@ async function createHubSpotContact(userData: UserSignupData) {
     }
 
     const phoneNumber = userData.raw_user_meta_data?.phone_number;
-    const companyName = userData.raw_user_meta_data?.company_name;
     
     console.log("Phone number available:", !!phoneNumber, phoneNumber);
-    console.log("Company name available:", !!companyName, companyName);
     
-    // Try multiple company field approaches for better HubSpot compatibility
-    const contactProperties: any = {
-      email: userData.email,
-      firstname: userData.raw_user_meta_data?.first_name || "",
-      lastname: userData.raw_user_meta_data?.last_name || "",
-      lifecyclestage: "lead"
+    // Use only safe, standard HubSpot fields
+    const contactData = {
+      properties: {
+        email: userData.email,
+        firstname: userData.raw_user_meta_data?.first_name || "",
+        lastname: userData.raw_user_meta_data?.last_name || "",
+        lifecyclestage: "lead",
+        ...(phoneNumber && { phone: phoneNumber })
+      }
     };
-
-    // Add phone if available
-    if (phoneNumber) {
-      contactProperties.phone = phoneNumber;
-    }
-
-    // Try multiple company field names for maximum compatibility
-    if (companyName) {
-      contactProperties.company = companyName;           // Standard company field
-      contactProperties.hs_company_name = companyName;   // HubSpot specific field
-      contactProperties.company_name = companyName;      // Alternative field name
-    }
-    
-    const contactData = { properties: contactProperties };
-    
-    console.log("HubSpot Request Payload:", JSON.stringify(contactData, null, 2));
 
     const response = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
       method: "POST",
@@ -203,15 +188,6 @@ async function createHubSpotContact(userData: UserSignupData) {
     }
 
     const result = await response.json();
-    console.log("HubSpot Response Data:", JSON.stringify(result, null, 2));
-    
-    // Log which company fields were actually processed
-    if (result.properties) {
-      console.log("Company field results:");
-      console.log("- company:", result.properties.company || "NOT SET");
-      console.log("- hs_company_name:", result.properties.hs_company_name || "NOT SET");
-      console.log("- company_name:", result.properties.company_name || "NOT SET");
-    }
     
     return { success: true, data: result };
   } catch (error) {
@@ -254,27 +230,13 @@ async function updateHubSpotContact(userData: UserSignupData) {
 
     const contactId = searchResult.results[0].id;
     const phoneNumber = userData.raw_user_meta_data?.phone_number;
-    const companyName = userData.raw_user_meta_data?.company_name;
     
-    // Use same multi-field company approach as create
-    const updateProperties: any = {
-      lifecyclestage: "lead"
+    const updateData = {
+      properties: {
+        lifecyclestage: "lead",
+        ...(phoneNumber && { phone: phoneNumber })
+      }
     };
-
-    if (phoneNumber) {
-      updateProperties.phone = phoneNumber;
-    }
-
-    // Try multiple company field names for update too
-    if (companyName) {
-      updateProperties.company = companyName;
-      updateProperties.hs_company_name = companyName;
-      updateProperties.company_name = companyName;
-    }
-    
-    const updateData = { properties: updateProperties };
-    
-    console.log("HubSpot Update Payload:", JSON.stringify(updateData, null, 2));
 
     const updateResponse = await fetch(
       `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
@@ -288,8 +250,6 @@ async function updateHubSpotContact(userData: UserSignupData) {
       }
     );
 
-    console.log("HubSpot Update Response Status:", updateResponse.status, updateResponse.statusText);
-
     if (!updateResponse.ok) {
       const errorBody = await updateResponse.text();
       console.error("HubSpot update error response:", errorBody);
@@ -297,15 +257,6 @@ async function updateHubSpotContact(userData: UserSignupData) {
     }
 
     const result = await updateResponse.json();
-    console.log("HubSpot Update Response Data:", JSON.stringify(result, null, 2));
-    
-    // Log which company fields were actually processed in update
-    if (result.properties) {
-      console.log("Updated company field results:");
-      console.log("- company:", result.properties.company || "NOT SET");
-      console.log("- hs_company_name:", result.properties.hs_company_name || "NOT SET");
-      console.log("- company_name:", result.properties.company_name || "NOT SET");
-    }
     
     return { success: true, data: result };
   } catch (error) {
