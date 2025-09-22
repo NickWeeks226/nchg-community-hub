@@ -36,11 +36,16 @@ const handler = async (req: Request): Promise<Response> => {
     const hubspotResult = await createHubSpotContact(userData);
     console.log("HubSpot contact created:", hubspotResult);
 
+    // Send admin notification
+    const adminNotificationResult = await sendAdminNotification(userData);
+    console.log("Admin notification sent:", adminNotificationResult);
+
     return new Response(
       JSON.stringify({
         success: true,
         email_sent: emailResult.success,
         hubspot_contact: hubspotResult.success,
+        admin_notification: adminNotificationResult.success,
       }),
       {
         status: 200,
@@ -244,6 +249,92 @@ async function updateHubSpotContact(userData: UserSignupData) {
     return { success: true, data: result };
   } catch (error) {
     console.error("Failed to update HubSpot contact:", error);
+    return { success: false, error: error.message };
+  }
+}
+
+async function sendAdminNotification(userData: UserSignupData) {
+  try {
+    const firstName = userData.raw_user_meta_data?.first_name || "Unknown";
+    const lastName = userData.raw_user_meta_data?.last_name || "";
+    const userRole = userData.raw_user_meta_data?.user_role || "individual";
+    
+    const emailResponse = await resend.emails.send({
+      from: "NCHG Platform <team@nchg.co.uk>",
+      to: ["nick@nchg.co.uk"],
+      subject: "🎉 New User Signup - NCHG Platform",
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>New User Signup</title>
+        </head>
+        <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            
+            <!-- Header -->
+            <div style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 30px; text-align: center;">
+              <h1 style="color: white; margin: 0; font-size: 24px; font-weight: bold;">🎉 New User Signup</h1>
+              <p style="color: #d1fae5; margin: 10px 0 0 0; font-size: 14px;">NCHG Platform</p>
+            </div>
+
+            <!-- Main Content -->
+            <div style="padding: 30px;">
+              <h2 style="color: #1f2937; margin: 0 0 20px 0; font-size: 20px;">New User Details</h2>
+              
+              <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46; width: 120px;">Name:</td>
+                    <td style="padding: 8px 0; color: #374151;">${firstName} ${lastName}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Email:</td>
+                    <td style="padding: 8px 0; color: #374151;">${userData.email}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Role:</td>
+                    <td style="padding: 8px 0; color: #374151;">${userRole}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">User ID:</td>
+                    <td style="padding: 8px 0; color: #374151; font-family: monospace; font-size: 12px;">${userData.id}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Signup Time:</td>
+                    <td style="padding: 8px 0; color: #374151;">${new Date().toLocaleString('en-GB')}</td>
+                  </tr>
+                </table>
+              </div>
+
+              <p style="color: #4b5563; line-height: 1.6; margin: 20px 0; font-size: 14px;">
+                This user has successfully registered for early access to the NCHG Ti64 marketplace platform. 
+                A welcome email has been sent, and their contact information has been added to HubSpot.
+              </p>
+
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="https://app.hubspot.com/contacts/45977443/contact/${userData.id}" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block; margin-right: 10px;">View in HubSpot</a>
+                <a href="https://supabase.com/dashboard/project/zvrnwhjiomtraaphfzmk/auth/users" style="background: #374151; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block;">View in Supabase</a>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div style="background-color: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="color: #6b7280; margin: 0; font-size: 12px;">
+                Automated notification from NCHG Platform
+              </p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+    });
+
+    return { success: true, data: emailResponse };
+  } catch (error) {
+    console.error("Failed to send admin notification:", error);
     return { success: false, error: error.message };
   }
 }
