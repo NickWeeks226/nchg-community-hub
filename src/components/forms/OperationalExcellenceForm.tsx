@@ -37,8 +37,23 @@ const OperationalExcellenceForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Here you would integrate with your form handling service
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      // Submit to edge function
+      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'operational-excellence',
+          formData: formData,
+          customerEmail: formData.email,
+          customerName: formData.name
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
       
       toast({
         title: "Request submitted successfully!",
@@ -59,6 +74,7 @@ const OperationalExcellenceForm = () => {
         additionalInfo: ""
       });
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Submission failed",
         description: "Please try again or contact us directly.",

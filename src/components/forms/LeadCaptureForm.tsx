@@ -33,7 +33,7 @@ export function LeadCaptureForm({
       phone: ""
     }
   });
-  const handleSubmit = (data: LeadFormValues) => {
+  const handleSubmit = async (data: LeadFormValues) => {
     // Sanitize inputs
     const sanitizedData = {
       ...data,
@@ -41,19 +41,45 @@ export function LeadCaptureForm({
       company: sanitizeInput(data.company),
       phone: data.phone ? sanitizeInput(data.phone) : undefined
     };
-    console.log("Lead form submitted:", sanitizedData);
+    
+    try {
+      // Submit to edge function
+      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'lead-capture',
+          formData: sanitizedData,
+          customerEmail: sanitizedData.email,
+          customerName: sanitizedData.name
+        }),
+      });
 
-    // Show success message
-    toast({
-      title: "Assessment Request Submitted!",
-      description: "We'll contact you within 24 hours to schedule your free Ti64 powder assessment."
-    });
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
 
-    // Call parent handler if provided
-    onSubmit?.(sanitizedData);
+      // Show success message
+      toast({
+        title: "Assessment Request Submitted!",
+        description: "We'll contact you within 24 hours to schedule your free Ti64 powder assessment."
+      });
 
-    // Reset form
-    form.reset();
+      // Call parent handler if provided
+      onSubmit?.(sanitizedData);
+
+      // Reset form
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    }
   };
   return <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">

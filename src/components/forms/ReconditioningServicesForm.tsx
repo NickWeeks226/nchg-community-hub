@@ -38,11 +38,29 @@ const ReconditioningServicesForm = ({ onClose }: ReconditioningServicesFormProps
 
   const onSubmit = async (data: ReconditioningFormData) => {
     try {
-      console.log("Reconditioning services request:", data);
+      // Submit to edge function
+      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'reconditioning-services',
+          formData: data,
+          customerEmail: data.email,
+          customerName: `${data.firstName} ${data.lastName}`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       toast.success("Reconditioning request submitted! Our team will contact you within 24 hours for assessment.");
       form.reset();
       onClose?.();
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast.error("Failed to submit request. Please try again.");
     }
   };

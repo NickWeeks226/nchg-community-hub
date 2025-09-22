@@ -36,11 +36,29 @@ const FoundingMemberForm = ({ onClose }: FoundingMemberFormProps) => {
 
   const onSubmit = async (data: FoundingMemberFormData) => {
     try {
-      console.log("Founding Member application:", data);
+      // Submit to edge function
+      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'founding-member',
+          formData: data,
+          customerEmail: data.email,
+          customerName: `${data.firstName} ${data.lastName}`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       toast.success("Application submitted! We'll contact you within 24 hours about founding member status.");
       form.reset();
       onClose?.();
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast.error("Failed to submit application. Please try again.");
     }
   };

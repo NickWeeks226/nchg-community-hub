@@ -37,11 +37,29 @@ const MarketplaceEarlyAccessForm = ({ onClose }: MarketplaceEarlyAccessFormProps
 
   const onSubmit = async (data: MarketplaceFormData) => {
     try {
-      console.log("Marketplace early access request:", data);
+      // Submit to edge function
+      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'marketplace-early-access',
+          formData: data,
+          customerEmail: data.email,
+          customerName: `${data.firstName} ${data.lastName}`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       toast.success("Early access request submitted! We'll contact you when the marketplace launches.");
       form.reset();
       onClose?.();
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast.error("Failed to submit request. Please try again.");
     }
   };
