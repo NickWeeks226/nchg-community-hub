@@ -82,51 +82,51 @@ async function sendWelcomeEmail(userData: UserSignupData) {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Welcome to NCHG</title>
         </head>
-        <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc;">
-          <div style="max-width: 600px; margin: 0 auto; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f8fafc;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: white; box-shadow: 0 8px 32px -8px rgba(55, 65, 81, 0.12);">
             
-            <!-- Header -->
-            <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Welcome to NCHG</h1>
-              <p style="color: #dbeafe; margin: 10px 0 0 0; font-size: 16px;">Next-Generation Ti64 Solutions</p>
+            <!-- Header with NCHG Branding -->
+            <div style="background: linear-gradient(135deg, #2d5a87 0%, #4a7c9b 100%); padding: 40px 30px; text-align: center;">
+              <div style="margin-bottom: 20px;">
+                <img src="https://zvrnwhjiomtraaphfzmk.supabase.co/storage/v1/object/public/listing-images/logo.png" alt="NCHG Logo" style="height: 40px; width: auto;" />
+              </div>
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.025em;">Welcome to NCHG</h1>
+              <p style="color: #e5f4fd; margin: 10px 0 0 0; font-size: 16px; font-weight: 400;">Sustainable Ti64 Solutions</p>
             </div>
 
             <!-- Main Content -->
             <div style="padding: 40px 30px;">
-              <h2 style="color: #1f2937; margin: 0 0 20px 0; font-size: 24px;">Hi ${firstName}!</h2>
+              <h2 style="color: #2d5a87; margin: 0 0 20px 0; font-size: 24px; font-weight: 600;">Hi ${firstName}!</h2>
               
               <p style="color: #4b5563; line-height: 1.6; margin: 0 0 20px 0; font-size: 16px;">
-                Thank you for requesting early access to the UK's premier Ti64 marketplace. We're excited to have you join us as we revolutionize the titanium powder trading industry.
+                Thank you for your interest in NCHG's Ti64 marketplace. We've received your request for early access and are excited to have you join our community.
               </p>
 
-              <div style="background-color: #f0f9ff; border-left: 4px solid #3b82f6; padding: 20px; margin: 30px 0;">
-                <h3 style="color: #1e40af; margin: 0 0 10px 0; font-size: 18px;">What happens next?</h3>
-                <ul style="color: #4b5563; line-height: 1.6; margin: 0; padding-left: 20px;">
-                  <li>You'll be among the first to access our marketplace when we launch</li>
-                  <li>We'll keep you updated on our progress and key milestones</li>
-                  <li>You'll have the opportunity to shape our platform with your feedback</li>
-                  <li>Early access to exclusive features and preferential trading opportunities</li>
-                </ul>
+              <div style="background-color: #f0f8ff; border-left: 4px solid #4a7c9b; padding: 20px; margin: 30px 0; border-radius: 4px;">
+                <h3 style="color: #2d5a87; margin: 0 0 15px 0; font-size: 18px; font-weight: 600;">What's next?</h3>
+                <p style="color: #4b5563; line-height: 1.6; margin: 0; font-size: 16px;">
+                  A member of our team will be in touch within 24 hours to discuss your requirements and how NCHG can support your Ti64 needs.
+                </p>
               </div>
 
               <p style="color: #4b5563; line-height: 1.6; margin: 20px 0; font-size: 16px;">
-                As a founding community member, your input will be invaluable in creating the most effective Ti64 trading platform. We'll be in touch soon with updates on our progress.
+                In the meantime, feel free to explore our website to learn more about our sustainable titanium solutions.
               </p>
 
               <div style="text-align: center; margin: 40px 0;">
-                <a href="https://nchg.co.uk" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: bold; display: inline-block;">Visit Our Website</a>
+                <a href="https://nchg.co.uk" style="background: linear-gradient(135deg, #2d5a87 0%, #4a7c9b 100%); color: white; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-weight: 600; display: inline-block; font-size: 16px;">Visit Our Website</a>
               </div>
             </div>
 
             <!-- Footer -->
             <div style="background-color: #f8fafc; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
-              <p style="color: #6b7280; margin: 0 0 10px 0; font-size: 14px;">
+              <p style="color: #6b7280; margin: 0 0 10px 0; font-size: 14px; font-weight: 500;">
                 Best regards,<br>
                 <strong>The NCHG Team</strong>
               </p>
-              <p style="color: #9ca3af; margin: 0; font-size: 12px;">
-                Next-Generation Chemical Holdings Ltd.<br>
-                Pioneering the future of Ti64 solutions
+              <p style="color: #9ca3af; margin: 0; font-size: 12px; line-height: 1.5;">
+                NCHG Limited<br>
+                Sustainable Titanium Solutions
               </p>
             </div>
           </div>
@@ -269,7 +269,9 @@ async function sendAdminNotification(userData: UserSignupData) {
   try {
     const firstName = userData.raw_user_meta_data?.first_name || "Unknown";
     const lastName = userData.raw_user_meta_data?.last_name || "";
-    const userRole = userData.raw_user_meta_data?.user_role || "individual";
+    const userRole = userData.raw_user_meta_data?.user_role || "company_rep";
+    const companyName = userData.raw_user_meta_data?.company_name || "Not provided";
+    const phoneNumber = userData.raw_user_meta_data?.phone_number || "Not provided";
     
     const emailResponse = await resend.emails.send({
       from: "NCHG Platform <team@nchg.co.uk>",
@@ -305,6 +307,14 @@ async function sendAdminNotification(userData: UserSignupData) {
                   <tr>
                     <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Email:</td>
                     <td style="padding: 8px 0; color: #374151;">${userData.email}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Company:</td>
+                    <td style="padding: 8px 0; color: #374151;">${companyName}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Phone:</td>
+                    <td style="padding: 8px 0; color: #374151;">${phoneNumber}</td>
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; font-weight: bold; color: #065f46;">Role:</td>

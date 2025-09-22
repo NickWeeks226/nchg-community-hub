@@ -26,7 +26,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
     confirmPassword: "",
     firstName: "",
     lastName: "",
-    userRole: "individual" as "individual" | "company_rep" | "verified_supplier" | "service_provider",
+    userRole: "company_rep" as "company_rep",
     companyName: "",
     phoneNumber: ""
   });
@@ -73,8 +73,8 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
       errors.phoneNumber = ['Please enter a valid phone number (e.g., +1 555-123-4567)'];
     }
 
-    // Validate company name if required
-    if ((signUpData.userRole === "company_rep" || signUpData.userRole === "verified_supplier" || signUpData.userRole === "service_provider") && !validateCompanyName(signUpData.companyName)) {
+    // Validate company name (always required)
+    if (!validateCompanyName(signUpData.companyName)) {
       errors.companyName = ['Company name must be between 2 and 100 characters'];
     }
 
@@ -98,7 +98,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
       first_name: sanitizeInput(signUpData.firstName),
       last_name: sanitizeInput(signUpData.lastName),
       user_role: signUpData.userRole,
-      company_name: signUpData.companyName ? sanitizeInput(signUpData.companyName) : null,
+      company_name: sanitizeInput(signUpData.companyName),
       phone_number: signUpData.phoneNumber || null
     };
 
@@ -177,7 +177,7 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
       confirmPassword: "",
       firstName: "",
       lastName: "",
-      userRole: "individual",
+      userRole: "company_rep",
       companyName: "",
       phoneNumber: ""
     });
@@ -331,39 +331,22 @@ export const AuthModal = ({ open, onOpenChange }: AuthModalProps) => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="userRole">Account Type</Label>
-                <Select value={signUpData.userRole} onValueChange={(value: any) => setSignUpData(prev => ({ ...prev, userRole: value }))}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="individual">Individual</SelectItem>
-                    <SelectItem value="company_rep">Company Representative</SelectItem>
-                    <SelectItem value="verified_supplier">Verified Supplier</SelectItem>
-                    <SelectItem value="service_provider">Service Provider</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Label htmlFor="companyName">Company Name</Label>
+                <Input
+                  id="companyName"
+                  placeholder="Enter your company name"
+                  value={signUpData.companyName}
+                  onChange={(e) => setSignUpData(prev => ({ ...prev, companyName: e.target.value }))}
+                  required
+                />
+                {validationErrors.companyName && (
+                  <div className="text-sm text-destructive">
+                    {validationErrors.companyName.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
+                  </div>
+                )}
               </div>
-
-              {(signUpData.userRole === "company_rep" || signUpData.userRole === "verified_supplier" || signUpData.userRole === "service_provider") && (
-                <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name</Label>
-                  <Input
-                    id="companyName"
-                    placeholder="Enter company name"
-                    value={signUpData.companyName}
-                    onChange={(e) => setSignUpData(prev => ({ ...prev, companyName: e.target.value }))}
-                    required
-                  />
-                  {validationErrors.companyName && (
-                    <div className="text-sm text-destructive">
-                      {validationErrors.companyName.map((error, index) => (
-                        <div key={index}>{error}</div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
               
               <div className="space-y-2">
                 <Label htmlFor="signup-password">Password</Label>
