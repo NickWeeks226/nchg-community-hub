@@ -8,6 +8,13 @@ import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, 
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 const SmartFeedstockSolutions = () => {
+  const scrollToForm = () => {
+    const formSection = document.querySelector('#lead-capture-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const statistics = [{
     title: "Up to 40%",
     subtitle: "Cost Reduction",
@@ -101,10 +108,10 @@ const SmartFeedstockSolutions = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                  <Button variant="hero" size="lg" className="text-lg px-8">
+                  <Button variant="hero" size="lg" className="text-lg px-8" onClick={scrollToForm}>
                     Get Your Free Powder Assessment
                   </Button>
-                  <Button variant="glass" size="lg" className="text-lg px-8">
+                  <Button variant="glass" size="lg" className="text-lg px-8" onClick={scrollToForm}>
                     Download ROI Calculator
                   </Button>
                 </div>
@@ -224,7 +231,7 @@ const SmartFeedstockSolutions = () => {
 
 
         {/* Lead Capture Section */}
-        <section className="py-20 surface-gradient">
+        <section id="lead-capture-form" className="py-20 surface-gradient">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
