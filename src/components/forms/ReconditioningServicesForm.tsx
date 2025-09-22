@@ -19,8 +19,8 @@ const reconditioningSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
   powderStatus: z.enum(["Used", "Contaminated", "Degraded", "Mixed Grade", "Uncertain"]),
   estimatedVolume: z.enum(["< 50kg", "50-200kg", "200-500kg", "500-1000kg", "1000kg+"]),
-  currentCondition: z.string().min(20, "Please describe the current condition"),
-  desiredOutcome: z.string().min(20, "Please describe your desired outcome"),
+  currentCondition: z.string().min(10, "Please provide at least 10 characters describing the current condition"),
+  desiredOutcome: z.string().min(10, "Please provide at least 10 characters describing your desired outcome"),
   timeline: z.enum(["Urgent (< 1 week)", "Standard (2-3 weeks)", "Flexible (1-2 months)"]),
   additionalServices: z.string().optional(),
 });
@@ -239,7 +239,7 @@ const ReconditioningServicesForm = ({ onClose }: ReconditioningServicesFormProps
                 <FormLabel>Current Powder Condition</FormLabel>
                 <FormControl>
                   <Textarea 
-                    placeholder="Describe the current condition of your Ti64 powder, including any known issues or contamination"
+                    placeholder="Describe the current condition of your Ti64 powder, including any known issues or contamination (minimum 10 characters)"
                     {...field} 
                   />
                 </FormControl>
@@ -256,7 +256,7 @@ const ReconditioningServicesForm = ({ onClose }: ReconditioningServicesFormProps
                 <FormLabel>Desired Outcome & Specifications</FormLabel>
                 <FormControl>
                   <Textarea 
-                    placeholder="Describe your desired outcome and any specific quality or performance requirements"
+                    placeholder="Describe your desired outcome and any specific quality or performance requirements (minimum 10 characters)"
                     {...field} 
                   />
                 </FormControl>

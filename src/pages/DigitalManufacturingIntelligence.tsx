@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +11,22 @@ import OperationalExcellenceForm from "@/components/forms/OperationalExcellenceF
 import Ti64DatabaseForm from "@/components/forms/Ti64DatabaseForm";
 const DigitalManufacturingIntelligence = () => {
   const [selectedService, setSelectedService] = useState<'operational' | 'ti64'>('operational');
+  const serviceTabsRef = useRef<HTMLDivElement>(null);
+  const formsRef = useRef<HTMLDivElement>(null);
+
+  const handleCaseStudyClick = (service: 'operational' | 'ti64') => {
+    setSelectedService(service);
+    
+    // Smooth scroll to service tabs first, then to forms
+    setTimeout(() => {
+      serviceTabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Then scroll to forms after a short delay
+      setTimeout(() => {
+        formsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 800);
+    }, 100);
+  };
   const keyStats = [{
     title: "99.8%",
     subtitle: "On-Time Delivery",
@@ -124,7 +140,7 @@ const DigitalManufacturingIntelligence = () => {
         </section>
 
         {/* Two Powerful Solutions Section */}
-        <section className="py-20 surface-gradient">
+        <section ref={serviceTabsRef} className="py-20 surface-gradient">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
@@ -353,9 +369,9 @@ const DigitalManufacturingIntelligence = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <CaseStudyCard title="Aerospace Manufacturer Transforms Operations" problem="25% AM efficiency, 11-week lead times, 70% on-time delivery performance was limiting growth and customer satisfaction" solution="Uptimo software deployment with comprehensive lean consultancy implementation, including FIFO, VSM, and SMED methodologies" results="80% improvement in AM system efficiency, lead times reduced from 11 weeks to 1 week, 99.8% on-time delivery, >100% revenue increase" ctaText="Learn More About Operational Excellence" onCtaClick={() => setSelectedService('operational')} />
+              <CaseStudyCard title="Aerospace Manufacturer Transforms Operations" problem="25% AM efficiency, 11-week lead times, 70% on-time delivery performance was limiting growth and customer satisfaction" solution="Uptimo software deployment with comprehensive lean consultancy implementation, including FIFO, VSM, and SMED methodologies" results="80% improvement in AM system efficiency, lead times reduced from 11 weeks to 1 week, 99.8% on-time delivery, >100% revenue increase" ctaText="Learn More About Operational Excellence" onCtaClick={() => handleCaseStudyClick('operational')} />
 
-              <CaseStudyCard title="R&D Team Accelerates Ti64 Development" problem="5-week trial-and-error development process causing missed opportunities and limiting innovation pace in Ti64 applications" solution="Ti64 performance database access with validated process parameters and design allowables integration into development workflow" results="Development time reduced from 5 weeks to 2 weeks, £180k revenue protection, targeting 40% feedstock cost reduction and 60% build time reduction" ctaText="Access Ti64 Database" onCtaClick={() => setSelectedService('ti64')} />
+              <CaseStudyCard title="R&D Team Accelerates Ti64 Development" problem="5-week trial-and-error development process causing missed opportunities and limiting innovation pace in Ti64 applications" solution="Ti64 performance database access with validated process parameters and design allowables integration into development workflow" results="Development time reduced from 5 weeks to 2 weeks, £180k revenue protection, targeting 40% feedstock cost reduction and 60% build time reduction" ctaText="Access Ti64 Database" onCtaClick={() => handleCaseStudyClick('ti64')} />
             </div>
           </div>
         </section>
@@ -434,7 +450,7 @@ const DigitalManufacturingIntelligence = () => {
           </div>
         </section>
         {/* Lead Capture Section */}
-        <section className="py-20 bg-background">
+        <section ref={formsRef} className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
