@@ -69,11 +69,11 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
             What We Do
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+          <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-4">
             Transforming titanium manufacturing through smart feedstock optimisation, 
             data-driven operational excellence, and the UK's premier Ti64 ecosystem.
           </p>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
             From powder lifecycle optimisation to digital manufacturing intelligence and sustainable trading - 
             we provide comprehensive solutions for the entire Ti64 value chain.
           </p>
@@ -95,7 +95,7 @@ const Services = () => {
                   <div className="text-base font-medium text-primary mb-3">
                     {pillar.tagline}
                   </div>
-                  <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-sm text-foreground/80 leading-relaxed">
                     {pillar.description}
                   </CardDescription>
                 </CardHeader>
@@ -135,7 +135,7 @@ const Services = () => {
           <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
             Help Us Build the Future of Titanium Manufacturing
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
             Join us in developing sustainable solutions for the titanium industry. 
             Partner with us to shape the future of UK manufacturing.
           </p>

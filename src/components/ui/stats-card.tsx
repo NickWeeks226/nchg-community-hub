@@ -25,7 +25,7 @@ const StatsCard = React.forwardRef<HTMLDivElement, StatsCardProps>(
       )}
       <div className="text-xl font-extrabold text-primary mb-0.5">{title}</div>
       <div className="text-sm font-semibold text-foreground mb-1">{subtitle}</div>
-      <div className="text-xs text-muted-foreground">{description}</div>
+      <div className="text-xs text-foreground/70">{description}</div>
     </div>
   )
 )

@@ -37,7 +37,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-smooth font-medium"
+                className="text-foreground hover:text-primary transition-smooth font-medium"
               >
                 {item.label}
               </a>
@@ -74,7 +74,7 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-smooth font-medium"
+                  className="text-foreground hover:text-primary transition-smooth font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

@@ -34,12 +34,12 @@ const Hero = () => {
           </h1>
           
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed font-medium">
+          <p className="text-xl sm:text-2xl text-foreground/90 mb-8 max-w-3xl leading-relaxed font-medium">
             Titanium solutions for a stronger, greener future.
           </p>
           
           {/* Body Text */}
-          <div className="text-lg text-muted-foreground mb-8 max-w-4xl leading-relaxed">
+          <div className="text-lg text-foreground mb-8 max-w-4xl leading-relaxed">
             <p className="mb-4">
               At NCHG Limited, we are committed to creating a resilient and sustainable future for British industry. By embracing the core principles of Reduce, Re-use, and Recycle, we aim to educate, empower, and connect a community of UK businesses dedicated to sustainable manufacturing.
             </p>

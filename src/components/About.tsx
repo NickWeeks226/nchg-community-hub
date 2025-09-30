@@ -90,10 +90,10 @@ const About = () => {
         {/* Leadership Team */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">About NCHG Limited</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
             NCHG Limited is driving the next generation of titanium powder innovation in the UK. Focused on sustainable Ti64 feedstock solutions, we support additive manufacturing and aerospace applications with a local, circular, and secure supply chain.
           </p>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
             Our leadership combines deep technical expertise, strategic industry insight, and a commitment to reshaping British manufacturing through collaboration, sustainability, and innovation.
           </p>
           
@@ -122,7 +122,7 @@ const About = () => {
                   <p className="text-primary font-medium">{person.role}</p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center leading-relaxed">
+                  <p className="text-foreground/80 text-center leading-relaxed">
                     {person.description}
                   </p>
                 </CardContent>

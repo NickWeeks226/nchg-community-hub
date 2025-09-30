@@ -23,12 +23,12 @@ const CaseStudyCard = React.forwardRef<HTMLDivElement, CaseStudyCardProps>(
       <CardContent className="space-y-4">
         <div>
           <h4 className="font-semibold text-destructive mb-2">Problem:</h4>
-          <p className="text-sm text-muted-foreground">{problem}</p>
+          <p className="text-sm text-foreground/80">{problem}</p>
         </div>
         
         <div>
           <h4 className="font-semibold text-primary mb-2">Solution:</h4>
-          <p className="text-sm text-muted-foreground">{solution}</p>
+          <p className="text-sm text-foreground/80">{solution}</p>
         </div>
         
         <div>
