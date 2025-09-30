@@ -220,9 +220,9 @@ All colors MUST be HSL.
   
   /* Header White Background */
   .header-white {
-    background: hsl(0 0% 100% / 0.95) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: hsl(0 0% 100%) !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   
   /* Hover Effects */
