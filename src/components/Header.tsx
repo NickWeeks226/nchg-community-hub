@@ -19,8 +19,7 @@ const Header = () => {
     { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
     { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
     { label: "Marketplace", href: "/marketplace-community" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
