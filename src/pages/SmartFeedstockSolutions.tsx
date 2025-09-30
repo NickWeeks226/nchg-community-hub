@@ -80,9 +80,9 @@ const SmartFeedstockSolutions = () => {
   const benefits_list = ["Current powder usage efficiency analysis", "Potential cost savings calculation", "Lifecycle extension opportunities", "Custom optimisation recommendations", "ROI projections for implementation"];
   return <>
       <Helmet>
-        <title>Maximise Your Ti64 Powder ROI and Lifecycle Value | NCHG Smart Feedstock Solutions</title>
-        <meta name="description" content="Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles." />
-        <meta name="keywords" content="Ti64 powder optimisation, titanium feedstock solutions, powder lifecycle extension, cost reduction, additive manufacturing, ROI calculator" />
+        <title>Ti64 Powder ROI Optimisation | NCHG Smart Feedstock</title>
+        <meta name="description" content="Expert Ti64 powder lifecycle optimisation achieving up to 40% cost reduction with 3-5x lifecycle extension. Optimise your feedstock strategy today." />
+        <meta name="keywords" content="Ti64 powder lifecycle, powder reuse optimization, feedstock cost reduction, additive manufacturing, powder optimisation" />
         <link rel="canonical" href="/smart-feedstock-solutions" />
       </Helmet>
       
@@ -102,14 +102,14 @@ const SmartFeedstockSolutions = () => {
               <div className="text-center mb-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">Maximise Your Ti64 Powder ROI and Lifecycle Value</h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                  Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 
+                  Expert Ti64 powder lifecycle optimisation and cost reduction strategies that can save up to 
                   <span className="font-bold"> 40% on material costs</span> while extending powder life by 
-                  <span className="font-bold"> 3-5 cycles</span>.
+                  <span className="font-bold"> 3-5x lifecycle extension</span>.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                   <Button variant="hero" size="lg" className="text-lg px-8" onClick={scrollToForm}>
-                    Get Your Free Powder Assessment
+                    Optimise Your Feedstock
                   </Button>
                   <Button variant="glass" size="lg" className="text-lg px-8" onClick={scrollToForm}>
                     Download ROI Calculator
@@ -149,7 +149,7 @@ const SmartFeedstockSolutions = () => {
 
               {/* Solution Statement */}
               <div className="text-center bg-primary/5 rounded-xl p-8 border border-primary/20">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">We've developed proven methodologies to optimise every aspect of your Ti64 powder strategy</h3>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-4">We've developed proven methodologies to optimise every aspect of your Ti64 powder lifecycle</h3>
                 <p className="text-lg text-muted-foreground">
                   From initial selection through to end-of-life value recovery
                 </p>
@@ -236,9 +236,9 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  Get Your Free Ti64 Powder Optimisation Assessment
+                  Get Your Free Ti64 Powder Lifecycle Assessment
                 </h2>
-                <p className="text-xl text-muted-foreground">Discover your powder optimisation potential with a comprehensive analysis</p>
+                <p className="text-xl text-muted-foreground">Discover your powder lifecycle optimisation potential with a comprehensive analysis</p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

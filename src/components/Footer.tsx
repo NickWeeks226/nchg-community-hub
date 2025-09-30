@@ -14,10 +14,10 @@ const Footer = () => {
   ];
 
   const services = [
-    "Feedstock Consultancy",
-    "Commercial Viability Testing",
-    "Ti64 AM Dataset Development",
-    "Digital Shopfloor Solutions",
+    "Ti64 Powder Lifecycle Solutions",
+    "AM Operational Excellence",
+    "Ti64 Database Development",
+    "Uptimo Software Implementation",
   ];
 
   const contact = [
@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
             <p className="text-primary-foreground/80 mb-6">
               Leading provider of sustainable titanium solutions for additive manufacturing. 
-              Securing UK supply chains with eco-friendly feedstock processing.
+              Securing UK supply chains with eco-friendly Ti64 powder lifecycle solutions.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">

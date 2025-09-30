@@ -106,9 +106,9 @@ const DigitalManufacturingIntelligence = () => {
   }];
   return <>
       <Helmet>
-        <title>Digital Manufacturing Intelligence | NCHG - Data-Driven AM Excellence</title>
-        <meta name="description" content="Transform AM operations with Uptimo software and Ti64 performance database. Achieve 99.8% on-time delivery and accelerate material qualification." />
-        <meta name="keywords" content="Uptimo software, Ti64 database, AM operational excellence, lean manufacturing, additive manufacturing intelligence, Magnitude Innovations" />
+        <title>Uptimo AM Intelligence Software | NCHG Digital Solutions</title>
+        <meta name="description" content="Transform AM operations with Uptimo software. Achieve 99.8% on-time delivery and accelerate Ti64 qualification with our digital intelligence solutions." />
+        <meta name="keywords" content="Uptimo software, AM operational excellence, Ti64 database, additive manufacturing intelligence, Magnitude Innovations partnership" />
         <link rel="canonical" href="/digital-manufacturing-intelligence" />
       </Helmet>
       
@@ -128,7 +128,7 @@ const DigitalManufacturingIntelligence = () => {
               </h1>
               <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-12">
                 Transform your AM operations with proven lean methodologies and comprehensive Ti64 performance data. 
-                Achieve operational excellence while accelerating material qualification and design optimisation.
+                Achieve operational excellence whilst accelerating material qualification and design optimisation.
               </p>
               
               {/* Key Statistics */}
@@ -176,7 +176,7 @@ const DigitalManufacturingIntelligence = () => {
                     <p className="text-lg text-primary font-semibold mb-4">Partnership with Magnitude Innovations</p>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
                       Transform your AM shopfloor with the only software designed specifically for additive manufacturing 
-                      operational excellence, backed by deep lean consultancy.
+                      operational excellence, backed by deep lean consultancy expertise.
                     </p>
                   </div>
 
