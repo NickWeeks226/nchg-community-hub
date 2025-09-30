@@ -54,15 +54,15 @@ All colors MUST be HSL.
     /* Design System Properties */
     --radius: 0.5rem;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+    /* Gradients - NCHG Oxford Blue Explicit Values */
+    --gradient-primary: linear-gradient(135deg, hsl(221 61% 16%), hsl(221 55% 25%)) !important;
+    --gradient-hero: linear-gradient(135deg, hsl(225 71% 11%), hsl(221 61% 16%)) !important;
     --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     
-    /* Shadows */
-    --shadow-elegant: 0 8px 32px -8px hsl(var(--primary) / 0.12);
-    --shadow-card: 0 2px 16px -4px hsl(var(--primary) / 0.08);
-    --shadow-glow: 0 0 32px hsl(var(--accent) / 0.25);
+    /* Shadows - Oxford Blue Tinted */
+    --shadow-elegant: 0 8px 32px -8px hsl(221 61% 16% / 0.12) !important;
+    --shadow-card: 0 2px 16px -4px hsl(221 61% 16% / 0.08) !important;
+    --shadow-glow: 0 0 32px hsl(221 55% 35% / 0.25) !important;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -114,15 +114,15 @@ All colors MUST be HSL.
     --input: 220 40% 18%;
     --ring: 221 55% 45%;
     
-    /* Dark Mode Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--primary-dark)));
+    /* Dark Mode Gradients - NCHG Oxford Blue Explicit Values */
+    --gradient-primary: linear-gradient(135deg, hsl(225 65% 25%), hsl(221 55% 45%)) !important;
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(225 65% 25%)) !important;
     --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     
-    /* Dark Mode Shadows */
+    /* Dark Mode Shadows - Oxford Blue Tinted */
     --shadow-elegant: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
     --shadow-card: 0 2px 16px -4px hsl(0 0% 0% / 0.25);
-    --shadow-glow: 0 0 32px hsl(var(--accent) / 0.2);
+    --shadow-glow: 0 0 32px hsl(221 50% 45% / 0.2) !important;
     
     --sidebar-background: 220 45% 12%;
     --sidebar-foreground: 220 15% 92%;
@@ -201,12 +201,21 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Text Gradient Utilities */
+  /* Text Gradient Utilities - Oxford Blue Force */
   .text-gradient-primary {
-    background: var(--gradient-primary);
+    background: var(--gradient-primary) !important;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  /* Oxford Blue Force Utilities */
+  .text-primary-force {
+    color: hsl(221 61% 16%) !important;
+  }
+  
+  .bg-primary-force {
+    background-color: hsl(221 61% 16%) !important;
   }
   
   /* Hover Effects */
