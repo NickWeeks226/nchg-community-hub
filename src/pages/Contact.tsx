@@ -21,10 +21,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your titanium manufacturing? Our experts are here to help you optimize 
-              your Ti64 processes and unlock sustainable growth opportunities.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Ready to transform your titanium manufacturing? Our experts are here to help you optimise your Ti64 processes and unlock sustainable growth opportunities.</p>
           </div>
         </section>
 
