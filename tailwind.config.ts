@@ -77,10 +77,11 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Inter', 'system-ui', 'sans-serif']
-			},
+		fontFamily: {
+			sans: ['Gill Sans Nova', 'Inter', 'system-ui', 'sans-serif'],
+			display: ['Gill Sans Nova', 'Inter', 'system-ui', 'sans-serif'],
+			light: ['Gill Sans Nova Light', 'Gill Sans Nova', 'Inter', 'sans-serif']
+		},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],
 				'sm': ['0.875rem', { lineHeight: '1.25rem' }],

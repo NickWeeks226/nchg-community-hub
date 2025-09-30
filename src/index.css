@@ -1,3 +1,19 @@
+/* NCHG Brand Fonts - Gill Sans Nova */
+@font-face {
+  font-family: 'Gill Sans Nova';
+  src: url('/fonts/gillsansnova-book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans Nova Light';
+  src: url('/fonts/gillsansnova-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
