@@ -75,7 +75,7 @@ const Contact = () => {
                         <Phone className="h-6 w-6 text-primary mt-1" />
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                          <p className="text-muted-foreground">+44 7823 489248</p>
+                          <p className="text-muted-foreground">+44 (0) 7823 489 248</p>
                           <p className="text-sm text-muted-foreground mt-1">Monday - Friday, 9:00 AM - 6:00 PM GMT</p>
                         </div>
                       </div>
@@ -89,8 +89,7 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Address</h3>
                           <p className="text-muted-foreground">
-                            Advanced Manufacturing Hub<br />
-                            Sheffield, United Kingdom
+                            Over Peover, Cheshire, United Kingdom
                           </p>
                           <p className="text-sm text-muted-foreground mt-1">By appointment only</p>
                         </div>
