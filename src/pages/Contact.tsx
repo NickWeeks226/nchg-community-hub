@@ -4,16 +4,11 @@ import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Helmet>
         <title>Contact NCHG - Titanium & Ti64 Solutions Experts | UK</title>
-        <meta 
-          name="description" 
-          content="Contact NCHG for sustainable titanium solutions, Ti64 powder optimization, and additive manufacturing intelligence. 24-hour response time guaranteed." 
-        />
+        <meta name="description" content="Contact NCHG for sustainable titanium solutions, Ti64 powder optimization, and additive manufacturing intelligence. 24-hour response time guaranteed." />
         <meta name="keywords" content="contact NCHG, titanium solutions, Ti64 powder, additive manufacturing, UK" />
       </Helmet>
       
@@ -67,7 +62,7 @@ const Contact = () => {
                         <Mail className="h-6 w-6 text-primary mt-1" />
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                          <p className="text-muted-foreground">nick@nchg.co.uk</p>
+                          <p className="text-muted-foreground">Claudia@nchg.co.uk</p>
                           <p className="text-sm text-muted-foreground mt-1">For all inquiries and partnerships</p>
                         </div>
                       </div>
@@ -142,8 +137,6 @@ const Contact = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
