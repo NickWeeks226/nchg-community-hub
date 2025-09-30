@@ -20,11 +20,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 15%;
 
-    /* Primary Brand - NCHG Dark Blue */
-    --primary: 220 45% 25%;
+    /* Primary Brand - NCHG Oxford Blue */
+    --primary: 221 61% 16%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 40% 35%;
-    --primary-dark: 220 50% 18%;
+    --primary-light: 221 55% 25%;
+    --primary-dark: 225 71% 11%;
 
     /* Secondary - Professional Gray */
     --secondary: 220 10% 90%;
@@ -36,9 +36,9 @@ All colors MUST be HSL.
     --muted-foreground: 220 15% 45%;
 
     /* Accent - Professional Blue Accent */
-    --accent: 220 60% 45%;
+    --accent: 221 55% 35%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 220 55% 55%;
+    --accent-light: 221 50% 45%;
 
     /* Status Colors */
     --destructive: 0 84% 60%;
@@ -49,7 +49,7 @@ All colors MUST be HSL.
     /* Border & Input */
     --border: 220 15% 88%;
     --input: 220 10% 94%;
-    --ring: 220 45% 25%;
+    --ring: 221 61% 16%;
 
     /* Design System Properties */
     --radius: 0.5rem;
@@ -70,12 +70,12 @@ All colors MUST be HSL.
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 220 25% 15%;
-    --sidebar-primary: 220 45% 25%;
+    --sidebar-primary: 221 61% 16%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 10% 95%;
     --sidebar-accent-foreground: 220 25% 15%;
     --sidebar-border: 220 15% 88%;
-    --sidebar-ring: 220 60% 45%;
+    --sidebar-ring: 221 55% 35%;
   }
 
   .dark {
@@ -89,10 +89,10 @@ All colors MUST be HSL.
     --popover: 220 45% 15%;
     --popover-foreground: 220 15% 92%;
 
-    --primary: 220 60% 55%;
+    --primary: 221 55% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 55% 65%;
-    --primary-dark: 220 65% 45%;
+    --primary-light: 221 50% 55%;
+    --primary-dark: 225 65% 25%;
 
     --secondary: 220 35% 20%;
     --secondary-foreground: 220 15% 85%;
@@ -101,9 +101,9 @@ All colors MUST be HSL.
     --muted: 220 40% 18%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 220 60% 55%;
+    --accent: 221 50% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 220 55% 65%;
+    --accent-light: 221 45% 55%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -112,7 +112,7 @@ All colors MUST be HSL.
 
     --border: 220 35% 22%;
     --input: 220 40% 18%;
-    --ring: 220 60% 55%;
+    --ring: 221 55% 45%;
     
     /* Dark Mode Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
@@ -126,12 +126,12 @@ All colors MUST be HSL.
     
     --sidebar-background: 220 45% 12%;
     --sidebar-foreground: 220 15% 92%;
-    --sidebar-primary: 220 60% 55%;
+    --sidebar-primary: 221 55% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 35% 18%;
     --sidebar-accent-foreground: 220 15% 92%;
     --sidebar-border: 220 35% 22%;
-    --sidebar-ring: 220 60% 55%;
+    --sidebar-ring: 221 50% 45%;
   }
 }
 
