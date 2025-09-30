@@ -20,11 +20,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 15%;
 
-    /* Primary Brand - NCHG Dark Blue */
-    --primary: 220 45% 25%;
+    /* Primary Brand - Oxford Blue (#101D42) */
+    --primary: 220 61% 16%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 40% 35%;
-    --primary-dark: 220 50% 18%;
+    --primary-light: 220 56% 26%;
+    --primary-dark: 220 68% 12%;
 
     /* Secondary - Professional Gray */
     --secondary: 220 10% 90%;

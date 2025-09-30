@@ -78,8 +78,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Inter', 'system-ui', 'sans-serif']
+				sans: ['Gill Sans Nova', 'Inter', 'system-ui', 'sans-serif'],
+				display: ['Gill Sans Nova', 'Inter', 'system-ui', 'sans-serif']
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],

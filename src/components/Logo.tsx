@@ -1,14 +1,23 @@
-const logo = "/lovable-uploads/ae237c9b-1f11-4428-ad49-e3f968cb7995.png";
+const logos = {
+  primary: "/lovable-uploads/primary-logo.png",
+  white: "/lovable-uploads/logo-white-short.png",
+  blue: "/lovable-uploads/logo-blue-short.png"
+};
 
 interface LogoProps {
   className?: string;
   alt?: string;
+  variant?: 'primary' | 'white' | 'blue';
 }
 
-const Logo = ({ className = "h-10 w-auto", alt = "NCHG Limited - Sustainable Titanium Solutions" }: LogoProps) => {
+const Logo = ({ 
+  className = "h-10 w-auto", 
+  alt = "NCHG Limited - Sustainable Titanium Solutions",
+  variant = 'primary'
+}: LogoProps) => {
   return (
     <img
-      src={logo}
+      src={logos[variant]}
       alt={alt}
       className={className}
       loading="eager"
