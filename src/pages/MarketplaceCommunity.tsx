@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import FoundingMemberForm from "@/components/forms/FoundingMemberForm";
 import MarketplaceEarlyAccessForm from "@/components/forms/MarketplaceEarlyAccessForm";
 import ReconditioningServicesForm from "@/components/forms/ReconditioningServicesForm";
+import Footer from "@/components/Footer";
 
 const MarketplaceCommunity = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -700,6 +701,8 @@ const MarketplaceCommunity = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
 
       {/* Modal Dialogs */}
       <Dialog open={activeModal === "founding"} onOpenChange={() => setActiveModal(null)}>
