@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,8 +10,6 @@ const Contact = () => {
         <meta name="description" content="Contact NCHG for sustainable titanium solutions, Ti64 powder optimization, and additive manufacturing intelligence. 24-hour response time guaranteed." />
         <meta name="keywords" content="contact NCHG, titanium solutions, Ti64 powder, additive manufacturing, UK" />
       </Helmet>
-      
-      <Header />
       
       <main className="pt-16">
         {/* Hero Section */}

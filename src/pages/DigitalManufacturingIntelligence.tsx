@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Database, BarChart3, Settings, Monitor, TrendingUp, Factory, Award, Users, CheckCircle, Target, Clock, Building } from "lucide-react";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
 import { StatsCard } from "@/components/ui/stats-card";
 import { CaseStudyCard } from "@/components/ui/case-study-card";
 import OperationalExcellenceForm from "@/components/forms/OperationalExcellenceForm";
@@ -111,8 +110,6 @@ const DigitalManufacturingIntelligence = () => {
         <meta name="keywords" content="Uptimo software, AM operational excellence, Ti64 database, additive manufacturing intelligence, Magnitude Innovations partnership" />
         <link rel="canonical" href="/digital-manufacturing-intelligence" />
       </Helmet>
-      
-      <Header />
       
       <main className="min-h-screen">
         {/* Hero Section */}

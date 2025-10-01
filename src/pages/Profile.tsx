@@ -12,7 +12,6 @@ import { PreferencesSettings } from "@/components/profile/PreferencesSettings";
 import { ActivityHistoryAnalytics } from "@/components/profile/ActivityHistoryAnalytics";
 import { LayoutDashboard, User, MapPin, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
 
 interface UserProfile {
   id: string;
@@ -101,9 +100,8 @@ export default function Profile() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="container mx-auto px-4 py-8 pt-16">
+    <div className="min-h-screen bg-background pt-16">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <h1 className="text-3xl font-bold">My Profile</h1>

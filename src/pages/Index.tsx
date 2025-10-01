@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
@@ -19,7 +18,6 @@ const Index = () => {
         <meta name="keywords" content="Ti64 solutions UK, titanium powder optimization, AM operational excellence, powder lifecycle, feedstock cost reduction" />
         <link rel="canonical" href="/" />
       </Helmet>
-      <Header />
       <main>
         <Hero />
         <Services />

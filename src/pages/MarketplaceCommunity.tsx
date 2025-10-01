@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowLeft, ShoppingCart, Users, RefreshCw, Network, Crown, TrendingUp, MapPin, Clock, CheckCircle, Shield, Target, Recycle, Award, UserCheck, Star, Globe, Clock3, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
 import FoundingMemberForm from "@/components/forms/FoundingMemberForm";
 import MarketplaceEarlyAccessForm from "@/components/forms/MarketplaceEarlyAccessForm";
 import ReconditioningServicesForm from "@/components/forms/ReconditioningServicesForm";
@@ -126,8 +125,6 @@ const MarketplaceCommunity = () => {
         <meta name="keywords" content="Ti64 marketplace, titanium powder trading, founding members, reconditioning services, sustainable manufacturing, UK Ti64 community" />
         <link rel="canonical" href="/marketplace-community" />
       </Helmet>
-      
-      <Header />
       
       <main className="min-h-screen">
         {/* Hero Section */}

@@ -6,7 +6,7 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
+
 const SmartFeedstockSolutions = () => {
   const scrollToForm = () => {
     const formSection = document.querySelector('#lead-capture-form');
@@ -85,8 +85,6 @@ const SmartFeedstockSolutions = () => {
         <meta name="keywords" content="Ti64 powder lifecycle, powder reuse optimization, feedstock cost reduction, additive manufacturing, powder optimisation" />
         <link rel="canonical" href="/smart-feedstock-solutions" />
       </Helmet>
-      
-      <Header />
       
       <main className="min-h-screen">
         {/* Hero Section */}
