@@ -41,15 +41,22 @@ const CookieConsent = () => {
   }, []);
 
   const applyConsent = (prefs: CookiePreferences) => {
-    // Apply Google Analytics based on consent
-    if (prefs.analytics && window.gtag) {
+    // Apply Google Analytics 4 consent based on user preferences
+    if (window.gtag) {
       window.gtag("consent", "update", {
-        analytics_storage: "granted",
+        analytics_storage: prefs.analytics ? "granted" : "denied",
+        ad_storage: prefs.marketing ? "granted" : "denied",
+        ad_user_data: prefs.marketing ? "granted" : "denied",
+        ad_personalization: prefs.marketing ? "granted" : "denied",
       });
-    } else if (window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: "denied",
-      });
+      
+      // Initialize GA4 tracking if analytics is enabled
+      if (prefs.analytics) {
+        window.gtag("config", "G-QZ19MYM39Z", {
+          send_page_view: true,
+          anonymize_ip: true,
+        });
+      }
     }
   };
 
