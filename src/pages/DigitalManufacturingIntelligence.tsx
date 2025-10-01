@@ -9,6 +9,7 @@ import { CaseStudyCard } from "@/components/ui/case-study-card";
 import OperationalExcellenceForm from "@/components/forms/OperationalExcellenceForm";
 import Ti64DatabaseForm from "@/components/forms/Ti64DatabaseForm";
 import Footer from "@/components/Footer";
+import latticeHero from "@/assets/lattice-structures-hero.jpg";
 const DigitalManufacturingIntelligence = () => {
   const [selectedService, setSelectedService] = useState<'operational' | 'ti64'>('operational');
   const serviceTabsRef = useRef<HTMLDivElement>(null);
@@ -114,8 +115,10 @@ const DigitalManufacturingIntelligence = () => {
       
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="hero-gradient pt-32 pb-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${latticeHero})` }} />
+          <div className="absolute inset-0 bg-primary/75" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
                 Data-Driven Excellence for Additive Manufacturing Operations
