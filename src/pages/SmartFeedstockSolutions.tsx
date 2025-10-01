@@ -7,17 +7,16 @@ import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
-
 const SmartFeedstockSolutions = () => {
   const navigate = useNavigate();
-  
   const scrollToForm = () => {
     const formSection = document.querySelector('#lead-capture-form');
     if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
+      formSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const statistics = [{
     title: "Up to 40%",
     subtitle: "Cost Reduction",
@@ -29,24 +28,19 @@ const SmartFeedstockSolutions = () => {
     description: "Powder reuse cycles",
     icon: <Recycle className="w-6 h-6 text-primary" />
   }];
-  const problems = [
-    {
-      heading: "High Costs",
-      description: "Material costs (£180-250/kg) eating into margins"
-    },
-    {
-      heading: "Premature Waste",
-      description: "From premature powder disposal"
-    },
-    {
-      heading: "Lack of Parameters",
-      description: "No validated parameters for cost-effective alternatives"
-    },
-    {
-      heading: "No Recovery Strategy",
-      description: "No strategy for end-of-life powder value recovery"
-    }
-  ];
+  const problems = [{
+    heading: "High Costs",
+    description: "Material costs (£180-250/kg) eating into margins"
+  }, {
+    heading: "Premature Waste",
+    description: "From premature powder disposal"
+  }, {
+    heading: "Lack of Parameters",
+    description: "No validated parameters for cost-effective alternatives"
+  }, {
+    heading: "No Recovery Strategy",
+    description: "No strategy for end-of-life powder value recovery"
+  }];
   const benefits = [{
     icon: DollarSign,
     title: "COST OPTIMISATION",
@@ -109,10 +103,9 @@ const SmartFeedstockSolutions = () => {
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${powderParticlesHero})` }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+          backgroundImage: `url(${powderParticlesHero})`
+        }} />
           <div className="absolute inset-0 bg-primary/75" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
@@ -147,13 +140,7 @@ const SmartFeedstockSolutions = () => {
 
               {/* CTA Button Below Header */}
               <div className="flex justify-center">
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                  onClick={() => navigate('/contact')}
-                >
-                  Book a Call
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -171,11 +158,7 @@ const SmartFeedstockSolutions = () => {
 
               {/* Problem Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                {problems.map((problem, index) => (
-                  <Card 
-                    key={index} 
-                    className="p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                  >
+                {problems.map((problem, index) => <Card key={index} className="p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                     <div className="flex flex-col items-center text-center space-y-4">
                       <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
                         <Target className="w-8 h-8 text-destructive" />
@@ -189,8 +172,7 @@ const SmartFeedstockSolutions = () => {
                         </p>
                       </div>
                     </div>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Solution Statement */}
@@ -201,12 +183,7 @@ const SmartFeedstockSolutions = () => {
                 </p>
                 
                 {/* CTA After Hidden Costs */}
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="text-lg px-8"
-                  onClick={() => navigate('/contact')}
-                >
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => navigate('/contact')}>
                   Talk to an Expert
                 </Button>
               </div>
@@ -336,11 +313,7 @@ const SmartFeedstockSolutions = () => {
               <p className="text-xl text-muted-foreground mb-8">
                 Let's discuss how we can help you achieve up to 40% cost reduction and extend your powder lifecycle
               </p>
-              <Button 
-                size="lg" 
-                className="text-lg px-10"
-                onClick={() => navigate('/contact')}
-              >
+              <Button size="lg" className="text-lg px-10" onClick={() => navigate('/contact')}>
                 Get in Touch Today
               </Button>
             </div>
