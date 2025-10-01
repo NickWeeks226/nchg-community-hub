@@ -147,9 +147,10 @@ const CookieConsent = () => {
                 </div>
                 <Switch
                   id="essential"
-                  checked={true}
+                  checked={preferences.essential}
                   disabled
-                  className="mt-1"
+                  aria-label="Essential cookies (always enabled)"
+                  className="mt-1 opacity-60"
                 />
               </div>
 
@@ -169,6 +170,7 @@ const CookieConsent = () => {
                   onCheckedChange={(checked) =>
                     setPreferences({ ...preferences, analytics: checked })
                   }
+                  aria-label="Analytics cookies toggle"
                   className="mt-1"
                 />
               </div>
@@ -190,7 +192,8 @@ const CookieConsent = () => {
                     setPreferences({ ...preferences, marketing: checked })
                   }
                   disabled
-                  className="mt-1"
+                  aria-label="Marketing cookies (not currently used)"
+                  className="mt-1 opacity-60"
                 />
               </div>
             </div>
