@@ -8,6 +8,7 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { CaseStudyCard } from "@/components/ui/case-study-card";
 import OperationalExcellenceForm from "@/components/forms/OperationalExcellenceForm";
 import Ti64DatabaseForm from "@/components/forms/Ti64DatabaseForm";
+import Footer from "@/components/Footer";
 const DigitalManufacturingIntelligence = () => {
   const [selectedService, setSelectedService] = useState<'operational' | 'ti64'>('operational');
   const serviceTabsRef = useRef<HTMLDivElement>(null);
@@ -503,6 +504,8 @@ const DigitalManufacturingIntelligence = () => {
           </div>
         </section>
       </main>
+      
+      <Footer />
     </>;
 };
 export default DigitalManufacturingIntelligence;
