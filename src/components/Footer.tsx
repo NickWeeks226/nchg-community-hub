@@ -7,17 +7,18 @@ import Logo from "@/components/Logo";
 const Footer = () => {
   
   const quickLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Community", href: "#community" },
-    { label: "Marketplace", href: "#marketplace" },
-    { label: "About", href: "#about" },
+    { label: "Home", href: "/" },
+    { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
+    { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
+    { label: "Marketplace", href: "/marketplace-community" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const services = [
-    "Ti64 Powder Lifecycle Solutions",
-    "AM Operational Excellence",
-    "Ti64 Database Development",
-    "Uptimo Software Implementation",
+    { label: "Ti64 Powder Lifecycle Solutions", href: "/smart-feedstock-solutions" },
+    { label: "AM Operational Excellence", href: "/digital-manufacturing-intelligence" },
+    { label: "Ti64 Database Development", href: "/digital-manufacturing-intelligence" },
+    { label: "Uptimo Software Implementation", href: "/digital-manufacturing-intelligence" },
   ];
 
   const contact = [
@@ -82,9 +83,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-primary-foreground/80 text-sm">
-                    {service}
-                  </span>
+                  <a 
+                    href={service.href}
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                  >
+                    {service.label}
+                  </a>
                 </li>
               ))}
             </ul>
