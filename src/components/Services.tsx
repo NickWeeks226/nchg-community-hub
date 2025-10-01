@@ -113,7 +113,7 @@ const Services = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <Badge variant="secondary" className="w-full text-center p-2 text-xs font-bold bg-gradient-primary text-primary-foreground">
+                    <Badge variant="secondary" className="w-full flex items-center justify-center text-center p-3 text-xs font-bold bg-gradient-primary text-primary-foreground rounded-full">
                       {pillar.resultsBadge}
                     </Badge>
                   </div>
