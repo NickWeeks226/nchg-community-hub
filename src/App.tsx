@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpellingProvider } from "@/contexts/SpellingContext";
 import { SecurityMonitor } from "@/components/security/SecurityMonitor";
+import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
@@ -16,6 +17,8 @@ import SmartFeedstockSolutions from "./pages/SmartFeedstockSolutions";
 import DigitalManufacturingIntelligence from "./pages/DigitalManufacturingIntelligence";
 import MarketplaceCommunity from "./pages/MarketplaceCommunity";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <SecurityMonitor />
+          <CookieConsent />
           <BrowserRouter>
             <Header />
             <Routes>
@@ -42,6 +46,8 @@ const App = () => {
               <Route path="/digital-manufacturing-intelligence" element={<DigitalManufacturingIntelligence />} />
               <Route path="/marketplace-community" element={<MarketplaceCommunity />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/cookies-policy" element={<CookiesPolicy />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

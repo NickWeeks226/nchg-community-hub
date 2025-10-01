@@ -125,13 +125,13 @@ const Footer = () => {
             © 2025 NCHG Limited. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a href="/privacy-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a href="/cookies-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Cookie Policy
             </a>
           </div>
