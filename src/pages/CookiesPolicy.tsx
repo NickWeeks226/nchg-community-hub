@@ -239,7 +239,7 @@ const CookiesPolicy = () => {
               If you have any questions about our use of cookies, please contact us at:
             </p>
             <div className="bg-muted/30 p-4 rounded-lg">
-              <p><strong>Email:</strong> claudia@nchg.co.uk</p>
+              <p><strong>Email:</strong> <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">claudia@nchg.co.uk</a></p>
               <p><strong>Phone:</strong> +44 (0) 7823 489 248</p>
               <p><strong>Address:</strong> NCHG Limited, Over Peover, Cheshire, United Kingdom</p>
             </div>

@@ -22,9 +22,9 @@ const Footer = () => {
   ];
 
   const contact = [
-    { icon: Mail, label: "claudia@nchg.co.uk" },
-    { icon: Phone, label: "+44 (0) 7823 489 248" },
-    { icon: MapPin, label: "Over Peover, Cheshire, United Kingdom" },
+    { icon: Mail, label: "claudia@nchg.co.uk", href: "mailto:claudia@nchg.co.uk", isLink: true },
+    { icon: Phone, label: "+44 (0) 7823 489 248", isLink: false },
+    { icon: MapPin, label: "Over Peover, Cheshire, United Kingdom", isLink: false },
   ];
 
   return (
@@ -103,9 +103,18 @@ const Footer = () => {
                 return (
                   <div key={index} className="flex items-center space-x-3">
                     <IconComponent className="w-5 h-5 text-primary-foreground/80" />
-                    <span className="text-primary-foreground/80 text-sm">
-                      {item.label}
-                    </span>
+                    {item.isLink ? (
+                      <a 
+                        href={item.href}
+                        className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span className="text-primary-foreground/80 text-sm">
+                        {item.label}
+                      </span>
+                    )}
                   </div>
                 );
               })}
