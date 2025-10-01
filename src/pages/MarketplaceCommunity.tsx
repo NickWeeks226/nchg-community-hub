@@ -3,12 +3,13 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowLeft, ShoppingCart, Users, RefreshCw, Network, Crown, TrendingUp, MapPin, Clock, CheckCircle, Shield, Target, Recycle, Award, UserCheck, Star, Globe, Clock3, FileCheck } from "lucide-react";
+import { ShoppingCart, Users, RefreshCw, Network, Crown, TrendingUp, MapPin, Clock, CheckCircle, Shield, Target, Recycle, Award, UserCheck, Star, Globe, Clock3, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import FoundingMemberForm from "@/components/forms/FoundingMemberForm";
 import MarketplaceEarlyAccessForm from "@/components/forms/MarketplaceEarlyAccessForm";
 import ReconditioningServicesForm from "@/components/forms/ReconditioningServicesForm";
 import Footer from "@/components/Footer";
+import powderMarketplaceHero from "@/assets/powder-marketplace-hero.jpg";
 
 const MarketplaceCommunity = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -129,13 +130,13 @@ const MarketplaceCommunity = () => {
       
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="hero-gradient pt-24 pb-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+            backgroundImage: `url(${powderMarketplaceHero})`
+          }} />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto text-center">
-              <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Link>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
                 The UK's Premier Ti64 Ecosystem
               </h1>

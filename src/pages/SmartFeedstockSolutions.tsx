@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatsCard } from "@/components/ui/stats-card";
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
-import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
 import ctaImage from "@/assets/powder-pouring-cta.jpg";
 import Footer from "@/components/Footer";
@@ -104,20 +104,14 @@ const SmartFeedstockSolutions = () => {
       
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative pt-24 pb-16 overflow-hidden">
+        <section className="relative pt-32 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center" style={{
           backgroundImage: `url(${powderParticlesHero})`
         }} />
           <div className="absolute inset-0 bg-primary/75" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="text-left mb-8">
-                <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Home
-                </Link>
-              </div>
-              <div className="text-center mb-8">
+              <div className="text-center">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">Maximise Your Ti64 Powder ROI and Lifecycle Value</h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
                   Expert Ti64 powder lifecycle optimisation and cost reduction strategies that can save up to 
