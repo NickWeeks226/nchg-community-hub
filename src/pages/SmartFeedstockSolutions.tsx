@@ -340,7 +340,7 @@ const SmartFeedstockSolutions = () => {
         </section>
 
         {/* Spacing Section */}
-        <section className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 py-8"></section>
+        <section className="bg-background py-8"></section>
       </main>
       
       <Footer />
