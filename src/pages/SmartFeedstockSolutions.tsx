@@ -27,7 +27,24 @@ const SmartFeedstockSolutions = () => {
     description: "Powder reuse cycles",
     icon: <Recycle className="w-6 h-6 text-primary" />
   }];
-  const problems = ["High material costs (£180-250/kg) eating into margins", "Waste from premature powder disposal", "Lack of validated parameters for cost-effective alternatives", "No strategy for end-of-life powder value recovery"];
+  const problems = [
+    {
+      heading: "High Costs",
+      description: "Material costs (£180-250/kg) eating into margins"
+    },
+    {
+      heading: "Premature Waste",
+      description: "From premature powder disposal"
+    },
+    {
+      heading: "Lack of Parameters",
+      description: "No validated parameters for cost-effective alternatives"
+    },
+    {
+      heading: "No Recovery Strategy",
+      description: "No strategy for end-of-life powder value recovery"
+    }
+  ];
   const benefits = [{
     icon: DollarSign,
     title: "COST OPTIMISATION",
@@ -140,15 +157,27 @@ const SmartFeedstockSolutions = () => {
               </div>
 
               {/* Problem Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                {problems.map((problem, index) => <Card key={index} className="p-6 hover-lift">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <Target className="w-3 h-3 text-destructive" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                {problems.map((problem, index) => (
+                  <Card 
+                    key={index} 
+                    className="p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  >
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
+                        <Target className="w-8 h-8 text-destructive" />
                       </div>
-                      <p className="text-sm text-foreground">{problem}</p>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground mb-2">
+                          {problem.heading}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {problem.description}
+                        </p>
+                      </div>
                     </div>
-                  </Card>)}
+                  </Card>
+                ))}
               </div>
 
               {/* Solution Statement */}
