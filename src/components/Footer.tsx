@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Logo from "@/components/Logo";
 
 
@@ -41,14 +41,20 @@ const Footer = () => {
               Securing UK supply chains with eco-friendly Ti64 powder lifecycle solutions.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Globe className="w-5 h-5" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                asChild
+              >
+                <a 
+                  href="https://www.linkedin.com/company/nchg-limited" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Visit NCHG Limited on LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -128,7 +134,7 @@ const Footer = () => {
             <a href="/privacy-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <a href="/terms-of-service" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               Terms of Service
             </a>
             <a href="/cookies-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
