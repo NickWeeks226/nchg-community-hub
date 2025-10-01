@@ -232,9 +232,7 @@ const DigitalManufacturingIntelligence = () => {
                     <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
                       <Database className="w-8 h-8 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground mb-2">
-                      📊 TI64 MECHANICAL PROPERTY DATABASE
-                    </h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground mb-2">TI64 MECHANICAL PROPERTY DATABASE</h3>
                     <p className="text-lg text-primary font-semibold mb-4">Design Allowables & Performance Benchmarking</p>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
                       Accelerate Ti64 adoption and optimisation with the most comprehensive database of AM Ti64 
