@@ -6,6 +6,7 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import powderParticlesHero from "@/assets/powder-particles-hero.png";
 
 const SmartFeedstockSolutions = () => {
   const scrollToForm = () => {
@@ -88,8 +89,13 @@ const SmartFeedstockSolutions = () => {
       
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="hero-gradient pt-24 pb-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-24 pb-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${powderParticlesHero})` }}
+          />
+          <div className="absolute inset-0 bg-primary/75" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-left mb-8">
                 <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
