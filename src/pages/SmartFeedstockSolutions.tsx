@@ -5,10 +5,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { StatsCard } from "@/components/ui/stats-card";
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
 
 const SmartFeedstockSolutions = () => {
+  const navigate = useNavigate();
+  
   const scrollToForm = () => {
     const formSection = document.querySelector('#lead-capture-form');
     if (formSection) {
@@ -139,8 +141,19 @@ const SmartFeedstockSolutions = () => {
               </div>
 
               {/* Key Statistics Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-8">
                 {statistics.map((stat, index) => <StatsCard key={index} title={stat.title} subtitle={stat.subtitle} description={stat.description} icon={stat.icon} className="bg-card/90 border-primary-foreground/20" />)}
+              </div>
+
+              {/* CTA Button Below Header */}
+              <div className="flex justify-center">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                  onClick={() => navigate('/contact')}
+                >
+                  Book a Call
+                </Button>
               </div>
             </div>
           </div>
@@ -183,9 +196,19 @@ const SmartFeedstockSolutions = () => {
               {/* Solution Statement */}
               <div className="text-center bg-primary/5 rounded-xl p-8 border border-primary/20">
                 <h3 className="text-2xl font-display font-bold text-foreground mb-4">We've developed proven methodologies to optimise every aspect of your Ti64 powder lifecycle</h3>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-muted-foreground mb-6">
                   From initial selection through to end-of-life value recovery
                 </p>
+                
+                {/* CTA After Hidden Costs */}
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-lg px-8"
+                  onClick={() => navigate('/contact')}
+                >
+                  Talk to an Expert
+                </Button>
               </div>
             </div>
           </div>
@@ -299,6 +322,27 @@ const SmartFeedstockSolutions = () => {
                   <LeadCaptureForm />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom CTA Section */}
+        <section className="py-16 bg-primary/5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
+                Ready to Transform Your Ti64 Powder Strategy?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Let's discuss how we can help you achieve up to 40% cost reduction and extend your powder lifecycle
+              </p>
+              <Button 
+                size="lg" 
+                className="text-lg px-10"
+                onClick={() => navigate('/contact')}
+              >
+                Get in Touch Today
+              </Button>
             </div>
           </div>
         </section>
