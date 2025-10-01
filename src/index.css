@@ -250,4 +250,10 @@ All colors MUST be HSL.
     transform: translateY(-2px);
     box-shadow: var(--shadow-elegant);
   }
+  
+  /* Prevent browser default :active font-weight change */
+  a:active,
+  button:active {
+    font-weight: inherit !important;
+  }
 }
