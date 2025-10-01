@@ -306,7 +306,7 @@ const SmartFeedstockSolutions = () => {
         </section>
 
         {/* Bottom CTA Section */}
-        <section className="relative py-20 mb-16 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/90">
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/90">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
               {/* Text Content */}
@@ -338,6 +338,9 @@ const SmartFeedstockSolutions = () => {
             </div>
           </div>
         </section>
+
+        {/* Spacing Section */}
+        <section className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 py-8"></section>
       </main>
       
       <Footer />
