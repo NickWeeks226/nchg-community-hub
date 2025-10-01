@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
             </p>
             <div className="bg-muted/30 p-4 rounded-lg">
               <p><strong>Email:</strong> <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">claudia@nchg.co.uk</a></p>
-              <p><strong>Phone:</strong> +44 (0) 7823 489 248</p>
+              <p><strong>Phone:</strong> <a href="tel:+447823489248" className="text-primary hover:underline">+44 (0) 7823 489 248</a></p>
               <p><strong>Address:</strong> NCHG Limited, Over Peover, Cheshire, United Kingdom</p>
             </div>
           </section>
