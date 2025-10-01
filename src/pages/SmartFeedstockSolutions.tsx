@@ -7,7 +7,7 @@ import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
-import ctaAbstractTech from "@/assets/cta-abstract-tech.jpg";
+import ctaImage from "@/assets/powder-pouring-cta.jpg";
 import Footer from "@/components/Footer";
 const SmartFeedstockSolutions = () => {
   const navigate = useNavigate();
@@ -327,12 +327,12 @@ const SmartFeedstockSolutions = () => {
                 </Button>
               </div>
 
-              {/* Abstract Technical Image */}
+              {/* Technical Image */}
               <div className="relative h-64 lg:h-96 rounded-xl overflow-hidden shadow-elegant">
                 <img 
-                  src={ctaAbstractTech} 
-                  alt="Advanced titanium powder particle analysis" 
-                  className="w-full h-full object-cover"
+                  src={ctaImage} 
+                  alt="Ti64 powder handling in additive manufacturing process" 
+                  className="w-full h-full object-cover brightness-95 contrast-110"
                 />
               </div>
             </div>
