@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import contactHero from "@/assets/contact-hero.jpg";
 const Contact = () => {
   return <div className="min-h-screen bg-background">
       <Helmet>
@@ -13,12 +14,16 @@ const Contact = () => {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-24 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="container mx-auto max-w-6xl text-center">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">
+        <section className="relative py-32 px-4 overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+            backgroundImage: `url(${contactHero})`
+          }} />
+          <div className="absolute inset-0 bg-primary/75" />
+          <div className="container mx-auto max-w-6xl text-center relative z-10">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Ready to transform your titanium manufacturing? Our experts are here to help you optimise your Ti64 processes and unlock sustainable growth opportunities.</p>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">Ready to transform your titanium manufacturing? Our experts are here to help you optimise your Ti64 processes and unlock sustainable growth opportunities.</p>
           </div>
         </section>
 
