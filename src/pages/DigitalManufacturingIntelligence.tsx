@@ -14,17 +14,22 @@ const DigitalManufacturingIntelligence = () => {
   const [selectedService, setSelectedService] = useState<'operational' | 'ti64'>('operational');
   const serviceTabsRef = useRef<HTMLDivElement>(null);
   const formsRef = useRef<HTMLDivElement>(null);
-
   const handleCaseStudyClick = (service: 'operational' | 'ti64') => {
     setSelectedService(service);
-    
+
     // Smooth scroll to service tabs first, then to forms
     setTimeout(() => {
-      serviceTabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      
+      serviceTabsRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
       // Then scroll to forms after a short delay
       setTimeout(() => {
-        formsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        formsRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }, 800);
     }, 100);
   };
@@ -116,7 +121,9 @@ const DigitalManufacturingIntelligence = () => {
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${latticeHero})` }} />
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+          backgroundImage: `url(${latticeHero})`
+        }} />
           <div className="absolute inset-0 bg-primary/75" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto text-center">
@@ -167,9 +174,7 @@ const DigitalManufacturingIntelligence = () => {
                     <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mb-6 mx-auto">
                       <Factory className="w-8 h-8 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground mb-2">
-                      🏭 UPTIMO SOFTWARE & LEAN CONSULTANCY
-                    </h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground mb-2">UPTIMO SOFTWARE & LEAN CONSULTANCY</h3>
                     <p className="text-lg text-primary font-semibold mb-4">Partnership with Magnitude Innovations</p>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
                       Transform your AM shopfloor with the only software designed specifically for additive manufacturing 
