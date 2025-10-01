@@ -7,6 +7,8 @@ import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { ArrowLeft, Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
+import ctaAbstractTech from "@/assets/cta-abstract-tech.jpg";
+import Footer from "@/components/Footer";
 const SmartFeedstockSolutions = () => {
   const navigate = useNavigate();
   const scrollToForm = () => {
@@ -304,22 +306,41 @@ const SmartFeedstockSolutions = () => {
         </section>
 
         {/* Bottom CTA Section */}
-        <section className="py-16 bg-primary/5">
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/90">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                Ready to Transform Your Ti64 Powder Strategy?
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Let's discuss how we can help you achieve up to 40% cost reduction and extend your powder lifecycle
-              </p>
-              <Button size="lg" className="text-lg px-10" onClick={() => navigate('/contact')}>
-                Get in Touch Today
-              </Button>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+              {/* Text Content */}
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6">
+                  Ready to Transform Your Ti64 Powder Strategy?
+                </h2>
+                <p className="text-xl text-primary-foreground/90 mb-8">
+                  Let's discuss how we can help you achieve up to 40% cost reduction and extend your powder lifecycle
+                </p>
+                <Button 
+                  size="lg" 
+                  variant="hero"
+                  className="text-lg px-10" 
+                  onClick={() => navigate('/contact')}
+                >
+                  Get in Touch Today
+                </Button>
+              </div>
+
+              {/* Abstract Technical Image */}
+              <div className="relative h-64 lg:h-96 rounded-xl overflow-hidden shadow-elegant">
+                <img 
+                  src={ctaAbstractTech} 
+                  alt="Advanced titanium powder particle analysis" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
       </main>
+      
+      <Footer />
     </>;
 };
 export default SmartFeedstockSolutions;
