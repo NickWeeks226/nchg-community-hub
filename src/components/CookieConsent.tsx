@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 
 const COOKIE_CONSENT_KEY = "nchg_cookie_consent";
 
@@ -64,7 +65,7 @@ const CookieConsent = () => {
     const allAccepted = {
       essential: true,
       analytics: true,
-      marketing: true,
+      marketing: false,
     };
     savePreferences(allAccepted);
   };
@@ -137,21 +138,19 @@ const CookieConsent = () => {
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-4 p-4 bg-muted/30 rounded-lg">
                 <div className="space-y-1 flex-1">
-                  <Label htmlFor="essential" className="text-base font-semibold">
-                    Essential Cookies
-                  </Label>
+                  <div className="flex items-center gap-2">
+                    <Label className="text-base font-semibold">
+                      Essential Cookies
+                    </Label>
+                    <Badge variant="secondary" className="text-xs">
+                      Always enabled
+                    </Badge>
+                  </div>
                   <p className="text-sm text-muted-foreground">
                     Required for the website to function. These cookies enable core functionality such as 
                     security, authentication, and session management.
                   </p>
                 </div>
-                <Switch
-                  id="essential"
-                  checked={preferences.essential}
-                  disabled
-                  aria-label="Essential cookies (always enabled)"
-                  className="mt-1 opacity-60"
-                />
               </div>
 
               <div className="flex items-start justify-between gap-4 p-4 bg-muted/30 rounded-lg">
@@ -177,24 +176,19 @@ const CookieConsent = () => {
 
               <div className="flex items-start justify-between gap-4 p-4 bg-muted/30 rounded-lg">
                 <div className="space-y-1 flex-1">
-                  <Label htmlFor="marketing" className="text-base font-semibold">
-                    Marketing Cookies
-                  </Label>
+                  <div className="flex items-center gap-2">
+                    <Label className="text-base font-semibold">
+                      Marketing Cookies
+                    </Label>
+                    <Badge variant="outline" className="text-xs">
+                      Not currently used
+                    </Badge>
+                  </div>
                   <p className="text-sm text-muted-foreground">
                     Not currently used. If we introduce marketing cookies in the future, they would be used 
                     to deliver relevant advertisements and measure campaign effectiveness.
                   </p>
                 </div>
-                <Switch
-                  id="marketing"
-                  checked={preferences.marketing}
-                  onCheckedChange={(checked) =>
-                    setPreferences({ ...preferences, marketing: checked })
-                  }
-                  disabled
-                  aria-label="Marketing cookies (not currently used)"
-                  className="mt-1 opacity-60"
-                />
               </div>
             </div>
 
