@@ -114,13 +114,9 @@ const DigitalManufacturingIntelligence = () => {
       
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="hero-gradient pt-24 pb-16">
+        <section className="hero-gradient pt-32 pb-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
-              <Link to="/" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Link>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
                 Data-Driven Excellence for Additive Manufacturing Operations
               </h1>
