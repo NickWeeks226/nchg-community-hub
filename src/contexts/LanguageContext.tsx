@@ -72,7 +72,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.cta.text': 'Join us in developing sustainable solutions for the titanium industry. Partner with us to shape the future of UK manufacturing.',
     'services.cta.button': 'Partner With Us',
     
-    // About Section
+    // About Section  
     'about.heading': 'About NCHG Limited',
     'about.intro1': 'NCHG Limited is driving the next generation of titanium powder innovation in the UK. Focused on sustainable Ti64 feedstock solutions, we support additive manufacturing and aerospace applications with a local, circular, and secure supply chain.',
     'about.intro2': 'Our leadership combines deep technical expertise, strategic industry insight, and a commitment to reshaping British manufacturing through collaboration, sustainability, and innovation.',
@@ -119,6 +119,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.hours.saturdayTime': '10:00 AM - 2:00 PM GMT',
     'contact.hours.sunday': 'Sunday',
     'contact.hours.sundayTime': 'Closed',
+    
+    // Not Found
+    'notFound.title': '404',
+    'notFound.description': 'Oops! Page not found',
+    'notFound.returnHome': 'Return to Home',
   },
   de: {
     // Navigation
@@ -228,6 +233,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.hours.saturdayTime': '10:00 - 14:00 Uhr GMT',
     'contact.hours.sunday': 'Sonntag',
     'contact.hours.sundayTime': 'Geschlossen',
+    
+    // Not Found
+    'notFound.title': '404',
+    'notFound.description': 'Hoppla! Seite nicht gefunden',
+    'notFound.returnHome': 'Zurück zur Startseite',
   },
 };
 
