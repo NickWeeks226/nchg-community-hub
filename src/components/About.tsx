@@ -25,15 +25,15 @@ const About = () => {
   const leadership = [
     {
       name: "Claudia",
-      role: "Director",
+      role: t('about.claudia.role'),
       image: claudiaImg,
-      description: "Claudia brings a wealth of experience in brand development, stakeholder engagement, and relationship management. Her strength lies in connecting people, ideas, and opportunities—supporting NCHG's mission by building meaningful partnerships and raising awareness around sustainable innovation in UK manufacturing."
+      description: t('about.claudia.bio')
     },
     {
       name: "Nick",
-      role: "Director", 
+      role: t('about.nick.role'), 
       image: nickImg,
-      description: "Nick is a seasoned expert in additive manufacturing with extensive experience leading high-growth companies. As a former COO and director, he combines deep technical knowledge with strategic vision, driving innovation and forging strong industry partnerships. Nick's extensive network and leadership empower NCHG to deliver cutting-edge titanium solutions that advance sustainable manufacturing in the UK."
+      description: t('about.nick.bio')
     }
   ];
 

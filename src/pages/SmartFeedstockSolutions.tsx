@@ -6,11 +6,13 @@ import { StatsCard } from "@/components/ui/stats-card";
 import { LeadCaptureForm } from "@/components/forms/LeadCaptureForm";
 import { Target, DollarSign, Recycle, Shield, RefreshCw, TrendingUp, Award, Users, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import powderParticlesHero from "@/assets/powder-particles-hero.png";
 import ctaImage from "@/assets/powder-pouring-cta.jpg";
 import Footer from "@/components/Footer";
 const SmartFeedstockSolutions = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const scrollToForm = () => {
     const formSection = document.querySelector('#lead-capture-form');
     if (formSection) {
@@ -20,28 +22,28 @@ const SmartFeedstockSolutions = () => {
     }
   };
   const statistics = [{
-    title: "Up to 40%",
-    subtitle: "Cost Reduction",
-    description: "Material cost savings",
+    title: t('smartFeedstock.stats.costReduction'),
+    subtitle: t('smartFeedstock.stats.costReductionSub'),
+    description: t('smartFeedstock.stats.costReductionDesc'),
     icon: <DollarSign className="w-6 h-6 text-success" />
   }, {
-    title: "3-5x",
-    subtitle: "Lifecycle Extension",
-    description: "Powder reuse cycles",
+    title: t('smartFeedstock.stats.lifecycle'),
+    subtitle: t('smartFeedstock.stats.lifecycleSub'),
+    description: t('smartFeedstock.stats.lifecycleDesc'),
     icon: <Recycle className="w-6 h-6 text-primary" />
   }];
   const problems = [{
-    heading: "High Costs",
-    description: "Material costs (£180-250/kg) eating into margins"
+    heading: t('smartFeedstock.problems.cost'),
+    description: t('smartFeedstock.problems.costDesc')
   }, {
-    heading: "Premature Waste",
-    description: "From premature powder disposal"
+    heading: t('smartFeedstock.problems.waste'),
+    description: t('smartFeedstock.problems.wasteDesc')
   }, {
-    heading: "Lack of Parameters",
-    description: "No validated parameters for cost-effective alternatives"
+    heading: t('smartFeedstock.problems.parameters'),
+    description: t('smartFeedstock.problems.parametersDesc')
   }, {
-    heading: "No Recovery Strategy",
-    description: "No strategy for end-of-life powder value recovery"
+    heading: t('smartFeedstock.problems.recovery'),
+    description: t('smartFeedstock.problems.recoveryDesc')
   }];
   const benefits = [{
     icon: DollarSign,
@@ -112,19 +114,19 @@ const SmartFeedstockSolutions = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">Maximise Your Ti64 Powder ROI and Lifecycle Value</h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">{t('smartFeedstock.hero.title')}</h1>
                 <p className="text-xl text-primary-foreground/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                  Expert Ti64 powder lifecycle optimisation and cost reduction strategies that can save up to 
-                  <span className="font-bold"> 40% on material costs</span> while extending powder life by 
-                  <span className="font-bold"> 3-5x lifecycle extension</span>.
+                  {t('smartFeedstock.hero.subtitle')}
+                  <span className="font-bold"> {t('smartFeedstock.hero.costSaving')}</span> {' '}
+                  <span className="font-bold">{t('smartFeedstock.hero.lifecycle')}</span>.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                   <Button variant="hero" size="lg" className="text-lg px-8" onClick={scrollToForm}>
-                    Optimise Your Feedstock
+                    {t('smartFeedstock.hero.cta1')}
                   </Button>
                   <Button variant="glass" size="lg" className="text-lg px-8" onClick={scrollToForm}>
-                    Download ROI Calculator
+                    {t('smartFeedstock.hero.cta2')}
                   </Button>
                 </div>
               </div>
@@ -148,7 +150,7 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-6">
-                  The Hidden Costs of Inefficient Ti64 Powder Management
+                  {t('smartFeedstock.problems.title')}
                 </h2>
               </div>
 
@@ -173,14 +175,14 @@ const SmartFeedstockSolutions = () => {
 
               {/* Solution Statement */}
               <div className="text-center bg-primary/5 rounded-xl p-8 border border-primary/20">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">We've developed proven methodologies to optimise every aspect of your Ti64 powder lifecycle</h3>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-4">{t('smartFeedstock.solution.title')}</h3>
                 <p className="text-lg text-muted-foreground mb-6">
-                  From initial selection through to end-of-life value recovery
+                  {t('smartFeedstock.solution.subtitle')}
                 </p>
                 
                 {/* CTA After Hidden Costs */}
                 <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => navigate('/contact')}>
-                  Talk to an Expert
+                  {t('smartFeedstock.solution.cta')}
                 </Button>
               </div>
             </div>
@@ -193,10 +195,10 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  Transform Your Ti64 Powder Strategy
+                  {t('smartFeedstock.benefits.title')}
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Four pillars of comprehensive powder optimisation
+                  {t('smartFeedstock.benefits.subtitle')}
                 </p>
               </div>
 
@@ -232,10 +234,10 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  How It Works
+                  {t('smartFeedstock.process.title')}
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Our proven 4-step process for Ti64 powder optimisation
+                  {t('smartFeedstock.process.subtitle')}
                 </p>
               </div>
 
@@ -265,15 +267,15 @@ const SmartFeedstockSolutions = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-                  Get Your Free Ti64 Powder Lifecycle Assessment
+                  {t('smartFeedstock.leadCapture.title')}
                 </h2>
-                <p className="text-xl text-muted-foreground">Discover your powder lifecycle optimisation potential with a comprehensive analysis</p>
+                <p className="text-xl text-muted-foreground">{t('smartFeedstock.leadCapture.subtitle')}</p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 {/* Benefits List */}
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-6">What You'll Receive:</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-6">{t('smartFeedstock.leadCapture.whatYouGet')}</h3>
                   <div className="space-y-4">
                     {benefits_list.map((benefit, index) => <div key={index} className="flex items-center space-x-3">
                         <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
@@ -284,9 +286,9 @@ const SmartFeedstockSolutions = () => {
                   <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
                     <div className="flex items-center space-x-3 mb-3">
                       <Users className="w-5 h-5 text-primary" />
-                      <span className="font-semibold text-foreground">Trusted by Industry Leaders</span>
+                      <span className="font-semibold text-foreground">{t('smartFeedstock.leadCapture.trusted')}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">Join industry leaders already optimising their Ti64 strategy with NCHG</p>
+                    <p className="text-sm text-muted-foreground">{t('smartFeedstock.leadCapture.trustedDesc')}</p>
                   </div>
                 </div>
 
@@ -306,10 +308,10 @@ const SmartFeedstockSolutions = () => {
               {/* Text Content */}
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6">
-                  Ready to Transform Your Ti64 Powder Strategy?
+                  {t('smartFeedstock.cta.title')}
                 </h2>
                 <p className="text-xl text-primary-foreground/90 mb-8">
-                  Let's discuss how we can help you achieve up to 40% cost reduction and extend your powder lifecycle
+                  {t('smartFeedstock.cta.subtitle')}
                 </p>
                 <Button 
                   size="lg" 
@@ -317,7 +319,7 @@ const SmartFeedstockSolutions = () => {
                   className="text-lg px-10" 
                   onClick={() => navigate('/contact')}
                 >
-                  Get in Touch Today
+                  {t('smartFeedstock.cta.button')}
                 </Button>
               </div>
 
