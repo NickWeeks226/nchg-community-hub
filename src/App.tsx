@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpellingProvider } from "@/contexts/SpellingContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SecurityMonitor } from "@/components/security/SecurityMonitor";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -30,16 +31,17 @@ const App = () => {
   
   return (
     <QueryClientProvider client={queryClient}>
-      <SpellingProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <SecurityMonitor />
-          <CookieConsent />
-          <BrowserRouter>
-            <ScrollToTop />
-            <Header />
-            <Routes>
+      <LanguageProvider>
+        <SpellingProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <SecurityMonitor />
+            <CookieConsent />
+            <BrowserRouter>
+              <ScrollToTop />
+              <Header />
+              <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/marketplace" element={<Marketplace />} />
@@ -58,6 +60,7 @@ const App = () => {
           </BrowserRouter>
         </TooltipProvider>
       </SpellingProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   )
 }

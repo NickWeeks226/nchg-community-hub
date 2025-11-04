@@ -6,6 +6,8 @@ import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { UserMenu } from "@/components/auth/UserMenu";
 import Logo from "@/components/Logo";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 
@@ -14,14 +16,15 @@ const Header = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const { user } = useAuth();
   const location = useLocation();
+  const { t } = useLanguage();
   
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
-    { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
-    { label: "Marketplace", href: "/marketplace-community" },
-    { label: "Contact", href: "/contact" },
+    { label: t('nav.home'), href: "/" },
+    { label: t('nav.smartFeedstock'), href: "/smart-feedstock-solutions" },
+    { label: t('nav.digitalIntelligence'), href: "/digital-manufacturing-intelligence" },
+    { label: t('nav.marketplace'), href: "/marketplace-community" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   return (
@@ -54,12 +57,13 @@ const Header = () => {
           </nav>
 
           {/* Auth Section */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2">
+            <LanguageSelector />
             {user ? (
               <UserMenu />
             ) : (
               <Button variant="hero" size="sm" onClick={() => setAuthModalOpen(true)}>
-                Sign In
+                {t('nav.signIn')}
               </Button>
             )}
           </div>
@@ -96,20 +100,21 @@ const Header = () => {
                   </Link>
                 );
               })}
-              {user ? (
-                <div className="pt-4 border-t border-border/50">
+              <div className="pt-4 border-t border-border/50 flex items-center justify-between">
+                <LanguageSelector />
+                {user ? (
                   <UserMenu />
-                </div>
-              ) : (
-                <Button 
-                  variant="hero" 
-                  size="sm" 
-                  className="w-full mt-4"
-                  onClick={() => setAuthModalOpen(true)}
-                >
-                  Sign In
-                </Button>
-              )}
+                ) : (
+                  <Button 
+                    variant="hero" 
+                    size="sm" 
+                    className="flex-1 ml-2"
+                    onClick={() => setAuthModalOpen(true)}
+                  >
+                    {t('nav.signIn')}
+                  </Button>
+                )}
+              </div>
             </nav>
           </div>
         )}
