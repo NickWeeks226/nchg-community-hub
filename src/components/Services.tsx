@@ -10,53 +10,56 @@ import {
 } from "lucide-react";
 import { AuthModal } from "@/components/auth/AuthModal";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { t } = useLanguage();
+  
   const pillars = [
     {
       icon: Target,
-      title: "Smart Feedstock Solutions",
-      tagline: "Maximize powder ROI & lifecycle value",
-      description: "Expert feedstock optimisation, lifecycle extension, and cost reduction strategies that can save up to 40% on material costs while extending powder life by 3-5 cycles.",
+      title: t('services.pillar1.title'),
+      tagline: t('services.pillar1.tagline'),
+      description: t('services.pillar1.description'),
       services: [
-        "Feedstock Consultancy & Optimisation",
-        "Commercial Viability Testing & Validation", 
-        "Powder Lifecycle Extension (3-5x cycles)",
-        "Strategic Cost Reduction Programs"
+        t('services.pillar1.service1'),
+        t('services.pillar1.service2'), 
+        t('services.pillar1.service3'),
+        t('services.pillar1.service4')
       ],
-      resultsBadge: "Up to 40% Cost Reduction & 3-5x Lifecycle Extension",
-      ctaText: "Optimize Your Feedstock",
+      resultsBadge: t('services.pillar1.results'),
+      ctaText: t('services.pillar1.cta'),
       link: "/smart-feedstock-solutions"
     },
     {
       icon: TrendingUp,
-      title: "Digital Manufacturing Intelligence",
-      tagline: "Data-driven operational excellence for AM operations",
-      description: "Comprehensive digital solutions combining advanced analytics, process optimisation, and mechanical properties databases to maximise manufacturing efficiency and quality control.",
+      title: t('services.pillar2.title'),
+      tagline: t('services.pillar2.tagline'),
+      description: t('services.pillar2.description'),
       services: [
-        "Uptimo Software & Lean Consultancy",
-        "Ti64 Mechanical Properties Database",
-        "Process Optimisation & Analytics",
-        "Quality Control Systems"
+        t('services.pillar2.service1'),
+        t('services.pillar2.service2'),
+        t('services.pillar2.service3'),
+        t('services.pillar2.service4')
       ],
-      resultsBadge: "30% Efficiency Gains & Certified Data Standards",
-      ctaText: "Transform Your Operations",
+      resultsBadge: t('services.pillar2.results'),
+      ctaText: t('services.pillar2.cta'),
       link: "/digital-manufacturing-intelligence"
     },
     {
       icon: Handshake,
-      title: "Ti64 Marketplace & Community",
-      tagline: "Sustainable ecosystem for trading & knowledge sharing",
-      description: "The UK's premier Ti64 trading platform and professional community, connecting manufacturers, suppliers, and experts in a secure, sustainable marketplace focused on circular economy principles.",
+      title: t('services.pillar3.title'),
+      tagline: t('services.pillar3.tagline'),
+      description: t('services.pillar3.description'),
       services: [
-        "Secure Marketplace Platform",
-        "Expert Community Network",
-        "Professional Reconditioning Services",
-        "Sustainability & Circular Economy Focus"
+        t('services.pillar3.service1'),
+        t('services.pillar3.service2'),
+        t('services.pillar3.service3'),
+        t('services.pillar3.service4')
       ],
-      resultsBadge: "Founding Members - Exclusive Early Access",
-      ctaText: "Join the Community",
+      resultsBadge: t('services.pillar3.results'),
+      ctaText: t('services.pillar3.cta'),
       link: "/marketplace-community"
     }
   ];
@@ -67,15 +70,13 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-            What We Do
+            {t('services.heading')}
           </h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-4">
-            Transforming titanium manufacturing through smart feedstock optimisation, 
-            data-driven operational excellence, and the UK's premier Ti64 ecosystem.
+            {t('services.subtitle')}
           </p>
           <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-            From powder lifecycle optimisation to digital manufacturing intelligence and sustainable trading - 
-            we provide comprehensive solutions for the entire Ti64 value chain.
+            {t('services.description')}
           </p>
         </div>
 
@@ -133,14 +134,13 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-2xl font-display font-semibold text-foreground mb-4">
-            Help Us Build the Future of Titanium Manufacturing
+            {t('services.cta.heading')}
           </h3>
           <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
-            Join us in developing sustainable solutions for the titanium industry. 
-            Partner with us to shape the future of UK manufacturing.
+            {t('services.cta.text')}
           </p>
           <Button variant="hero" size="lg" onClick={() => setAuthModalOpen(true)}>
-            Partner With Us
+            {t('services.cta.button')}
           </Button>
         </div>
       </div>

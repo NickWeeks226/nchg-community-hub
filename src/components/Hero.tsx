@@ -1,12 +1,13 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Recycle, Factory } from "lucide-react";
 import heroImage from "@/assets/hero-titanium.jpg";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { t } = useLanguage();
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -25,29 +26,29 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 mb-6">
             <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Sustainable Manufacturing Leader</span>
+            <span className="text-sm font-medium text-primary">{t('hero.badge')}</span>
           </div>
           
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            Resilient. Sustainable. British.
+            {t('hero.headline')}
           </h1>
           
           {/* Subheading */}
           <p className="text-xl sm:text-2xl text-foreground/90 mb-8 max-w-3xl leading-relaxed font-medium">
-            Titanium solutions for a stronger, greener future.
+            {t('hero.subheadline')}
           </p>
           
           {/* Body Text */}
           <div className="text-lg text-foreground mb-8 max-w-4xl leading-relaxed">
             <p className="mb-4">
-              At NCHG Limited, we are committed to creating a resilient and sustainable future for British industry. By embracing the core principles of Reduce, Re-use, and Recycle, we aim to educate, empower, and connect a community of UK businesses dedicated to sustainable manufacturing.
+              {t('hero.para1')}
             </p>
             <p className="mb-4">
-              Our mission is to establish a secure, 100% UK-sourced supply of Titanium by 2030, supporting the energy and mobility sectors with reliable, environmentally conscious solutions. In doing so, we help mitigate global supply chain risks while promoting local innovation and sustainability.
+              {t('hero.para2')}
             </p>
             <p>
-              Join us in reshaping the future - where resilience, sustainability, and circular economy practices drive British manufacturing forward.
+              {t('hero.para3')}
             </p>
           </div>
           
@@ -57,24 +58,24 @@ const Hero = () => {
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Recycle className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-foreground font-medium">100% UK Source by 2030</span>
+              <span className="text-foreground font-medium">{t('hero.keypoint1')}</span>
             </div>
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Factory className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-foreground font-medium">Reduce, Re-use, Recycle</span>
+              <span className="text-foreground font-medium">{t('hero.keypoint2')}</span>
             </div>
           </div>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="default" size="lg" className="group" onClick={() => setAuthModalOpen(true)}>
-              Explore Our Solutions
+              {t('hero.cta1')}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="lg" onClick={() => setAuthModalOpen(true)}>
-              Join the Movement
+              {t('hero.cta2')}
             </Button>
           </div>
           

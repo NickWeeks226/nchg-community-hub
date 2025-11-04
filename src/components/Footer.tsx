@@ -2,23 +2,25 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Logo from "@/components/Logo";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 const Footer = () => {
+  const { t } = useLanguage();
   
   const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "Smart Feedstock", href: "/smart-feedstock-solutions" },
-    { label: "Digital Intelligence", href: "/digital-manufacturing-intelligence" },
-    { label: "Marketplace", href: "/marketplace-community" },
-    { label: "Contact", href: "/contact" },
+    { label: t('nav.home'), href: "/" },
+    { label: t('nav.smartFeedstock'), href: "/smart-feedstock-solutions" },
+    { label: t('nav.digitalIntelligence'), href: "/digital-manufacturing-intelligence" },
+    { label: t('nav.marketplace'), href: "/marketplace-community" },
+    { label: t('nav.contact'), href: "/contact" },
   ];
 
   const services = [
-    { label: "Ti64 Powder Lifecycle Solutions", href: "/smart-feedstock-solutions" },
-    { label: "AM Operational Excellence", href: "/digital-manufacturing-intelligence" },
-    { label: "Ti64 Database Development", href: "/digital-manufacturing-intelligence" },
-    { label: "Uptimo Software Implementation", href: "/digital-manufacturing-intelligence" },
+    { label: t('footer.service1'), href: "/smart-feedstock-solutions" },
+    { label: t('footer.service2'), href: "/digital-manufacturing-intelligence" },
+    { label: t('footer.service3'), href: "/digital-manufacturing-intelligence" },
+    { label: t('footer.service4'), href: "/digital-manufacturing-intelligence" },
   ];
 
   const contact = [
@@ -38,8 +40,7 @@ const Footer = () => {
               <Logo variant="white" className="h-12 w-auto md:h-14" />
             </div>
             <p className="text-primary-foreground/80 mb-6">
-              Leading provider of sustainable titanium solutions for additive manufacturing. 
-              Securing UK supply chains with eco-friendly Ti64 powder lifecycle solutions.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <Button 
@@ -62,7 +63,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -79,7 +80,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Our Services</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.services')}</h3>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -96,7 +97,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.contact')}</h3>
             <div className="space-y-4">
               {contact.map((item, index) => {
                 const IconComponent = item.icon;
@@ -121,15 +122,15 @@ const Footer = () => {
             </div>
             
             <div className="mt-6">
-              <h4 className="font-medium mb-3">Stay Updated</h4>
+              <h4 className="font-medium mb-3">{t('footer.stayUpdated')}</h4>
               <div className="flex space-x-2">
                 <input 
                   type="email" 
-                  placeholder="Enter your email"
+                  placeholder={t('footer.emailPlaceholder')}
                   className="flex-1 px-3 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-md text-primary-foreground placeholder:text-primary-foreground/60 text-sm"
                 />
                 <Button variant="accent" size="sm">
-                  Subscribe
+                  {t('footer.subscribe')}
                 </Button>
               </div>
             </div>
@@ -141,17 +142,17 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="text-primary-foreground/80 text-sm">
-            © 2025 NCHG Limited. All rights reserved.
+            {t('footer.copyright')}
           </div>
           <div className="flex space-x-6 text-sm">
             <a href="/privacy-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Privacy Policy
+              {t('footer.privacy')}
             </a>
             <a href="/terms-of-service" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Terms of Service
+              {t('footer.terms')}
             </a>
             <a href="/cookies-policy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Cookie Policy
+              {t('footer.cookies')}
             </a>
           </div>
         </div>

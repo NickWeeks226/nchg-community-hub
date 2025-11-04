@@ -4,7 +4,10 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
+  const { t } = useLanguage();
+  
   return <div className="min-h-screen bg-background">
       <Helmet>
         <title>Contact NCHG - Titanium & Ti64 Solutions Experts | UK</title>
@@ -21,9 +24,9 @@ const Contact = () => {
           <div className="absolute inset-0 bg-primary/75" />
           <div className="container mx-auto max-w-6xl text-center relative z-10">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6">
-              Get In Touch
+              {t('contact.hero.title')}
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">Ready to transform your titanium manufacturing? Our experts are here to help you optimise your Ti64 processes and unlock sustainable growth opportunities.</p>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">{t('contact.hero.subtitle')}</p>
           </div>
         </section>
 
@@ -35,10 +38,10 @@ const Contact = () => {
               {/* Contact Form */}
               <div>
                 <h2 className="text-3xl font-display font-bold text-foreground mb-6">
-                  Send Us a Message
+                  {t('contact.form.heading')}
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  Tell us about your project and we'll get back to you within 24 hours with a tailored solution.
+                  {t('contact.form.subtitle')}
                 </p>
                 <ContactForm />
               </div>
@@ -47,10 +50,10 @@ const Contact = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="text-3xl font-display font-bold text-foreground mb-6">
-                    Contact Information
+                    {t('contact.info.heading')}
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Speak directly with our titanium experts and discover how we can accelerate your manufacturing success.
+                    {t('contact.info.subtitle')}
                   </p>
                 </div>
 
@@ -60,11 +63,11 @@ const Contact = () => {
                       <div className="flex items-start space-x-4">
                         <Mail className="h-6 w-6 text-primary mt-1" />
                         <div>
-                          <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{t('contact.email.heading')}</h3>
                           <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">
                             claudia@nchg.co.uk
                           </a>
-                          <p className="text-sm text-muted-foreground mt-1">For all inquiries and partnerships</p>
+                          <p className="text-sm text-muted-foreground mt-1">{t('contact.email.description')}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -75,11 +78,11 @@ const Contact = () => {
                       <div className="flex items-start space-x-4">
                         <Phone className="h-6 w-6 text-primary mt-1" />
                         <div>
-                          <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{t('contact.phone.heading')}</h3>
                           <a href="tel:+447823489248" className="text-primary hover:underline">
                             +44 (0) 7823 489 248
                           </a>
-                          <p className="text-sm text-muted-foreground mt-1">Monday - Friday, 9:00 AM - 6:00 PM GMT</p>
+                          <p className="text-sm text-muted-foreground mt-1">{t('contact.phone.hours')}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -90,11 +93,11 @@ const Contact = () => {
                       <div className="flex items-start space-x-4">
                         <MapPin className="h-6 w-6 text-primary mt-1" />
                         <div>
-                          <h3 className="font-semibold text-foreground mb-1">Address</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{t('contact.address.heading')}</h3>
                           <p className="text-muted-foreground">
                             Over Peover, Cheshire, United Kingdom
                           </p>
-                          <p className="text-sm text-muted-foreground mt-1">By appointment only</p>
+                          <p className="text-sm text-muted-foreground mt-1">{t('contact.address.note')}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -105,9 +108,9 @@ const Contact = () => {
                       <div className="flex items-start space-x-4">
                         <Clock className="h-6 w-6 text-primary mt-1" />
                         <div>
-                          <h3 className="font-semibold text-foreground mb-1">Response Time</h3>
-                          <p className="text-muted-foreground">Within 24 hours</p>
-                          <p className="text-sm text-muted-foreground mt-1">Guaranteed response to all inquiries</p>
+                          <h3 className="font-semibold text-foreground mb-1">{t('contact.response.heading')}</h3>
+                          <p className="text-muted-foreground">{t('contact.response.time')}</p>
+                          <p className="text-sm text-muted-foreground mt-1">{t('contact.response.guarantee')}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -116,19 +119,19 @@ const Contact = () => {
 
                 {/* Business Hours */}
                 <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-6">
-                  <h3 className="font-semibold text-foreground mb-4">Business Hours</h3>
+                  <h3 className="font-semibold text-foreground mb-4">{t('contact.hours.heading')}</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Monday - Friday</span>
-                      <span className="text-foreground">9:00 AM - 6:00 PM GMT</span>
+                      <span className="text-muted-foreground">{t('contact.hours.weekday')}</span>
+                      <span className="text-foreground">{t('contact.hours.weekdayTime')}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Saturday</span>
-                      <span className="text-foreground">10:00 AM - 2:00 PM GMT</span>
+                      <span className="text-muted-foreground">{t('contact.hours.saturday')}</span>
+                      <span className="text-foreground">{t('contact.hours.saturdayTime')}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Sunday</span>
-                      <span className="text-foreground">Closed</span>
+                      <span className="text-muted-foreground">{t('contact.hours.sunday')}</span>
+                      <span className="text-foreground">{t('contact.hours.sundayTime')}</span>
                     </div>
                   </div>
                 </div>

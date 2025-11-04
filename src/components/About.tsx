@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Leadership photos from uploads
 const claudiaImg = "/leadership/claudia.JPG";
@@ -19,6 +20,8 @@ const metalysisLogo = "/lovable-uploads/851c71bc-295f-483a-b170-f70509574e98.png
 const sheffieldLogo = "/customers/UoS.png";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   const leadership = [
     {
       name: "Claudia",
@@ -89,12 +92,12 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Leadership Team */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">About NCHG Limited</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">{t('about.heading')}</h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            NCHG Limited is driving the next generation of titanium powder innovation in the UK. Focused on sustainable Ti64 feedstock solutions, we support additive manufacturing and aerospace applications with a local, circular, and secure supply chain.
+            {t('about.intro1')}
           </p>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Our leadership combines deep technical expertise, strategic industry insight, and a commitment to reshaping British manufacturing through collaboration, sustainability, and innovation.
+            {t('about.intro2')}
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -133,7 +136,7 @@ const About = () => {
 
         {/* Partners Section */}
         <div className="text-center mb-16">
-          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Trusted Partners</h3>
+          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">{t('about.partners')}</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {partners.map((partner, index) => (
               <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-4 flex items-center justify-center min-h-[120px]">
@@ -156,7 +159,7 @@ const About = () => {
 
         {/* Customers Section */}
         <div className="text-center">
-          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">Valued Customers</h3>
+          <h3 className="text-2xl font-display font-semibold text-foreground mb-8">{t('about.customers')}</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {customers.map((customer, index) => (
               <Card key={index} className="hover-lift bg-card/60 backdrop-blur-sm border-primary/10 p-4 flex items-center justify-center min-h-[120px]">
