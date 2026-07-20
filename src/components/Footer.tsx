@@ -9,18 +9,18 @@ const Footer = () => {
   const { t } = useLanguage();
   
   const quickLinks = [
-    { label: t('nav.home'), href: "/" },
-    { label: t('nav.smartFeedstock'), href: "/smart-feedstock-solutions" },
-    { label: t('nav.digitalIntelligence'), href: "/digital-manufacturing-intelligence" },
-    { label: t('nav.marketplace'), href: "/marketplace-community" },
-    { label: t('nav.contact'), href: "/contact" },
+    { label: "Home", href: "/" },
+    { label: "What We Do", href: "/#services" },
+    { label: "Case Study", href: "/#case-study" },
+    { label: "Team", href: "/#team" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const services = [
-    { label: t('footer.service1'), href: "/smart-feedstock-solutions" },
-    { label: t('footer.service2'), href: "/digital-manufacturing-intelligence" },
-    { label: t('footer.service3'), href: "/digital-manufacturing-intelligence" },
-    { label: t('footer.service4'), href: "/digital-manufacturing-intelligence" },
+    { label: "Qualify — wider-spec feedstock", href: "/#services" },
+    { label: "Recover — sieve-rejected powder", href: "/#services" },
+    { label: "Recycle — highest-value scrap routing", href: "/#services" },
+    { label: "Book a free feedstock assessment", href: "/contact" },
   ];
 
   const contact = [

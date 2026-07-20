@@ -30,7 +30,7 @@ export const SecurityMonitor = () => {
 
     // Log suspicious activity (multiple rapid clicks, etc.)
     let clickCount = 0
-    let clickTimer: NodeJS.Timeout
+    let clickTimer: ReturnType<typeof setTimeout>
 
     const handleSuspiciousActivity = () => {
       clickCount++

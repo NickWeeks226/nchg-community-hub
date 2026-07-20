@@ -163,12 +163,10 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="general">General Inquiry</SelectItem>
-                  <SelectItem value="smart-feedstock">Smart Feedstock Solutions</SelectItem>
-                  <SelectItem value="digital-intelligence">Digital Manufacturing Intelligence</SelectItem>
-                  <SelectItem value="marketplace">Marketplace Interest</SelectItem>
-                  <SelectItem value="partnership">Partnership Opportunities</SelectItem>
-                  <SelectItem value="support">Technical Support</SelectItem>
+                  <SelectItem value="qualify">Qualify — wider-spec feedstock</SelectItem>
+                  <SelectItem value="recover">Recover — sieve-rejected powder</SelectItem>
+                  <SelectItem value="recycle">Recycle — highest-value scrap routing</SelectItem>
+                  <SelectItem value="not-sure">Not sure yet</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />

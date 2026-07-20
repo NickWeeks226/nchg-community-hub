@@ -11,13 +11,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
-import Marketplace from "./pages/Marketplace";
-import CreateListing from "./pages/CreateListing";
-import Messages from "./pages/Messages";
 import NotFound from "./pages/NotFound";
-import SmartFeedstockSolutions from "./pages/SmartFeedstockSolutions";
-import DigitalManufacturingIntelligence from "./pages/DigitalManufacturingIntelligence";
-import MarketplaceCommunity from "./pages/MarketplaceCommunity";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiesPolicy from "./pages/CookiesPolicy";
@@ -44,12 +38,6 @@ const App = () => {
               <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/marketplace" element={<Marketplace />} />
-              <Route path="/create-listing" element={<CreateListing />} />
-              <Route path="/messages" element={<Messages />} />
-              <Route path="/smart-feedstock-solutions" element={<SmartFeedstockSolutions />} />
-              <Route path="/digital-manufacturing-intelligence" element={<DigitalManufacturingIntelligence />} />
-              <Route path="/marketplace-community" element={<MarketplaceCommunity />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/cookies-policy" element={<CookiesPolicy />} />

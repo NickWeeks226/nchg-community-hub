@@ -21,9 +21,9 @@ const Header = () => {
 
   const navItems = [
     { label: t('nav.home'), href: "/" },
-    { label: t('nav.smartFeedstock'), href: "/smart-feedstock-solutions" },
-    { label: t('nav.digitalIntelligence'), href: "/digital-manufacturing-intelligence" },
-    { label: t('nav.marketplace'), href: "/marketplace-community" },
+    { label: "What We Do", href: "/#services" },
+    { label: "Case Study", href: "/#case-study" },
+    { label: "Team", href: "/#team" },
     { label: t('nav.contact'), href: "/contact" },
   ];
 
