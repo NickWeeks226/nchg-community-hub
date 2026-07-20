@@ -24,17 +24,33 @@ const About = () => {
   
   const leadership = [
     {
-      name: "Claudia",
-      role: t('about.claudia.role'),
-      image: claudiaImg,
-      description: t('about.claudia.bio')
+      name: "Nick Weeks",
+      role: "Founder / Director",
+      image: nickImg,
+      description:
+        "Nick brings 20+ years in titanium AM supply chains, including senior roles at Rolls-Royce, LPW Technology and Carpenter Additive. He leads NCHG's technical direction and industry partnerships.",
     },
     {
-      name: "Nick",
-      role: t('about.nick.role'), 
-      image: nickImg,
-      description: t('about.nick.bio')
-    }
+      name: "Claudia",
+      role: "Director",
+      image: claudiaImg,
+      description:
+        "Claudia leads brand, stakeholder engagement and partnerships at NCHG, connecting customers, partners and industry bodies across UK advanced manufacturing.",
+    },
+    {
+      name: "Jemma Carpenter",
+      role: "Business Development Manager",
+      image: "/placeholder.svg",
+      description:
+        "Jemma brings seven years of commercial additive manufacturing experience from Carpenter Additive, with direct relationships across the UK titanium AM customer base. She leads NCHG's sales strategy, market research, and customer engagement.",
+    },
+    {
+      name: "Jon Poole",
+      role: "Field Engineer",
+      image: "/placeholder.svg",
+      description:
+        "Jon brings hands-on LPBF operational experience from AtomikAM, covering powder handling, machine operation, and build execution. He leads NCHG's on-site service delivery — the gas flow assessments, mechanical testing and recovery engagements that qualify and recover customer feedstock.",
+    },
   ];
 
   const partners = [
@@ -91,16 +107,13 @@ const About = () => {
     <section id="about" className="py-20 surface-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Leadership Team */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">{t('about.heading')}</h2>
+        <div id="team" className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">The team</h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            {t('about.intro1')}
+            A UK team combining decades of titanium AM supply chain experience with hands-on LPBF machine expertise.
           </p>
-          <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            {t('about.intro2')}
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {leadership.map((person) => (
               <Card key={person.name} className="hover-lift bg-card/80 backdrop-blur-sm border-primary/20">
                 <CardHeader className="text-center pb-4">
