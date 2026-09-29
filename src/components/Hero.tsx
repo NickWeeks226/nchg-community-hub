@@ -44,6 +44,11 @@ const Hero = () => {
             <Button asChild variant="outline" size="lg">
               <a href="#case-study">See the Atherton Bikes case study</a>
             </Button>
+            <Button asChild variant="outline" size="lg">
+              <a href="/NCHG-AMRC-Ti64-10-90-report.pdf" target="_blank" rel="noopener noreferrer">
+                Download the AMRC report
+              </a>
+            </Button>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6">
