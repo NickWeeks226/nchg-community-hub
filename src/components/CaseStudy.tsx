@@ -43,9 +43,14 @@ const CaseStudy = () => {
           })}
         </div>
 
-        <div className="text-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild variant="hero" size="lg">
             <Link to="/contact">Book a free feedstock assessment</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <a href="/NCHG-AMRC-Ti64-10-90-report.pdf" target="_blank" rel="noopener noreferrer">
+              Download the AMRC report
+            </a>
           </Button>
         </div>
       </div>
