@@ -6,27 +6,27 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, tr } = useLanguage();
   
   const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "What We Do", href: "/#services" },
-    { label: "Case Study", href: "/#case-study" },
+    { label: tr("Home", "Startseite"), href: "/" },
+    { label: tr("What We Do", "Leistungen"), href: "/#services" },
+    { label: tr("Case Study", "Fallstudie"), href: "/#case-study" },
     { label: "Team", href: "/#team" },
-    { label: "Contact", href: "/contact" },
+    { label: tr("Contact", "Kontakt"), href: "/contact" },
   ];
 
   const services = [
-    { label: "Qualify — wider-spec feedstock", href: "/#services" },
-    { label: "Recover — sieve-rejected powder", href: "/#services" },
-    { label: "Recycle — highest-value scrap routing", href: "/#services" },
-    { label: "Book a free feedstock assessment", href: "/contact" },
+    { label: tr("Qualify — wider-spec feedstock", "Qualifizieren – Feedstock mit breiterer Spezifikation"), href: "/#services" },
+    { label: tr("Recover — sieve-rejected powder", "Rückgewinnen – ausgesiebtes Pulver"), href: "/#services" },
+    { label: tr("Recycle — highest-value scrap routing", "Recyceln – Schrottverwertung zum besten Preis"), href: "/#services" },
+    { label: tr("Book a free feedstock assessment", "Kostenlose Feedstock-Bewertung buchen"), href: "/contact" },
   ];
 
   const contact = [
     { icon: Mail, label: "jemma@nchg.co.uk", href: "mailto:jemma@nchg.co.uk", isLink: true },
     { icon: Phone, label: "+44 (0) 7823 489 248", href: "tel:+447823489248", isLink: true },
-    { icon: MapPin, label: "Over Peover, Cheshire, United Kingdom", isLink: false },
+    { icon: MapPin, label: tr("Over Peover, Cheshire, United Kingdom", "Over Peover, Cheshire, Vereinigtes Königreich"), isLink: false },
   ];
 
   return (

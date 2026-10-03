@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { validateEmail, validatePhoneNumber, sanitizeInput } from "@/lib/validation";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(50, "Name must be less than 50 characters"),
@@ -26,6 +27,7 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ onSubmit }: ContactFormProps) {
+  const { tr } = useLanguage();
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -64,8 +66,8 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
 
       // Show success message
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your inquiry. We'll respond within 24 hours."
+        title: tr("Message Sent Successfully!", "Nachricht erfolgreich gesendet!"),
+        description: tr("Thank you for your inquiry. We'll respond within 24 hours.", "Vielen Dank für Ihre Anfrage. Wir antworten innerhalb von 24 Stunden.")
       });
 
       // Call parent handler if provided
@@ -76,8 +78,8 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
-        title: "Submission Failed",
-        description: "Please try again or contact us directly.",
+        title: tr("Submission Failed", "Senden fehlgeschlagen"),
+        description: tr("Please try again or contact us directly.", "Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt."),
         variant: "destructive"
       });
     }
@@ -92,9 +94,9 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name *</FormLabel>
+                <FormLabel>{tr("Name", "Name")} *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your full name" {...field} />
+                  <Input placeholder={tr("Your full name", "Ihr vollständiger Name")} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -106,9 +108,9 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email *</FormLabel>
+                <FormLabel>{tr("Email", "E-Mail")} *</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="your.email@company.com" {...field} />
+                  <Input type="email" placeholder={tr("your.email@company.com", "ihre.email@firma.de")} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -122,9 +124,9 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
             name="company"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Company *</FormLabel>
+                <FormLabel>{tr("Company", "Unternehmen")} *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your company name" {...field} />
+                  <Input placeholder={tr("Your company name", "Name Ihres Unternehmens")} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -136,7 +138,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone (Optional)</FormLabel>
+                <FormLabel>{tr("Phone (Optional)", "Telefon (optional)")}</FormLabel>
                 <FormControl>
                   <Input placeholder="+44 7823 489248" {...field} />
                 </FormControl>
@@ -151,18 +153,18 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
           name="inquiryType"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Inquiry Type *</FormLabel>
+              <FormLabel>{tr("Inquiry Type", "Art der Anfrage")} *</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select the type of inquiry" />
+                    <SelectValue placeholder={tr("Select the type of inquiry", "Art der Anfrage auswählen")} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="qualify">Qualify — wider-spec feedstock</SelectItem>
-                  <SelectItem value="recover">Recover — sieve-rejected powder</SelectItem>
-                  <SelectItem value="recycle">Recycle — highest-value scrap routing</SelectItem>
-                  <SelectItem value="not-sure">Not sure yet</SelectItem>
+                  <SelectItem value="qualify">{tr("Qualify — wider-spec feedstock", "Qualifizieren – Feedstock mit breiterer Spezifikation")}</SelectItem>
+                  <SelectItem value="recover">{tr("Recover — sieve-rejected powder", "Rückgewinnen – ausgesiebtes Pulver")}</SelectItem>
+                  <SelectItem value="recycle">{tr("Recycle — highest-value scrap routing", "Recyceln – Schrottverwertung zum besten Preis")}</SelectItem>
+                  <SelectItem value="not-sure">{tr("Not sure yet", "Noch nicht sicher")}</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -175,10 +177,10 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message *</FormLabel>
+              <FormLabel>{tr("Message", "Nachricht")} *</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Tell us about your project, requirements, or how we can help you..."
+                  placeholder={tr("Tell us about your project, requirements, or how we can help you...", "Erzählen Sie uns von Ihrem Projekt, Ihren Anforderungen oder wie wir helfen können...")}
                   className="min-h-[120px]"
                   {...field} 
                 />
@@ -188,13 +190,13 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
           )}
         />
 
-        <Button type="submit" variant="hero" size="lg" className="w-full">
-          Send Message
+        <Button type="submit" variant="hero" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
+          {form.formState.isSubmitting ? tr("Sending...", "Wird gesendet...") : tr("Send Message", "Nachricht senden")}
         </Button>
 
         <div className="text-center">
           <p className="text-xs text-muted-foreground">
-            We typically respond within 24 hours. For urgent matters, please call us directly.
+            {tr("We typically respond within 24 hours. For urgent matters, please call us directly.", "Wir antworten in der Regel innerhalb von 24 Stunden. In dringenden Fällen rufen Sie uns bitte direkt an.")}
           </p>
         </div>
       </form>
