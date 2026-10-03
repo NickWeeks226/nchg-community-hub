@@ -5,12 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpellingProvider } from "@/contexts/SpellingContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { SecurityMonitor } from "@/components/security/SecurityMonitor";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Index from "./pages/Index";
-import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -30,14 +28,12 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <SecurityMonitor />
             <CookieConsent />
             <BrowserRouter>
               <ScrollToTop />
               <Header />
               <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/cookies-policy" element={<CookiesPolicy />} />
