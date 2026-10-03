@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
-import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
@@ -11,7 +10,7 @@ const Contact = () => {
   return <div className="min-h-screen bg-background">
       <Helmet>
         <title>Contact NCHG - Titanium & Ti64 Solutions Experts | UK</title>
-        <meta name="description" content="Contact NCHG for sustainable titanium solutions, Ti64 powder optimization, and additive manufacturing intelligence. 24-hour response time guaranteed." />
+        <meta name="description" content="Contact NCHG for sustainable titanium solutions, Ti64 powder optimisation and additive manufacturing intelligence. Get in touch today." />
         <meta name="keywords" content="contact NCHG, titanium solutions, Ti64 powder, additive manufacturing, UK" />
       </Helmet>
       
@@ -32,23 +31,10 @@ const Contact = () => {
 
         {/* Contact Content */}
         <section className="py-24 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12">
-              
-              {/* Contact Form */}
-              <div>
-                <h2 className="text-3xl font-display font-bold text-foreground mb-6">
-                  {t('contact.form.heading')}
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  {t('contact.form.subtitle')}
-                </p>
-                <ContactForm />
-              </div>
-
+          <div className="container mx-auto max-w-2xl">
               {/* Contact Information */}
               <div className="space-y-8">
-                <div>
+                <div className="text-center">
                   <h2 className="text-3xl font-display font-bold text-foreground mb-6">
                     {t('contact.info.heading')}
                   </h2>
@@ -103,7 +89,6 @@ const Contact = () => {
                   </Card>
                 </div>
               </div>
-            </div>
           </div>
         </section>
       </main>
