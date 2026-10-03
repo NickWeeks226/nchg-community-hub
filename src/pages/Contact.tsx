@@ -82,7 +82,6 @@ const Contact = () => {
                           <a href="tel:+447823489248" className="text-primary hover:underline">
                             +44 (0) 7823 489 248
                           </a>
-                          <p className="text-sm text-muted-foreground mt-1">{t('contact.phone.hours')}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -116,25 +115,7 @@ const Contact = () => {
                     </CardContent>
                   </Card>
                 </div>
-
-                {/* Business Hours */}
-                <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-6">
-                  <h3 className="font-semibold text-foreground mb-4">{t('contact.hours.heading')}</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t('contact.hours.weekday')}</span>
-                      <span className="text-foreground">{t('contact.hours.weekdayTime')}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t('contact.hours.saturday')}</span>
-                      <span className="text-foreground">{t('contact.hours.saturdayTime')}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t('contact.hours.sunday')}</span>
-                      <span className="text-foreground">{t('contact.hours.sundayTime')}</span>
-                    </div>
-                  </div>
-                </div>
+              </div>
               </div>
             </div>
           </div>
