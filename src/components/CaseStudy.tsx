@@ -12,7 +12,7 @@ const stats = [
 
 const CaseStudy = () => {
   return (
-    <section id="case-study" className="py-20 bg-background">
+    <section id="case-study" className="scroll-mt-16 py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-4">
