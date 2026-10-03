@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
               Privacy Policy or how we handle your data, please contact us at:
             </p>
             <div className="bg-muted/30 p-4 rounded-lg">
-              <p><strong>Email:</strong> <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">claudia@nchg.co.uk</a></p>
+              <p><strong>Email:</strong> <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline">jemma@nchg.co.uk</a></p>
               <p><strong>Address:</strong> Over Peover, Cheshire, United Kingdom</p>
             </div>
           </section>
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
               <li><strong>Right to withdraw consent:</strong> Where processing is based on consent, you may withdraw it at any time</li>
             </ul>
             <p className="mt-4">
-              To exercise any of these rights, please contact us at <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline"><strong>claudia@nchg.co.uk</strong></a>. 
+              To exercise any of these rights, please contact us at <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline"><strong>jemma@nchg.co.uk</strong></a>. 
               We will respond to your request within one month.
             </p>
           </section>
@@ -164,7 +164,7 @@ const PrivacyPolicy = () => {
               please contact us at:
             </p>
             <div className="bg-muted/30 p-4 rounded-lg">
-              <p><strong>Email:</strong> <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">claudia@nchg.co.uk</a></p>
+              <p><strong>Email:</strong> <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline">jemma@nchg.co.uk</a></p>
               <p><strong>Phone:</strong> <a href="tel:+447823489248" className="text-primary hover:underline">+44 (0) 7823 489 248</a></p>
               <p><strong>Address:</strong> NCHG Limited, Over Peover, Cheshire, United Kingdom</p>
             </div>

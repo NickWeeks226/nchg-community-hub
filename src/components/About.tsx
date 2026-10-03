@@ -20,36 +20,40 @@ const metalysisLogo = "/lovable-uploads/851c71bc-295f-483a-b170-f70509574e98.png
 const sheffieldLogo = "/customers/UoS.png";
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, tr } = useLanguage();
   
   const leadership = [
     {
       name: "Nick Weeks",
-      role: "Founder / Director",
+      role: tr("Founder / Director", "Gründer / Geschäftsführer"),
       image: nickImg,
-      description:
+      description: tr(
         "Nick brings 20+ years in titanium AM supply chains, including senior roles at Rolls-Royce, LPW Technology and Carpenter Additive. He leads NCHG's technical direction and industry partnerships.",
+        "Nick bringt über 20 Jahre Erfahrung in Titan-AM-Lieferketten mit, unter anderem in leitenden Positionen bei Rolls-Royce, LPW Technology und Carpenter Additive. Er verantwortet die technische Ausrichtung und die Industriepartnerschaften von NCHG."),
     },
     {
       name: "Claudia",
-      role: "Director",
+      role: tr("Director", "Geschäftsführerin"),
       image: claudiaImg,
-      description:
+      description: tr(
         "Claudia leads brand, stakeholder engagement and partnerships at NCHG, connecting customers, partners and industry bodies across UK advanced manufacturing.",
+        "Claudia verantwortet Marke, Stakeholder-Beziehungen und Partnerschaften bei NCHG und vernetzt Kunden, Partner und Branchenverbände in der britischen fortschrittlichen Fertigung."),
     },
     {
       name: "Jemma Carpenter",
-      role: "Business Development Manager",
+      role: tr("Business Development Manager", "Business Development Managerin"),
       image: "/placeholder.svg",
-      description:
+      description: tr(
         "Jemma brings seven years of commercial additive manufacturing experience from Carpenter Additive, with direct relationships across the UK titanium AM customer base. She leads NCHG's sales strategy, market research, and customer engagement.",
+        "Jemma bringt sieben Jahre kaufmännische Erfahrung in der additiven Fertigung von Carpenter Additive mit und pflegt direkte Beziehungen zum britischen Titan-AM-Kundenstamm. Sie leitet Vertriebsstrategie, Marktforschung und Kundenbetreuung bei NCHG."),
     },
     {
       name: "Jon Poole",
-      role: "Field Engineer",
+      role: tr("Field Engineer", "Außendienstingenieur"),
       image: "/placeholder.svg",
-      description:
+      description: tr(
         "Jon brings hands-on LPBF operational experience from AtomikAM, covering powder handling, machine operation, and build execution. He leads NCHG's on-site service delivery — the gas flow assessments, mechanical testing and recovery engagements that qualify and recover customer feedstock.",
+        "Jon bringt praktische LPBF-Erfahrung von AtomikAM mit – von der Pulverhandhabung über den Maschinenbetrieb bis zur Bauausführung. Er leitet die Vor-Ort-Leistungen von NCHG: Gasstrombewertungen, mechanische Prüfungen und Rückgewinnungsprojekte, mit denen Kunden-Feedstock qualifiziert und zurückgewonnen wird."),
     },
   ];
 
@@ -108,9 +112,9 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Leadership Team */}
         <div id="team" className="scroll-mt-24 text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">The team</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">{tr("The team", "Das Team")}</h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            A UK team combining decades of titanium AM supply chain experience with hands-on LPBF machine expertise.
+            {tr("A UK team combining decades of titanium AM supply chain experience with hands-on LPBF machine expertise.", "Ein britisches Team, das jahrzehntelange Erfahrung in Titan-AM-Lieferketten mit praktischer LPBF-Maschinenkompetenz verbindet.")}
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">

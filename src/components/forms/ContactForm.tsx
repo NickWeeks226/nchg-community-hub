@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { validateEmail, validatePhoneNumber, sanitizeInput } from "@/lib/validation";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(50, "Name must be less than 50 characters"),
@@ -48,22 +49,17 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
     };
     
     try {
-      // Submit to edge function
-      const response = await fetch(`https://zvrnwhjiomtraaphfzmk.supabase.co/functions/v1/process-form-submission`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          formType: 'contact',
-          formData: sanitizedData,
-          customerEmail: sanitizedData.email,
-          customerName: sanitizedData.name
-        }),
+      const { error } = await supabase.from('contact_submissions').insert({
+        name: sanitizedData.name,
+        email: sanitizedData.email,
+        company: sanitizedData.company,
+        phone: sanitizedData.phone || null,
+        inquiry_type: sanitizedData.inquiryType,
+        message: sanitizedData.message,
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
+      if (error) {
+        throw error;
       }
 
       // Show success message
