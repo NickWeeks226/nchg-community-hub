@@ -64,8 +64,8 @@ const Contact = () => {
                         <Mail className="h-6 w-6 text-primary mt-1" />
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">{t('contact.email.heading')}</h3>
-                          <a href="mailto:claudia@nchg.co.uk" className="text-primary hover:underline">
-                            claudia@nchg.co.uk
+                          <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline">
+                            jemma@nchg.co.uk
                           </a>
                           <p className="text-sm text-muted-foreground mt-1">{t('contact.email.description')}</p>
                         </div>

@@ -24,7 +24,7 @@ const Footer = () => {
   ];
 
   const contact = [
-    { icon: Mail, label: "claudia@nchg.co.uk", href: "mailto:claudia@nchg.co.uk", isLink: true },
+    { icon: Mail, label: "jemma@nchg.co.uk", href: "mailto:jemma@nchg.co.uk", isLink: true },
     { icon: Phone, label: "+44 (0) 7823 489 248", href: "tel:+447823489248", isLink: true },
     { icon: MapPin, label: "Over Peover, Cheshire, United Kingdom", isLink: false },
   ];
