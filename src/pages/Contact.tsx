@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
