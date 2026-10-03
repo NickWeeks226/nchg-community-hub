@@ -107,7 +107,7 @@ const About = () => {
     <section id="about" className="py-20 surface-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Leadership Team */}
-        <div id="team" className="text-center mb-16">
+        <div id="team" className="scroll-mt-24 text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">The team</h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-12 leading-relaxed">
             A UK team combining decades of titanium AM supply chain experience with hands-on LPBF machine expertise.
