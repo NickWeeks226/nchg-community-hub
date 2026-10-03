@@ -10,7 +10,6 @@ import CookieConsent from "@/components/CookieConsent";
 import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/Header";
 import Index from "./pages/Index";
-import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -37,7 +36,6 @@ const App = () => {
               <Header />
               <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/profile" element={<Profile />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/cookies-policy" element={<CookiesPolicy />} />
