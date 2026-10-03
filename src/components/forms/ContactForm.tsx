@@ -67,7 +67,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
       // Show success message
       toast({
         title: tr("Message Sent Successfully!", "Nachricht erfolgreich gesendet!"),
-        description: tr("Thank you for your inquiry. We'll respond within 24 hours.", "Vielen Dank für Ihre Anfrage. Wir antworten innerhalb von 24 Stunden.")
+        description: tr("Thank you for getting in touch. We'll review your enquiry and get back to you shortly.", "Vielen Dank für Ihre Nachricht. Wir prüfen Ihre Anfrage und melden uns in Kürze bei Ihnen.")
       });
 
       // Call parent handler if provided
