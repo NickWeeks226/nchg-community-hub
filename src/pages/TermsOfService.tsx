@@ -201,7 +201,7 @@ const TermsOfService = () => {
               <div className="mt-4 p-6 bg-muted/30 rounded-lg">
                 <p className="font-semibold">NCHG Limited</p>
                 <p className="mt-2">Email: <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline">jemma@nchg.co.uk</a></p>
-                <p>Address: Over Peover, Cheshire, United Kingdom</p>
+                <p>Address: Sutherland Works, Longton, United Kingdom</p>
               </div>
             </section>
 

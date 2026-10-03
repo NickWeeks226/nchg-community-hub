@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
@@ -94,22 +94,9 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">{t('contact.address.heading')}</h3>
                           <p className="text-muted-foreground">
-                            Over Peover, Cheshire, United Kingdom
+                            Sutherland Works, Longton, United Kingdom
                           </p>
                           <p className="text-sm text-muted-foreground mt-1">{t('contact.address.note')}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <Clock className="h-6 w-6 text-primary mt-1" />
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-1">{t('contact.response.heading')}</h3>
-                          <p className="text-muted-foreground">{t('contact.response.time')}</p>
-                          <p className="text-sm text-muted-foreground mt-1">{t('contact.response.guarantee')}</p>
                         </div>
                       </div>
                     </CardContent>
