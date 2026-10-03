@@ -26,7 +26,7 @@ const Footer = () => {
   const contact = [
     { icon: Mail, label: "jemma@nchg.co.uk", href: "mailto:jemma@nchg.co.uk", isLink: true },
     { icon: Phone, label: "+44 (0) 7823 489 248", href: "tel:+447823489248", isLink: true },
-    { icon: MapPin, label: tr("Over Peover, Cheshire, United Kingdom", "Over Peover, Cheshire, Vereinigtes Königreich"), isLink: false },
+    { icon: MapPin, label: tr("Sutherland Works, Longton, United Kingdom", "Sutherland Works, Longton, Vereinigtes Königreich"), isLink: false },
   ];
 
   return (

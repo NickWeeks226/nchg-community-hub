@@ -241,7 +241,7 @@ const CookiesPolicy = () => {
             <div className="bg-muted/30 p-4 rounded-lg">
               <p><strong>Email:</strong> <a href="mailto:jemma@nchg.co.uk" className="text-primary hover:underline">jemma@nchg.co.uk</a></p>
               <p><strong>Phone:</strong> <a href="tel:+447823489248" className="text-primary hover:underline">+44 (0) 7823 489 248</a></p>
-              <p><strong>Address:</strong> NCHG Limited, Over Peover, Cheshire, United Kingdom</p>
+              <p><strong>Address:</strong> NCHG Limited, Sutherland Works, Longton, United Kingdom</p>
             </div>
             <p className="mt-4">
               For more information about how we handle your personal data, please see our{" "}
