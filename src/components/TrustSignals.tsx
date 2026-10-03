@@ -32,7 +32,7 @@ const TrustSignals = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground mb-2">
-            {tr("Why trust NCHG", "Warum NCHG vertrauen")}
+            {tr("Trust signals", "Vertrauenssignale")}
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
