@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
+import jonAsset from "@/assets/leadership/jon-poole.jpg.asset.json";
 
 // Leadership photos from uploads
 const claudiaImg = "/leadership/claudia.JPG";
