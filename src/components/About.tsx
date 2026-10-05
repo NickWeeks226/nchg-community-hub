@@ -50,7 +50,7 @@ const About = () => {
     {
       name: "Jon Poole",
       role: tr("Field Engineer", "Außendienstingenieur"),
-      image: "/placeholder.svg",
+      image: "/leadership/jon-poole-field-engineer-nchg.jpg",
       description: tr(
         "Jon brings hands-on LPBF operational experience from AtomikAM, covering powder handling, machine operation, and build execution. He leads NCHG's on-site service delivery — the gas flow assessments, mechanical testing and recovery engagements that qualify and recover customer feedstock.",
         "Jon bringt praktische LPBF-Erfahrung von AtomikAM mit – von der Pulverhandhabung über den Maschinenbetrieb bis zur Bauausführung. Er leitet die Vor-Ort-Leistungen von NCHG: Gasstrombewertungen, mechanische Prüfungen und Rückgewinnungsprojekte, mit denen Kunden-Feedstock qualifiziert und zurückgewonnen wird."),
