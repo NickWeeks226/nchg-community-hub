@@ -20,10 +20,6 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 mb-6">
-            <PoundSterling className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">{tr("Ti64 feedstock, cost and carbon savings", "Ti64-Feedstock: Kosten- und CO₂-Einsparungen")}</span>
-          </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
             {tr("Cut cost. Cut waste. Cut carbon.", "Weniger Kosten. Weniger Abfall. Weniger CO₂.")}
