@@ -125,7 +125,7 @@ const About = () => {
                     <AvatarImage 
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
-                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_20%] scale-[1.4] origin-[50%_28%]" : ""}`}
+                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.25] origin-[50%_0%]" : ""}`}
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
