@@ -32,7 +32,7 @@ const About = () => {
         "Nick bringt über 20 Jahre Erfahrung in Titan-AM-Lieferketten mit, unter anderem in leitenden Positionen bei Rolls-Royce, LPW Technology und Carpenter Additive. Er verantwortet die technische Ausrichtung und die Industriepartnerschaften von NCHG."),
     },
     {
-      name: "Claudia",
+      name: "Claudia Weeks",
       role: tr("Director", "Geschäftsführerin"),
       image: claudiaImg,
       description: tr(
@@ -125,13 +125,13 @@ const About = () => {
                     <AvatarImage 
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
-                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.25] origin-[50%_0%]" : ""}`}
+                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.5] origin-[50%_12%]" : ""}`}
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
                         const img = e.currentTarget as HTMLImageElement;
                         console.warn(`Leadership image failed to load for ${person.name}:`, img.src);
-                        img.onerror = null; img.src = person.name === "Claudia" ? "/leadership/claudia.svg" : "/placeholder.svg";
+                        img.onerror = null; img.src = person.name === "Claudia Weeks" ? "/leadership/claudia.svg" : "/placeholder.svg";
                       }}
                     />
                     <AvatarFallback className="text-2xl font-semibold bg-gradient-primary text-primary-foreground">
