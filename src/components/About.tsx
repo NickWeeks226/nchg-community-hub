@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 // Leadership photos from uploads
 const claudiaImg = "/leadership/claudia.JPG";
-const nickImg = "/lovable-uploads/985b7b3a-ebb7-4c4c-bdef-bad9ddad2998.png";
+const nickImg = "/leadership/nick-weeks-founder-nchg-white.jpg";
 // Partner logos from uploads
 const nplLogo = "/lovable-uploads/815d37d3-7968-4915-a72e-41529be11e35.png";
 const powderloopLogo = "/lovable-uploads/7e9ab992-1f81-4fd5-9c1d-256c1cf4d3ce.png";
@@ -50,7 +50,7 @@ const About = () => {
     {
       name: "Jon Poole",
       role: tr("Field Engineer", "Außendienstingenieur"),
-      image: "/leadership/jon-poole-field-engineer-nchg.jpg",
+      image: "/leadership/jon-poole-field-engineer-nchg-white.jpg",
       description: tr(
         "Jon brings hands-on LPBF operational experience from AtomikAM, covering powder handling, machine operation, and build execution. He leads NCHG's on-site service delivery — the gas flow assessments, mechanical testing and recovery engagements that qualify and recover customer feedstock.",
         "Jon bringt praktische LPBF-Erfahrung von AtomikAM mit – von der Pulverhandhabung über den Maschinenbetrieb bis zur Bauausführung. Er leitet die Vor-Ort-Leistungen von NCHG: Gasstrombewertungen, mechanische Prüfungen und Rückgewinnungsprojekte, mit denen Kunden-Feedstock qualifiziert und zurückgewonnen wird."),
@@ -125,7 +125,7 @@ const About = () => {
                     <AvatarImage 
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
-                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.5] origin-[38%_12%]" : ""}`}
+                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.15] origin-[50%_10%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.5] origin-[38%_12%]" : ""}`}
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
