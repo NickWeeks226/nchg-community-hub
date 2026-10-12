@@ -50,7 +50,7 @@ const About = () => {
     {
       name: "Jon Poole",
       role: tr("Field Engineer", "Außendienstingenieur"),
-      image: "/leadership/jon-poole-field-engineer-nchg-white.jpg",
+      image: "/leadership/jon-poole-nchg-plain.jpg",
       description: tr(
         "Jon brings hands-on LPBF operational experience from AtomikAM, covering powder handling, machine operation, and build execution. He leads NCHG's on-site service delivery — the gas flow assessments, mechanical testing and recovery engagements that qualify and recover customer feedstock.",
         "Jon bringt praktische LPBF-Erfahrung von AtomikAM mit – von der Pulverhandhabung über den Maschinenbetrieb bis zur Bauausführung. Er leitet die Vor-Ort-Leistungen von NCHG: Gasstrombewertungen, mechanische Prüfungen und Rückgewinnungsprojekte, mit denen Kunden-Feedstock qualifiziert und zurückgewonnen wird."),
@@ -125,7 +125,7 @@ const About = () => {
                     <AvatarImage 
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
-                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.15] origin-[50%_10%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.5] origin-[38%_12%]" : ""}`}
+                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_8%]" : person.name === "Jemma Carpenter" ? "object-[50%_0%] scale-[1.5] origin-[38%_12%]" : ""}`}
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
