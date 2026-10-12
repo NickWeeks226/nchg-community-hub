@@ -42,7 +42,7 @@ const About = () => {
     {
       name: "Jemma Carpenter",
       role: tr("Business Development Manager", "Business Development Managerin"),
-      image: "/placeholder.svg",
+      image: "/leadership/jemma-carpenter-business-development-nchg.jpg",
       description: tr(
         "Jemma brings seven years of commercial additive manufacturing experience from Carpenter Additive, with direct relationships across the UK titanium AM customer base. She leads NCHG's sales strategy, market research, and customer engagement.",
         "Jemma bringt sieben Jahre kaufmännische Erfahrung in der additiven Fertigung von Carpenter Additive mit und pflegt direkte Beziehungen zum britischen Titan-AM-Kundenstamm. Sie leitet Vertriebsstrategie, Marktforschung und Kundenbetreuung bei NCHG."),
@@ -125,7 +125,7 @@ const About = () => {
                     <AvatarImage 
                       src={person.image} 
                       alt={`${person.name}, ${person.role} at NCHG Limited`}
-                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : ""}`}
+                      className={`object-cover grayscale ${person.name === "Jon Poole" ? "object-[50%_15%] scale-[1.45] origin-[50%_22%]" : person.name === "Nick Weeks" ? "scale-[1.35] origin-[50%_45%]" : person.name === "Jemma Carpenter" ? "object-[50%_20%] scale-[1.4] origin-[50%_28%]" : ""}`}
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
